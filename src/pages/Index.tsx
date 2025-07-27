@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Loader from '../components/Loader';
+import AnnouncementBar from '../components/AnnouncementBar';
 import Navbar from '../components/Navbar';
 import HeroSlider from '../components/HeroSlider';
 
@@ -24,6 +25,7 @@ const Index = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
+          <AnnouncementBar />
           <Navbar />
           <HeroSlider />
           

@@ -12,15 +12,15 @@ const Loader = ({ onComplete }: LoaderProps) => {
 
   const images = [
     {
-      src: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=400&h=400',
+      src: '/lovable-uploads/e8effae9-a554-406f-a63b-176687ffccdf.png',
       alt: 'Ghee'
     },
     {
-      src: 'https://images.unsplash.com/photo-1498936178812-4b2e558d2937?auto=format&fit=crop&w=400&h=400',
+      src: '/lovable-uploads/8e8c0e63-775d-49d4-a697-1974ae91bba3.png',
       alt: 'Honey'
     },
     {
-      src: 'https://images.unsplash.com/photo-1465379944081-7f47de8d74ac?auto=format&fit=crop&w=400&h=400',
+      src: '/lovable-uploads/3d858f04-6710-4121-bdee-0eb6c06c4963.png',
       alt: 'Commodity'
     }
   ];
