@@ -18,7 +18,6 @@ const HeroSlider = () => {
   
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     loop: true,
-    duration: 4000,
     slides: {
       perView: 1,
       spacing: 0,
@@ -114,13 +113,13 @@ const HeroSlider = () => {
             {/* Content */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center text-white max-w-4xl px-6">
-                <h1 className="text-6xl lg:text-8xl font-bold mb-6 text-white">
+                <h1 className="text-6xl lg:text-8xl font-kalnia mb-6 text-white">
                   {slide.title}
                 </h1>
-                <p className="text-xl lg:text-2xl mb-8 text-white opacity-90">
+                <p className="text-xl lg:text-2xl mb-8 text-white opacity-90 font-kalnia">
                   {slide.subtitle}
                 </p>
-                <button className="bg-olive-green text-white px-8 py-4 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 hover-scale">
+                <button className="bg-olive-green text-white px-8 py-4 rounded-lg font-kalnia hover:bg-opacity-90 transition-all duration-300 hover-scale">
                   Explore Products
                 </button>
               </div>
