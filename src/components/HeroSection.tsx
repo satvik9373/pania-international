@@ -19,7 +19,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
-                className="text-5xl lg:text-6xl font-bold text-rich-brown leading-tight"
+                className="text-5xl lg:text-6xl font-bold text-rich-brown leading-tight font-playfair"
               >
                 Health Begins in the Kitchen with Our{' '}
                 <span className="text-olive-green">A2 Ghee</span>
@@ -28,7 +28,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
-                className="text-xl text-gray-600 mt-6"
+                className="text-xl text-gray-600 mt-6 font-poppins tracking-poppins"
               >
                 Gentle on digestion, smooth on the stomach
               </motion.p>
@@ -45,7 +45,7 @@ const HeroSection = () => {
                   <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                 ))}
               </div>
-              <span className="text-gray-600">4.9/5 from 2,000+ reviews</span>
+              <span className="text-gray-600 font-poppins tracking-poppins">4.9/5 from 2,000+ reviews</span>
             </motion.div>
 
             <motion.div
@@ -54,11 +54,11 @@ const HeroSection = () => {
               transition={{ delay: 0.8, duration: 0.8 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <button className="bg-olive-green text-white px-8 py-4 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 flex items-center justify-center space-x-2 hover-scale">
+              <button className="bg-olive-green text-white px-8 py-4 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 flex items-center justify-center space-x-2 hover-scale font-poppins tracking-poppins">
                 <ShoppingCart size={20} />
                 <span>Shop Now</span>
               </button>
-              <button className="border-2 border-olive-green text-olive-green px-8 py-4 rounded-lg font-semibold hover:bg-olive-green hover:text-white transition-all duration-300">
+              <button className="border-2 border-olive-green text-olive-green px-8 py-4 rounded-lg font-semibold hover:bg-olive-green hover:text-white transition-all duration-300 font-poppins tracking-poppins">
                 Learn More
               </button>
             </motion.div>
@@ -84,8 +84,8 @@ const HeroSection = () => {
             
             {/* Floating elements */}
             <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
-              <p className="text-sm font-semibold text-rich-brown">Made from</p>
-              <p className="text-olive-green font-bold">A2 Cow Milk</p>
+              <p className="text-sm font-semibold text-rich-brown font-poppins tracking-poppins">Made from</p>
+              <p className="text-olive-green font-bold font-poppins tracking-poppins">A2 Cow Milk</p>
             </div>
           </motion.div>
         </div>

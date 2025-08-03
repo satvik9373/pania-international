@@ -35,12 +35,12 @@ const Loader = ({ onComplete }: LoaderProps) => {
           setTimeout(() => {
             setIsVisible(false);
             setTimeout(onComplete, 500);
-          }, 500);
+          }, 1000);
           return prevIndex;
         }
         return nextIndex;
       });
-    }, 500);
+    }, 1200);
 
     return () => clearInterval(imageInterval);
   }, [onComplete, images.length]);
@@ -59,16 +59,16 @@ const Loader = ({ onComplete }: LoaderProps) => {
           <AnimatePresence mode="wait">
             <motion.div
               key={currentImageIndex}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.3 }}
-              className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden shadow-2xl"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.6 }}
+              className="w-20 h-20 mx-auto mb-6"
             >
               <img
                 src={images[currentImageIndex].src}
                 alt={images[currentImageIndex].alt}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </motion.div>
           </AnimatePresence>
@@ -78,7 +78,7 @@ const Loader = ({ onComplete }: LoaderProps) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-4xl font-kalnia text-rich-brown mb-3"
+          className="text-4xl font-playfair text-rich-brown mb-3"
         >
           Pania<span className="text-olive-green">International</span>
         </motion.h2>
@@ -87,7 +87,7 @@ const Loader = ({ onComplete }: LoaderProps) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="text-lg text-olive-green opacity-80 font-kalnia"
+          className="text-lg text-olive-green opacity-80 font-playfair italic"
         >
           Natural. Premium. Authentic.
         </motion.p>

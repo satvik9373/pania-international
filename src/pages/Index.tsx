@@ -5,6 +5,8 @@ import Loader from '../components/Loader';
 import AnnouncementBar from '../components/AnnouncementBar';
 import Navbar from '../components/Navbar';
 import HeroSlider from '../components/HeroSlider';
+import CategorySection from '../components/CategorySection';
+import ProductSection from '../components/ProductSection';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -14,7 +16,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen font-kalnia">
+    <div className="min-h-screen font-poppins">
       <AnimatePresence>
         {isLoading && <Loader onComplete={handleLoaderComplete} />}
       </AnimatePresence>
@@ -28,9 +30,11 @@ const Index = () => {
           <AnnouncementBar />
           <Navbar />
           <HeroSlider />
+          <CategorySection />
+          <ProductSection />
           
           {/* Additional content sections */}
-          <section className="py-20 bg-cream">
+          <section className="py-12 bg-olive-green">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -38,43 +42,45 @@ const Index = () => {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-5xl font-kalnia text-rich-brown mb-8">
-                  Experience Pania<span className="text-olive-green">International</span>
+                <h2 className="text-5xl font-playfair text-white mb-12">
+                  Why Pania?
                 </h2>
-                <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto font-kalnia">
-                  Discover the finest natural products, crafted with traditional methods 
-                  and modern precision for your wellness journey.
-                </p>
                 
-                <div className="grid md:grid-cols-3 gap-12 mt-16">
+                <div className="grid md:grid-cols-4 gap-12">
                   <div className="text-center">
-                    <div className="w-20 h-20 bg-olive-green rounded-full flex items-center justify-center mx-auto mb-6">
-                      <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    <div className="w-20 h-20 border-2 border-white rounded-full flex items-center justify-center mx-auto mb-6">
+                      <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-kalnia text-rich-brown mb-4">Premium Quality</h3>
-                    <p className="text-gray-600 font-kalnia">Sourced from the finest farms across India with rigorous quality standards</p>
+                    <h3 className="text-xl font-playfair text-white mb-2">100% Clean</h3>
                   </div>
                   
                   <div className="text-center">
-                    <div className="w-20 h-20 bg-terracotta rounded-full flex items-center justify-center mx-auto mb-6">
-                      <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    <div className="w-20 h-20 border-2 border-white rounded-full flex items-center justify-center mx-auto mb-6">
+                      <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-kalnia text-rich-brown mb-4">100% Natural</h3>
-                    <p className="text-gray-600 font-kalnia">No preservatives, artificial colors, or harmful additives</p>
+                    <h3 className="text-xl font-playfair text-white mb-2">Farm Fresh</h3>
                   </div>
                   
                   <div className="text-center">
-                    <div className="w-20 h-20 bg-olive-green rounded-full flex items-center justify-center mx-auto mb-6">
-                      <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+                    <div className="w-20 h-20 border-2 border-white rounded-full flex items-center justify-center mx-auto mb-6">
+                      <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M9 1v6m6-6v6" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-kalnia text-rich-brown mb-4">Traditional Craft</h3>
-                    <p className="text-gray-600 font-kalnia">Time-honored processes passed down through generations</p>
+                    <h3 className="text-xl font-playfair text-white mb-2">Made in Small Batches</h3>
+                  </div>
+                  
+                  <div className="text-center">
+                    <div className="w-20 h-20 border-2 border-white rounded-full flex items-center justify-center mx-auto mb-6">
+                      <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-playfair text-white mb-2">Rooted in Tradition</h3>
                   </div>
                 </div>
               </motion.div>
@@ -85,35 +91,35 @@ const Index = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid md:grid-cols-4 gap-8">
                 <div className="md:col-span-2">
-                  <h3 className="text-3xl font-kalnia mb-6">
+                  <h3 className="text-3xl font-playfair mb-6">
                     Pania<span className="text-olive-green">International</span>
                   </h3>
-                  <p className="text-gray-300 mb-6 text-lg font-kalnia">
+                  <p className="text-gray-300 mb-6 text-lg font-poppins tracking-poppins">
                     Bringing you the finest natural products from farm to table. 
                     Experience the purity of traditional Indian agriculture with modern excellence.
                   </p>
                 </div>
                 <div>
-                  <h4 className="text-xl font-kalnia mb-6">Quick Links</h4>
+                  <h4 className="text-xl font-playfair mb-6">Quick Links</h4>
                   <ul className="space-y-3 text-gray-300">
-                    <li><a href="#" className="hover:text-olive-green transition-colors font-kalnia">About Us</a></li>
-                    <li><a href="#" className="hover:text-olive-green transition-colors font-kalnia">Products</a></li>
-                    <li><a href="#" className="hover:text-olive-green transition-colors font-kalnia">Our Story</a></li>
-                    <li><a href="#" className="hover:text-olive-green transition-colors font-kalnia">Contact</a></li>
+                    <li><a href="#" className="hover:text-olive-green transition-colors font-poppins tracking-poppins">About Us</a></li>
+                    <li><a href="#" className="hover:text-olive-green transition-colors font-poppins tracking-poppins">Products</a></li>
+                    <li><a href="#" className="hover:text-olive-green transition-colors font-poppins tracking-poppins">Our Story</a></li>
+                    <li><a href="#" className="hover:text-olive-green transition-colors font-poppins tracking-poppins">Contact</a></li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-xl font-kalnia mb-6">Support</h4>
+                  <h4 className="text-xl font-playfair mb-6">Support</h4>
                   <ul className="space-y-3 text-gray-300">
-                    <li><a href="#" className="hover:text-olive-green transition-colors font-kalnia">FAQ</a></li>
-                    <li><a href="#" className="hover:text-olive-green transition-colors font-kalnia">Shipping Info</a></li>
-                    <li><a href="#" className="hover:text-olive-green transition-colors font-kalnia">Returns</a></li>
-                    <li><a href="#" className="hover:text-olive-green transition-colors font-kalnia">Track Order</a></li>
+                    <li><a href="#" className="hover:text-olive-green transition-colors font-poppins tracking-poppins">FAQ</a></li>
+                    <li><a href="#" className="hover:text-olive-green transition-colors font-poppins tracking-poppins">Shipping Info</a></li>
+                    <li><a href="#" className="hover:text-olive-green transition-colors font-poppins tracking-poppins">Returns</a></li>
+                    <li><a href="#" className="hover:text-olive-green transition-colors font-poppins tracking-poppins">Track Order</a></li>
                   </ul>
                 </div>
               </div>
               <div className="border-t border-gray-600 mt-12 pt-8 text-center">
-                <p className="text-gray-300 text-lg font-kalnia">
+                <p className="text-gray-300 text-lg font-poppins tracking-poppins">
                   © 2024 Pania International. All rights reserved. Crafted with passion in India.
                 </p>
               </div>
