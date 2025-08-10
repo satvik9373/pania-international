@@ -20,11 +20,10 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'sans': ['Poppins', 'sans-serif'],
-				'serif': ['Playfair Display', 'serif'],
-				'playfair': ['Playfair Display', 'serif'],
-				'poppins': ['Poppins', 'sans-serif'],
-				'sangira': ['Sangira', 'serif'],
+				'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+				'serif': ['Prata', 'ui-serif', 'Georgia', 'serif'],
+				'playfair': ['Prata', 'serif'],
+				'poppins': ['Inter', 'sans-serif'],
 			},
 			letterSpacing: {
 				'tighter': '-0.05em',
@@ -34,6 +33,7 @@ export default {
 				'wider': '0.05em',
 				'widest': '0.1em',
 				'poppins': '-0.015em',
+				'inter-tight': '-0.01em',
 			},
 			colors: {
 				border: 'hsl(var(--border))',

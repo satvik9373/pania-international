@@ -8,14 +8,6 @@ All colors MUST be HSL.
 */
 
 @layer base {
-  @font-face {
-    font-family: 'Sangira';
-    src: url('/fonts/FontsFree-Net-Sangira-lglJX.ttf') format('truetype');
-    font-weight: 400 700;
-    font-style: normal;
-    font-display: swap;
-  }
-
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
@@ -110,11 +102,25 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   }
 }
 
 @layer utilities {
+  /* Marquee animations */
+  @keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+  }
+  @keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+  }
+
+  .marquee-left { animation: marquee-left 12s linear infinite; }
+  .marquee-right { animation: marquee-right 12s linear infinite; }
+  /* Slightly tighter line-height helper for Inter-heavy headings or bold elements */
+  .leading-tightish { line-height: 1.15; }
   .text-olive-green {
     color: hsl(var(--olive-green));
   }
@@ -153,6 +159,16 @@ All colors MUST be HSL.
   
   .bg-rich-brown {
     background-color: hsl(var(--rich-brown));
+  }
+
+  /* 2-line clamp utility */
+  .clamp-2 {
+    display: -webkit-box;
+  line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 

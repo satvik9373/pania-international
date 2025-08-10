@@ -96,7 +96,7 @@ const CategorySection = () => {
         <div className="flex justify-center mt-12">
           <button
             onClick={() => navigate('/categories')}
-            className="bg-green-600 text-white px-12 py-4 rounded-full font-playfair text-lg font-semibold hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            className="bg-green-600 text-white px-12 py-4 rounded-md font-playfair text-lg font-semibold hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
             Show More
           </button>
