@@ -88,7 +88,7 @@ const Categories = () => {
               <h1 className="text-4xl font-bold text-rich-brown mx-8 font-playfair">All Categories</h1>
               <div className="h-px bg-terracotta w-24"></div>
             </div>
-            <p className="text-xl text-gray-600 font-poppins">
+            <p className="text-xl text-gray-600 font-playfair">
               Explore our complete range of premium products
             </p>
           </div>

@@ -102,7 +102,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: 'Prata', serif;
   }
 }
 
@@ -119,7 +119,7 @@ All colors MUST be HSL.
 
   .marquee-left { animation: marquee-left 12s linear infinite; }
   .marquee-right { animation: marquee-right 12s linear infinite; }
-  /* Slightly tighter line-height helper for Inter-heavy headings or bold elements */
+  /* Slightly tighter line-height helper for headings or bold elements */
   .leading-tightish { line-height: 1.15; }
   .text-olive-green {
     color: hsl(var(--olive-green));
