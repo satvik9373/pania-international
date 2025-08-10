@@ -94,11 +94,6 @@ const VideoSlider = () => {
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-20 transition-all duration-300"></div>
                 </div>
-                
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black to-transparent text-white">
-                  <h3 className="text-xl font-bold mb-2">{product.title}</h3>
-                  <p className="text-sm opacity-90">{product.description}</p>
-                </div>
               </div>
             </div>
           ))}

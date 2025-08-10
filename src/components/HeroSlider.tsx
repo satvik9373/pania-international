@@ -8,8 +8,6 @@ interface SlideData {
   type: 'video' | 'image';
   src: string;
   alt?: string;
-  title: string;
-  subtitle: string;
 }
 
 const HeroSlider = () => {
@@ -48,38 +46,28 @@ const HeroSlider = () => {
       id: 1,
       type: 'image',
       src: 'https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1920&h=1080',
-      alt: 'Natural landscape',
-      title: 'Pure & Natural',
-      subtitle: 'From farm to table, experience authentic flavors'
+      alt: 'Natural landscape'
     },
     {
       id: 2,
       type: 'video',
-      src: 'https://player.vimeo.com/external/371433846.hd.mp4?s=8a91b8c3c1c5ce6b9a8b5b1b8b1b8b1b',
-      title: 'Traditional Methods',
-      subtitle: 'Crafted with time-honored techniques'
+      src: 'https://player.vimeo.com/external/371433846.hd.mp4?s=8a91b8c3c1c5ce6b9a8b5b1b8b1b8b1b'
     },
     {
       id: 3,
       type: 'video',
-      src: 'https://player.vimeo.com/external/434045526.hd.mp4?s=8a91b8c3c1c5ce6b9a8b5b1b8b1b8b1b',
-      title: 'A2 Ghee Excellence',
-      subtitle: 'Premium quality for your wellness'
+      src: 'https://player.vimeo.com/external/434045526.hd.mp4?s=8a91b8c3c1c5ce6b9a8b5b1b8b1b8b1b'
     },
     {
       id: 4,
       type: 'image',
       src: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&w=1920&h=1080',
-      alt: 'Starry night sky',
-      title: 'Organic Heritage',
-      subtitle: 'Connecting you to nature\'s finest gifts'
+      alt: 'Starry night sky'
     },
     {
       id: 5,
       type: 'video',
-      src: 'https://player.vimeo.com/external/418979306.hd.mp4?s=8a91b8c3c1c5ce6b9a8b5b1b8b1b8b1b',
-      title: 'Raw Honey',
-      subtitle: 'Straight from the hive to your home'
+      src: 'https://player.vimeo.com/external/418979306.hd.mp4?s=8a91b8c3c1c5ce6b9a8b5b1b8b1b8b1b'
     }
   ];
 
@@ -106,21 +94,6 @@ const HeroSlider = () => {
                 className="absolute inset-0 w-full h-full object-cover"
               />
             )}
-            
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-            
-            {/* Content */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center text-white max-w-4xl px-6">
-                <h1 className="text-6xl lg:text-8xl font-playfair mb-6 text-white">
-                  {slide.title}
-                </h1>
-                <p className="text-xl lg:text-2xl mb-8 text-white opacity-90 font-playfair italic tracking-poppins">
-                  {slide.subtitle}
-                </p>
-              </div>
-            </div>
           </div>
         ))}
       </div>

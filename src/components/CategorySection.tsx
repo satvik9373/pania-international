@@ -1,53 +1,50 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const CategorySection = () => {
+  const navigate = useNavigate();
+
   const categories = [
     {
       id: 1,
-      title: 'GHEE',
-      subtitle: '',
+      title: 'Fresh Fruits & Vegetables',
       image: '/lovable-uploads/3d858f04-6710-4121-bdee-0eb6c06c4963.png',
-      bgColor: 'bg-amber-800',
+      bgColor: 'bg-green-600',
       textColor: 'text-white'
     },
     {
       id: 2,
-      title: 'KHAPLI\nATTA',
-      subtitle: '',
+      title: 'Oils, Fats & Ghee – Dairy Fat Products',
       image: '/lovable-uploads/8e8c0e63-775d-49d4-a697-1974ae91bba3.png',
-      bgColor: 'bg-teal-600',
+      bgColor: 'bg-amber-800',
       textColor: 'text-white'
     },
     {
       id: 3,
-      title: 'STONE-\nPRESSED OILS',
-      subtitle: '',
+      title: 'Oils, Fats & Ghee – Cold Pressed Edible Oils',
       image: '/lovable-uploads/e8effae9-a554-406f-a63b-176687ffccdf.png',
       bgColor: 'bg-blue-400',
       textColor: 'text-white'
     },
     {
       id: 4,
-      title: 'PUJA\nESSENTIAL',
-      subtitle: '',
+      title: 'Oils, Fats & Ghee – Refined Oils',
       image: '/lovable-uploads/3d858f04-6710-4121-bdee-0eb6c06c4963.png',
       bgColor: 'bg-red-700',
       textColor: 'text-white'
     },
     {
       id: 5,
-      title: 'BUILD YOUR\nOWN BOX',
-      subtitle: '',
+      title: 'Natural Sweeteners & Sugars',
       image: '/lovable-uploads/8e8c0e63-775d-49d4-a697-1974ae91bba3.png',
-      bgColor: 'bg-orange-500',
+      bgColor: 'bg-pink-600',
       textColor: 'text-white'
     },
     {
       id: 6,
-      title: 'ESSENTIALS PACK',
-      subtitle: '',
+      title: 'Grains & Staples – Wheat Flour & Rice',
       image: '/lovable-uploads/e8effae9-a554-406f-a63b-176687ffccdf.png',
-      bgColor: 'bg-purple-500',
+      bgColor: 'bg-orange-600',
       textColor: 'text-white'
     }
   ];
@@ -59,12 +56,12 @@ const CategorySection = () => {
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-4">
             <div className="h-px bg-terracotta w-24"></div>
-            <h2 className="text-4xl font-bold text-rich-brown mx-8 font-poppins tracking-poppins">Shop By Category</h2>
+            <h2 className="text-4xl font-bold text-rich-brown mx-8 font-playfair">Shop By Category</h2>
             <div className="h-px bg-terracotta w-24"></div>
           </div>
         </div>
 
-        {/* Categories Grid */}
+        {/* Categories Grid - 3x2 Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((category, index) => (
             <motion.div
@@ -77,16 +74,9 @@ const CategorySection = () => {
               <div className="flex h-full">
                 {/* Text Content */}
                 <div className="flex-1 p-8 flex flex-col justify-center">
-                  <h3 className={`text-3xl font-bold ${category.textColor} leading-tight mb-4 font-poppins tracking-poppins`}>
-                    {category.title.split('\n').map((line, i) => (
-                      <div key={i}>{line}</div>
-                    ))}
+                  <h3 className={`text-2xl font-bold ${category.textColor} leading-tight mb-4 font-playfair`}>
+                    {category.title}
                   </h3>
-                  <div className={`text-lg font-semibold ${category.textColor} font-poppins tracking-poppins`}>
-                    {category.subtitle.split('\n').map((line, i) => (
-                      <div key={i}>{line}</div>
-                    ))}
-                  </div>
                 </div>
 
                 {/* Product Image */}
@@ -100,6 +90,16 @@ const CategorySection = () => {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Show More Button */}
+        <div className="flex justify-center mt-12">
+          <button
+            onClick={() => navigate('/categories')}
+            className="bg-green-600 text-white px-12 py-4 rounded-full font-playfair text-lg font-semibold hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          >
+            Show More
+          </button>
         </div>
       </div>
     </section>
