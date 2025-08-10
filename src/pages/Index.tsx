@@ -9,6 +9,7 @@ import CategorySection from '../components/CategorySection';
 import ProductSection from '../components/ProductSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import BlogSection from '../components/BlogSection';
+import FAQSection from '../components/FAQSection';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -36,6 +37,7 @@ const Index = () => {
           <ProductSection />
           <TestimonialsSection />
           <BlogSection />
+          <FAQSection />
           
           {/* Additional content sections */}
           <section className="py-12 bg-olive-green">
