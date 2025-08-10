@@ -24,6 +24,7 @@ export default {
 				'serif': ['Playfair Display', 'serif'],
 				'playfair': ['Playfair Display', 'serif'],
 				'poppins': ['Poppins', 'sans-serif'],
+				'sangira': ['Sangira', 'serif'],
 			},
 			letterSpacing: {
 				'tighter': '-0.05em',

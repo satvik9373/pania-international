@@ -1,5 +1,13 @@
 import { motion } from 'framer-motion';
 import { Star, ShoppingCart } from 'lucide-react';
+import { useState } from 'react';
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from '@/components/ui/select';
 
 const ProductSection = () => {
   const products = [
@@ -64,6 +72,9 @@ const ProductSection = () => {
     }
   ];
 
+  // Track selected size and quantity per product
+  const [selectedSizes, setSelectedSizes] = useState<Record<number, string>>({});
+
   const renderStars = (rating) => {
     return [...Array(5)].map((_, index) => (
       <Star
@@ -80,12 +91,12 @@ const ProductSection = () => {
   };
 
   return (
-    <section className="py-16 bg-white">
+  <section className="py-16 bg-white font-sangira">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex justify-between items-center mb-12">
-          <h2 className="text-4xl font-bold text-rich-brown font-playfair">Best Sellers</h2>
-          <button className="bg-olive-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 font-poppins tracking-poppins">
+      <h2 className="text-4xl font-bold text-rich-brown font-sangira">Best Sellers</h2>
+      <button className="bg-olive-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 font-sangira">
             View All Products
           </button>
         </div>
@@ -119,7 +130,7 @@ const ProductSection = () => {
 
               {/* Product Info */}
               <div className="p-4 flex-1 flex flex-col">
-                <h3 className="text-lg font-semibold text-rich-brown mb-2 line-clamp-2 font-playfair">
+                <h3 className="text-lg font-semibold text-rich-brown mb-2 line-clamp-2 font-sangira">
                   {product.name}
                 </h3>
 
@@ -131,17 +142,27 @@ const ProductSection = () => {
                   )}
                 </div>
 
-                {/* Size Selector and Rating Row */}
+                {/* Selector and Rating Row */}
                 <div className="flex items-center justify-between gap-3 mb-4">
-                  {/* Size Selector - Left Side */}
+                  {/* Size Selector only */}
                   <div className="flex-1">
-                    <select className="w-full p-2 border border-gray-300 rounded-lg text-sm bg-white">
-                      {product.sizes.map((size, idx) => (
-                        <option key={idx} value={size}>
-                          {size}
-                        </option>
-                      ))}
-                    </select>
+                    <Select
+                      value={selectedSizes[product.id] ?? product.defaultSize}
+                      onValueChange={(v) =>
+                        setSelectedSizes((prev) => ({ ...prev, [product.id]: v }))
+                      }
+                    >
+                      <SelectTrigger className="w-full h-10 text-sm">
+                        <SelectValue placeholder="Select size" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {product.sizes.map((size) => (
+                          <SelectItem key={size} value={size}>
+                            {size}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                   </div>
 
                   {/* Rating - Right Side */}
@@ -151,7 +172,8 @@ const ProductSection = () => {
                 </div>
 
                 {/* Add to Cart Button */}
-                <button className="w-full bg-olive-green text-white py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 mt-auto">
+                <button className="w-full bg-olive-green text-white py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 mt-auto flex items-center justify-center gap-2">
+                  <ShoppingCart className="h-4 w-4" />
                   Add to cart
                 </button>
               </div>

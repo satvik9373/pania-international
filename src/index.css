@@ -8,6 +8,14 @@ All colors MUST be HSL.
 */
 
 @layer base {
+  @font-face {
+    font-family: 'Sangira';
+    src: url('/fonts/FontsFree-Net-Sangira-lglJX.ttf') format('truetype');
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
