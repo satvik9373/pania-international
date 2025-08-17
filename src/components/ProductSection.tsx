@@ -91,11 +91,11 @@ const ProductSection = () => {
   };
 
   return (
-  <section className="py-16 bg-white font-playfair">
+  <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex justify-between items-center mb-12">
-          <h2 className="text-4xl font-bold text-rich-brown font-playfair">Best Sellers</h2>
+          <h2 className="text-4xl font-bold text-rich-brown">Best Sellers</h2>
           <button className="bg-olive-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300">
             View All Products
           </button>

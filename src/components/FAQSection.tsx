@@ -29,18 +29,18 @@ export default function FAQSection() {
     <section className="py-20 bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
-          <h2 className="text-4xl md:text-5xl font-playfair text-rich-brown">Frequently Asked Questions</h2>
-          <p className="mt-3 text-rich-brown/70 font-playfair">Answers to common questions about our products, shipping, and care.</p>
+          <h2 className="text-4xl md:text-5xl text-rich-brown">Frequently Asked Questions</h2>
+          <p className="mt-3 text-rich-brown/70">Answers to common questions about our products, shipping, and care.</p>
         </div>
 
         <div className="mx-auto max-w-3xl">
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((item, idx) => (
               <AccordionItem key={idx} value={`item-${idx}`}>
-                <AccordionTrigger className="font-playfair text-left text-lg md:text-xl text-rich-brown">
+                <AccordionTrigger className="text-left text-lg md:text-xl text-rich-brown">
                   {item.q}
                 </AccordionTrigger>
-                <AccordionContent className="font-playfair text-rich-brown/80 leading-relaxed">
+                <AccordionContent className="text-rich-brown/80 leading-relaxed">
                   {item.a}
                 </AccordionContent>
               </AccordionItem>

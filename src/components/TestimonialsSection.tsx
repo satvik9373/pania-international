@@ -44,7 +44,7 @@ const StarsRow = () => (
 
 function TextCard({ title, body, author }: { title: string; body: string; author: string }) {
   return (
-  <div className="w-full h-full min-h-[280px] rounded-3xl bg-[#BCD6C7] shadow-sm ring-1 ring-black/5 p-6 text-center flex flex-col justify-start break-words whitespace-normal font-playfair">
+  <div className="w-full h-full min-h-[280px] rounded-3xl bg-[#BCD6C7] shadow-sm ring-1 ring-black/5 p-6 text-center flex flex-col justify-start break-words whitespace-normal">
       <StarsRow />
       <h4 className="text-sm sm:text-base md:text-lg font-semibold tracking-wide text-rich-brown mb-3 leading-snug break-words">
         {title}
@@ -59,10 +59,10 @@ function TextCard({ title, body, author }: { title: string; body: string; author
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-16 bg-rose-100 font-sans">
+    <section className="py-16 bg-rose-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <h2 className="text-3xl sm:text-4xl text-rich-brown font-playfair font-semibold">
+          <h2 className="text-3xl sm:text-4xl text-rich-brown font-semibold">
             Why people love Pania
           </h2>
         </div>

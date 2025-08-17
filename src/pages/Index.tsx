@@ -19,7 +19,7 @@ const Index = () => {
   };
 
   return (
-  <div className="min-h-screen font-playfair">
+  <div className="min-h-screen">
       <AnimatePresence>
         {isLoading && <Loader onComplete={handleLoaderComplete} />}
       </AnimatePresence>
@@ -48,7 +48,7 @@ const Index = () => {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-5xl font-playfair text-white mb-12">
+                <h2 className="text-5xl text-white mb-12">
                   Why Pania?
                 </h2>
                 
@@ -59,7 +59,7 @@ const Index = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-playfair text-white mb-2">100% Clean</h3>
+                    <h3 className="text-xl text-white mb-2">100% Clean</h3>
                   </div>
                   
                   <div className="text-center">
@@ -68,7 +68,7 @@ const Index = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-playfair text-white mb-2">Farm Fresh</h3>
+                    <h3 className="text-xl text-white mb-2">Farm Fresh</h3>
                   </div>
                   
                   <div className="text-center">
@@ -77,7 +77,7 @@ const Index = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M9 1v6m6-6v6" />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-playfair text-white mb-2">Made in Small Batches</h3>
+                    <h3 className="text-xl text-white mb-2">Made in Small Batches</h3>
                   </div>
                   
                   <div className="text-center">
@@ -86,7 +86,7 @@ const Index = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-playfair text-white mb-2">Rooted in Tradition</h3>
+                    <h3 className="text-xl text-white mb-2">Rooted in Tradition</h3>
                   </div>
                 </div>
               </motion.div>
@@ -97,35 +97,35 @@ const Index = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid md:grid-cols-4 gap-8">
                 <div className="md:col-span-2">
-                  <h3 className="text-3xl font-playfair mb-6">
+                  <h3 className="text-3xl mb-6">
                     Pania<span className="text-olive-green">International</span>
                   </h3>
-                  <p className="text-gray-300 mb-6 text-lg font-playfair tracking-poppins">
+                  <p className="text-gray-300 mb-6 text-lg tracking-poppins">
                     Bringing you the finest natural products from farm to table. 
                     Experience the purity of traditional Indian agriculture with modern excellence.
                   </p>
                 </div>
                 <div>
-                  <h4 className="text-xl font-playfair mb-6">Quick Links</h4>
+                  <h4 className="text-xl mb-6">Quick Links</h4>
                   <ul className="space-y-3 text-gray-300">
-                    <li><a href="#" className="hover:text-olive-green transition-colors font-playfair tracking-poppins">About Us</a></li>
-                    <li><a href="#" className="hover:text-olive-green transition-colors font-playfair tracking-poppins">Products</a></li>
-                    <li><a href="#" className="hover:text-olive-green transition-colors font-playfair tracking-poppins">Our Story</a></li>
-                    <li><a href="#" className="hover:text-olive-green transition-colors font-playfair tracking-poppins">Contact</a></li>
+                    <li><a href="#" className="hover:text-olive-green transition-colors tracking-poppins">About Us</a></li>
+                    <li><a href="#" className="hover:text-olive-green transition-colors tracking-poppins">Products</a></li>
+                    <li><a href="#" className="hover:text-olive-green transition-colors tracking-poppins">Our Story</a></li>
+                    <li><a href="#" className="hover:text-olive-green transition-colors tracking-poppins">Contact</a></li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-xl font-playfair mb-6">Support</h4>
+                  <h4 className="text-xl mb-6">Support</h4>
                   <ul className="space-y-3 text-gray-300">
-                    <li><a href="#" className="hover:text-olive-green transition-colors font-playfair tracking-poppins">FAQ</a></li>
-                    <li><a href="#" className="hover:text-olive-green transition-colors font-playfair tracking-poppins">Shipping Info</a></li>
-                    <li><a href="#" className="hover:text-olive-green transition-colors font-playfair tracking-poppins">Returns</a></li>
-                    <li><a href="#" className="hover:text-olive-green transition-colors font-playfair tracking-poppins">Track Order</a></li>
+                    <li><a href="#" className="hover:text-olive-green transition-colors tracking-poppins">FAQ</a></li>
+                    <li><a href="#" className="hover:text-olive-green transition-colors tracking-poppins">Shipping Info</a></li>
+                    <li><a href="#" className="hover:text-olive-green transition-colors tracking-poppins">Returns</a></li>
+                    <li><a href="#" className="hover:text-olive-green transition-colors tracking-poppins">Track Order</a></li>
                   </ul>
                 </div>
               </div>
               <div className="border-t border-gray-600 mt-12 pt-8 text-center">
-                <p className="text-gray-300 text-lg font-playfair tracking-poppins">
+                <p className="text-gray-300 text-lg tracking-poppins">
                   © 2024 Pania International. All rights reserved. Crafted with passion in India.
                 </p>
               </div>

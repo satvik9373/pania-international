@@ -56,7 +56,7 @@ const CategorySection = () => {
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-4">
             <div className="h-px bg-terracotta w-24"></div>
-            <h2 className="text-4xl font-bold text-rich-brown mx-8 font-playfair">Shop By Category</h2>
+            <h2 className="text-4xl font-bold text-rich-brown mx-8">Shop By Category</h2>
             <div className="h-px bg-terracotta w-24"></div>
           </div>
         </div>
@@ -74,7 +74,7 @@ const CategorySection = () => {
               <div className="flex h-full">
                 {/* Text Content */}
                 <div className="flex-1 p-8 flex flex-col justify-center">
-                  <h3 className={`text-2xl font-bold ${category.textColor} leading-tight mb-4 font-playfair`}>
+                  <h3 className={`text-2xl font-bold ${category.textColor} leading-tight mb-4`}>
                     {category.title}
                   </h3>
                 </div>
@@ -96,7 +96,7 @@ const CategorySection = () => {
         <div className="flex justify-center mt-12">
           <button
             onClick={() => navigate('/categories')}
-            className="bg-green-600 text-white px-12 py-4 rounded-md font-playfair text-lg font-semibold hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            className="bg-green-600 text-white px-12 py-4 rounded-md text-lg font-semibold hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
             Show More
           </button>

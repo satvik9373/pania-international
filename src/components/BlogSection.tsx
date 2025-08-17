@@ -98,10 +98,10 @@ const BlogCard = ({ item }: { item: Blog }) => {
 
 			{/* Content */}
 			<div className="p-6 flex flex-col flex-1">
-				<h3 className="font-sans font-bold text-[#5A3A2E] text-xl md:text-2xl leading-tight mb-3">
+				<h3 className="font-bold text-[#5A3A2E] text-xl md:text-2xl leading-tight mb-3">
 					{item.title}
 				</h3>
-				<p className="font-sans text-sm text-stone-700/90 clamp-2 mb-6">
+				<p className="text-sm text-stone-700/90 clamp-2 mb-6">
 					{item.description}
 				</p>
 				<div className="mt-auto">
@@ -122,7 +122,7 @@ const BlogSection = () => {
 		<section className="py-16">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center mb-10">
-					<h2 className="text-3xl sm:text-4xl text-rich-brown font-playfair font-semibold">Latest Blogs</h2>
+					<h2 className="text-3xl sm:text-4xl text-rich-brown font-semibold">Latest Blogs</h2>
 				</div>
 
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">

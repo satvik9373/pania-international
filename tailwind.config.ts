@@ -20,10 +20,11 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				// Use only Prata across the site
-				'sans': ['Prata', 'serif'],
-				'serif': ['Prata', 'serif'],
-				'playfair': ['Prata', 'serif'],
+				// Use only Wasted Vindey across the entire site
+				'sans': ['Wasted Vindey', 'sans-serif'],
+				'serif': ['Wasted Vindey', 'sans-serif'],
+				'mono': ['Wasted Vindey', 'sans-serif'],
+				'playfair': ['Wasted Vindey', 'sans-serif'],
 			},
 			letterSpacing: {
 				'tighter': '-0.05em',

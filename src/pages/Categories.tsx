@@ -85,10 +85,10 @@ const Categories = () => {
           <div className="text-center mb-12">
             <div className="flex items-center justify-center mb-4">
               <div className="h-px bg-terracotta w-24"></div>
-              <h1 className="text-4xl font-bold text-rich-brown mx-8 font-playfair">All Categories</h1>
+              <h1 className="text-4xl font-bold text-rich-brown mx-8">All Categories</h1>
               <div className="h-px bg-terracotta w-24"></div>
             </div>
-            <p className="text-xl text-gray-600 font-playfair">
+            <p className="text-xl text-gray-600">
               Explore our complete range of premium products
             </p>
           </div>
@@ -106,7 +106,7 @@ const Categories = () => {
                 <div className="flex h-full">
                   {/* Text Content */}
                   <div className="flex-1 p-8 flex flex-col justify-center">
-                    <h3 className={`text-2xl font-bold ${category.textColor} leading-tight mb-4 font-playfair`}>
+                    <h3 className={`text-2xl font-bold ${category.textColor} leading-tight mb-4`}>
                       {category.title}
                     </h3>
                   </div>

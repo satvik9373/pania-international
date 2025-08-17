@@ -19,7 +19,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-playfair text-rich-brown tracking-tight uppercase">
+            <h1 className="text-2xl text-rich-brown tracking-tight uppercase">
               PANIA<span className="text-olive-green">INTERNATIONAL</span>
             </h1>
           </div>
@@ -30,7 +30,7 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-olive-green transition-colors duration-200 font-sans leading-tightish"
+                className="text-gray-700 hover:text-olive-green transition-colors duration-200 leading-tightish"
               >
                 {item.name}
               </a>
@@ -57,7 +57,7 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="block px-3 py-2 text-gray-700 hover:text-olive-green transition-colors duration-200 font-sans leading-tightish"
+                className="block px-3 py-2 text-gray-700 hover:text-olive-green transition-colors duration-200 leading-tightish"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}

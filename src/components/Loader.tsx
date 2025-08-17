@@ -78,7 +78,7 @@ const Loader = ({ onComplete }: LoaderProps) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-4xl font-playfair text-rich-brown mb-3"
+          className="text-4xl text-rich-brown mb-3"
         >
           Pania<span className="text-olive-green">International</span>
         </motion.h2>
@@ -87,7 +87,7 @@ const Loader = ({ onComplete }: LoaderProps) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="text-lg text-olive-green opacity-80 font-playfair italic"
+          className="text-lg text-olive-green opacity-80 italic"
         >
           Natural. Premium. Authentic.
         </motion.p>
