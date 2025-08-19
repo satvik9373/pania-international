@@ -1,13 +1,5 @@
 import { motion } from 'framer-motion';
-import { Star, ShoppingCart } from 'lucide-react';
-import { useState } from 'react';
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectContent,
-  SelectItem,
-} from '@/components/ui/select';
+import { ShoppingCart } from 'lucide-react';
 
 const ProductSection = () => {
   const products = [
@@ -72,24 +64,6 @@ const ProductSection = () => {
     }
   ];
 
-  // Track selected size and quantity per product
-  const [selectedSizes, setSelectedSizes] = useState<Record<number, string>>({});
-
-  const renderStars = (rating) => {
-    return [...Array(5)].map((_, index) => (
-      <Star
-        key={index}
-        className={`w-3 h-3 ${
-          index < Math.floor(rating)
-            ? 'text-yellow-400 fill-current'
-            : index < rating
-            ? 'text-yellow-400 fill-current opacity-50'
-            : 'text-gray-300'
-        }`}
-      />
-    ));
-  };
-
   return (
   <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -130,7 +104,7 @@ const ProductSection = () => {
 
               {/* Product Info */}
               <div className="p-4 flex-1 flex flex-col">
-                <h3 className="text-lg font-semibold text-rich-brown mb-2 line-clamp-2">
+                <h3 className="text-lg font-bold text-rich-brown mb-2 line-clamp-2">
                   {product.name}
                 </h3>
 
@@ -142,39 +116,10 @@ const ProductSection = () => {
                   )}
                 </div>
 
-                {/* Selector and Rating Row */}
-                <div className="flex items-center justify-between gap-3 mb-4">
-                  {/* Size Selector only */}
-                  <div className="flex-1">
-                    <Select
-                      value={selectedSizes[product.id] ?? product.defaultSize}
-                      onValueChange={(v) =>
-                        setSelectedSizes((prev) => ({ ...prev, [product.id]: v }))
-                      }
-                    >
-                      <SelectTrigger className="w-full h-10 text-sm">
-                        <SelectValue placeholder="Select size" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {product.sizes.map((size) => (
-                          <SelectItem key={size} value={size}>
-                            {size}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  {/* Rating - Right Side */}
-                  <div className="flex items-center gap-1">
-                    <div className="flex">{renderStars(product.rating)}</div>
-                  </div>
-                </div>
-
-                {/* Add to Cart Button */}
+                {/* Contact for more Button */}
                 <button className="w-full bg-olive-green text-white py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 mt-auto flex items-center justify-center gap-2">
                   <ShoppingCart className="h-4 w-4" />
-                  Add to cart
+                  Contact for more
                 </button>
               </div>
             </motion.div>
