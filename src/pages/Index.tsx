@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar';
 import HeroSlider from '../components/HeroSlider';
 import CategorySection from '../components/CategorySection';
 import ProductSection from '../components/ProductSection';
+import ServicesSection from '../components/ServicesSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import BlogSection from '../components/BlogSection';
 import FAQSection from '../components/FAQSection';
@@ -35,6 +36,7 @@ const Index = () => {
           <HeroSlider />
           <CategorySection />
           <ProductSection />
+          <ServicesSection />
           <TestimonialsSection />
           <BlogSection />
           <FAQSection />

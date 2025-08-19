@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
 import { getProductsByCategory, getCategoryById } from '@/data/products';
+import Navbar from '@/components/Navbar';
 
 const CategoryProductList = () => {
   const { categoryId } = useParams<{ categoryId: string }>();
@@ -11,6 +11,46 @@ const CategoryProductList = () => {
   const category = getCategoryById(categoryIdNum);
   const products = getProductsByCategory(categoryIdNum);
 
+  // Function to get category-specific announcement bar
+  const getCategoryAnnouncementBar = (categoryId: number) => {
+    const announcements = {
+      1: { // Fresh Fruits & Vegetables
+        bg: 'bg-olive-green',
+        text: '🍎 Farm Fresh Guarantee | 100% Organic & Pesticide-Free Produce',
+        emoji: '🌱'
+      },
+      2: { // Oils, Fats & Ghee - Dairy Fat Products
+        bg: 'bg-olive-green',
+        text: '🥛 Pure A2 Bilona Ghee | Traditional Methods | 100% Natural',
+        emoji: '✨'
+      },
+      3: { // Oils, Fats & Ghee - Cold Pressed Edible Oils
+        bg: 'bg-olive-green',
+        text: '🏺 Cold Pressed Excellence | Zero Chemicals | Maximum Nutrition',
+        emoji: '💧'
+      },
+      4: { // Oils, Fats & Ghee - Refined Oils
+        bg: 'bg-olive-green',
+        text: '🔥 Premium Refined Oils | Heart Healthy | Perfect for Cooking',
+        emoji: '❤️'
+      },
+      5: { // Natural Sweeteners & Sugars
+        bg: 'bg-olive-green',
+        text: '🍯 Natural Sweetness | No Artificial Additives | Pure & Healthy',
+        emoji: '🌿'
+      },
+      6: { // Grains & Staples - Wheat Flour & Rice
+        bg: 'bg-olive-green',
+        text: '🌾 Farm to Table | Premium Quality Grains | Nutrition Rich',
+        emoji: '🥖'
+      }
+    };
+
+    return announcements[categoryId as keyof typeof announcements] || announcements[1];
+  };
+
+  const announcement = getCategoryAnnouncementBar(categoryIdNum);
+
   if (!category) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -18,7 +58,7 @@ const CategoryProductList = () => {
           <h1 className="text-2xl font-bold text-gray-800 mb-4">Category not found</h1>
           <button 
             onClick={() => navigate('/')}
-            className="bg-olive-green text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all duration-300"
+            className="bg-olive-green text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition-all duration-300"
           >
             Go Back Home
           </button>
@@ -27,87 +67,89 @@ const CategoryProductList = () => {
     );
   }
 
-  const handleProductClick = (productId: number) => {
-    navigate(`/product/${productId}`);
-  };
-
-  const handleProceedToBuy = (e: React.MouseEvent, productId: number) => {
-    e.stopPropagation(); // Prevent product click
+  const handleContactUs = () => {
     navigate('/contact');
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-warm-beige to-cream">
-      {/* Header */}
-      <div className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => navigate('/')}
-              className="flex items-center gap-2 text-rich-brown hover:text-olive-green transition-colors duration-300"
-            >
-              <ArrowLeft className="h-5 w-5" />
-              <span>Back to Categories</span>
-            </button>
-          </div>
-          <div className="mt-4">
-            <h1 className="text-3xl md:text-4xl font-bold text-rich-brown">{category.title}</h1>
-            <p className="text-gray-600 mt-2">Browse our selection of quality products</p>
-          </div>
+      {/* Dynamic Announcement Bar */}
+      <div className={`${announcement.bg} text-white py-2 px-4 text-center text-sm font-medium`}>
+        <div className="flex items-center justify-center space-x-2">
+          <span>{announcement.emoji}</span>
+          <span>{announcement.text}</span>
+          <span>{announcement.emoji}</span>
+        </div>
+      </div>
+      
+      {/* Navbar */}
+      <Navbar />
+      
+      {/* Category Banner */}
+      <div className="relative w-full h-48 md:h-64 lg:h-80 overflow-hidden mb-8">
+        {/* New Green Banner for All Categories */}
+        <div className="w-full h-full flex items-center justify-center relative">
+          {/* Banner Image */}
+          <img
+            src="/labels/test.webp"
+            alt="Tradition Tastes Banner"
+            className="w-full h-full object-cover object-center"
+          />
         </div>
       </div>
 
       {/* Products Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         {products.length === 0 ? (
           <div className="text-center py-12">
             <h2 className="text-xl font-semibold text-gray-600 mb-4">No products available in this category</h2>
             <p className="text-gray-500">Please check back later for new products.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
             {products.map((product, index) => (
               <motion.div
                 key={product.id}
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
-                onClick={() => handleProductClick(product.id)}
-                className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group border border-gray-100"
+                className="flex flex-col items-center"
               >
-                {/* Product Image */}
-                <div className="h-48 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+                {/* Modern Product Card Box - Bigger Size */}
+                <div className="relative bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 h-80 w-60 flex items-center justify-center group overflow-hidden">
+                  {/* Primary Product Image */}
                   {product.image ? (
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                      className="w-40 h-40 object-contain transition-opacity duration-300 group-hover:opacity-0"
                     />
                   ) : (
-                    <div className="text-6xl opacity-30">📦</div>
+                    <span className="text-6xl opacity-30 transition-opacity duration-300 group-hover:opacity-0">📦</span>
+                  )}
+                  
+                  {/* Secondary Image on Hover */}
+                  {product.image && (
+                    <img
+                      src={product.image}
+                      alt={`${product.name} - hover`}
+                      className="absolute inset-0 w-40 h-40 object-contain m-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:scale-105"
+                    />
                   )}
                 </div>
 
-                {/* Product Info */}
-                <div className="p-6">
-                  {/* Product Name */}
-                  <h3 className="text-lg font-bold text-rich-brown mb-2 line-clamp-2 group-hover:text-olive-green transition-colors duration-300">
-                    {product.name}
-                  </h3>
+                {/* Product Name */}
+                <h3 className="text-xl font-bold text-rich-brown text-center mt-4 mb-4 px-2 leading-tight">
+                  {product.name}
+                </h3>
 
-                  {/* HSN Code */}
-                  <p className="text-sm text-gray-500 mb-4">
-                    HSN: {product.hsnCode}
-                  </p>
-
-                  {/* Proceed to Buy Button */}
-                  <button
-                    onClick={(e) => handleProceedToBuy(e, product.id)}
-                    className="w-full bg-olive-green text-white py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-md hover:shadow-lg"
-                  >
-                    Proceed to Buy
-                  </button>
-                </div>
+                {/* Contact Button - Dark Olive Green */}
+                <button
+                  onClick={handleContactUs}
+                  className="bg-green-800 text-white px-8 py-3 rounded-full text-sm font-medium shadow-md hover:shadow-lg hover:bg-green-900 transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  Contact for more
+                </button>
               </motion.div>
             ))}
           </div>

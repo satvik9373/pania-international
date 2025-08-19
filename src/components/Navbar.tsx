@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
-const Navbar = () => {
+const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
@@ -13,14 +13,20 @@ const Navbar = () => {
     { name: 'contact us', href: '/contact' },
   ];
 
+  const navClass = transparent ? 'bg-transparent border-none' : 'bg-white border-b border-gray-100';
+  const linkClass = (transparent
+    ? 'text-white hover:text-cream'
+    : 'text-gray-700 hover:text-olive-green') + ' transition-colors duration-200 leading-tightish';
+  const logoClass = transparent ? 'text-white tracking-tight uppercase' : 'text-2xl text-rich-brown tracking-tight uppercase';
+
   return (
-    <nav className="bg-white border-b border-gray-100 relative">
+    <nav className={`${navClass} relative`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl text-rich-brown tracking-tight uppercase">
-              PANIA<span className="text-olive-green">INTERNATIONAL</span>
+            <h1 className={logoClass}>
+              PANIA<span className={`${transparent ? 'text-cream' : 'text-olive-green'}`}>INTERNATIONAL</span>
             </h1>
           </div>
 
@@ -30,7 +36,7 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-olive-green transition-colors duration-200 leading-tightish"
+                className={linkClass}
               >
                 {item.name}
               </a>
