@@ -45,26 +45,26 @@ const HeroSlider = () => {
     {
       id: 1,
       type: 'image',
-      src: '/Blog Images/A2 BILONA GHEE - BLOG.png',
-      alt: 'A2 Bilona Ghee'
+      src: '/Banner Image/1.png',
+      alt: 'Premium A2 Ghee Products'
     },
     {
       id: 2,
       type: 'image',
-      src: '/Blog Images/A2 BILONA GHEE - BLOG.png',
-      alt: 'Premium Quality Ghee'
+      src: '/Banner Image/2.png',
+      alt: 'Pure Organic Ghee Collection'
     },
     {
       id: 3,
       type: 'image',
-      src: '/Blog Images/A2 BILONA GHEE - BLOG.png',
-      alt: 'Traditional Ghee Making'
+      src: '/Banner Image/3.png',
+      alt: 'Traditional Bilona Ghee'
     },
     {
       id: 4,
       type: 'image',
-      src: '/Blog Images/A2 BILONA GHEE - BLOG.png',
-      alt: 'Pure Organic Ghee'
+      src: '/Banner Image/4.png',
+      alt: 'Natural Health Products'
     }
   ];
 
