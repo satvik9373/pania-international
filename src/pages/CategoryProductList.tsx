@@ -71,8 +71,12 @@ const CategoryProductList = () => {
     navigate('/contact');
   };
 
+  const handleProductClick = (productId: number) => {
+    navigate(`/product/${productId}`);
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-warm-beige to-cream">
+    <div className="min-h-screen bg-gradient-to-br from-warm-beige to-cream font-poppins">
       {/* Dynamic Announcement Bar */}
       <div className={`${announcement.bg} text-white py-2 px-4 text-center text-sm font-medium`}>
         <div className="flex items-center justify-center space-x-2">
@@ -113,43 +117,46 @@ const CategoryProductList = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="flex flex-col items-center"
+                className="cursor-pointer flex flex-col items-center"
+                onClick={() => handleProductClick(product.id)}
               >
-                {/* Modern Product Card Box - Bigger Size */}
-                <div className="relative bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 h-80 w-60 flex items-center justify-center group overflow-hidden">
-                  {/* Primary Product Image */}
+                {/* White Square Image Box */}
+                <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-square w-full max-w-[250px] p-6 flex items-center justify-center">
                   {product.image ? (
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-40 h-40 object-contain transition-opacity duration-300 group-hover:opacity-0"
+                      className="w-full h-full max-w-[140px] max-h-[140px] object-contain hover:scale-105 transition-transform duration-300"
                     />
                   ) : (
-                    <span className="text-6xl opacity-30 transition-opacity duration-300 group-hover:opacity-0">📦</span>
-                  )}
-                  
-                  {/* Secondary Image on Hover */}
-                  {product.image && (
-                    <img
-                      src={product.image}
-                      alt={`${product.name} - hover`}
-                      className="absolute inset-0 w-40 h-40 object-contain m-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:scale-105"
-                    />
+                    <span className="text-6xl opacity-30">📦</span>
                   )}
                 </div>
 
-                {/* Product Name */}
-                <h3 className="text-xl font-bold text-rich-brown text-center mt-4 mb-4 px-2 leading-tight">
-                  {product.name}
-                </h3>
+                {/* Free-floating Product Info Below */}
+                <div className="flex flex-col items-center gap-3 mt-4 w-full">
+                  {/* Product Name */}
+                  <h3 className="text-lg font-bold text-rich-brown text-center leading-tight line-clamp-2">
+                    {product.name}
+                  </h3>
 
-                {/* Contact Button - Dark Olive Green */}
-                <button
-                  onClick={handleContactUs}
-                  className="bg-green-800 text-white px-8 py-3 rounded-full text-sm font-medium shadow-md hover:shadow-lg hover:bg-green-900 transition-all duration-300 transform hover:-translate-y-1"
-                >
-                  Contact for more
-                </button>
+                  {/* HSN Code */}
+                  <p className="text-sm text-gray-600 text-center font-medium">
+                    HSN: {product.hsnCode}
+                  </p>
+
+                  {/* Contact Button */}
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleContactUs();
+                    }}
+                    className="text-white py-3 px-8 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all duration-300 hover:shadow-md"
+                    style={{ backgroundColor: '#2e3e27' }}
+                  >
+                    Contact For More
+                  </button>
+                </div>
               </motion.div>
             ))}
           </div>

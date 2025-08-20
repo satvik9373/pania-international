@@ -31,6 +31,14 @@ All colors MUST be HSL.
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -126,11 +134,25 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-  font-family: 'Wasted Vindey', sans-serif;
+    font-family: 'Wasted Vindey', sans-serif;
   }
 
-  *, *::before, *::after {
-    font-family: 'Wasted Vindey', sans-serif !important;
+  /* Utility to apply Poppins where needed (product sections) */
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Utility to apply Wasted Vindey for headings like 'Best Sellers' */
+  .font-wasted {
+    font-family: 'Wasted Vindey', sans-serif;
+  }
+
+  /* Global product/button brand color - used across CTAs */
+  /* Ensure all buttons use brand color for B2B catalog CTAs */
+  button {
+    background-color: #2e3e27 !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
   }
 }
 

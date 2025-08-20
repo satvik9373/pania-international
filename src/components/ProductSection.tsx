@@ -1,78 +1,53 @@
 import { motion } from 'framer-motion';
-import { ShoppingCart } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const ProductSection = () => {
+  const navigate = useNavigate();
   const products = [
     {
       id: 1,
-      name: 'Gir Cow A2 ghee - Made From Curd',
-      price: '₹ 1,350.00',
-      originalPrice: null,
+      name: 'A2 Bilona Ghee',
+      hsn: 'HSN: 04059020',
       image: '/lovable-uploads/3d858f04-6710-4121-bdee-0eb6c06c4963.png',
-      hoverImage: '/lovable-uploads/8e8c0e63-775d-49d4-a697-1974ae91bba3.png',
-      rating: 5,
-      reviews: '1801 reviews',
-      sizes: ['500 ML', '250 ML', '1 L'],
-      defaultSize: '500 ML',
-      onSale: false,
-      savings: null
+      hoverImage: '/lovable-uploads/8e8c0e63-775d-49d4-a697-1974ae91bba3.png'
     },
     {
       id: 2,
-      name: 'Starter Pack',
-      price: '₹ 1,263.00',
-      originalPrice: '₹ 1,329',
+      name: 'Organic Rice Flour',
+      hsn: 'HSN: 11022000',
       image: '/lovable-uploads/8e8c0e63-775d-49d4-a697-1974ae91bba3.png',
-      hoverImage: '/lovable-uploads/3d858f04-6710-4121-bdee-0eb6c06c4963.png',
-      rating: 5,
-      reviews: '11 reviews',
-      sizes: ['1kg Khapli Atta + 250ml Ghee + 250ml Oil'],
-      defaultSize: '1kg Khapli Atta + 250ml Ghee + 250ml Oil',
-      onSale: true,
-      savings: '₹ 66.00',
-      badge: 'Sale'
+      hoverImage: '/lovable-uploads/3d858f04-6710-4121-bdee-0eb6c06c4963.png'
     },
     {
       id: 3,
-      name: 'Khapli (Emmer) Wheat Atta',
-      price: '₹ 469.00',
-      originalPrice: null,
+      name: 'Cold Pressed Mustard Oil',
+      hsn: 'HSN: 15155000',
       image: '/lovable-uploads/e8effae9-a554-406f-a63b-176687ffccdf.png',
-      hoverImage: '/lovable-uploads/3d858f04-6710-4121-bdee-0eb6c06c4963.png',
-      rating: 4.5,
-      reviews: '17 reviews',
-      sizes: ['2 kg', '1 kg', '5 kg'],
-      defaultSize: '2 kg',
-      onSale: true,
-      savings: '₹ 30.00',
-      badge: 'Sale'
+      hoverImage: '/lovable-uploads/3d858f04-6710-4121-bdee-0eb6c06c4963.png'
     },
     {
       id: 4,
-      name: 'Cooking Pack',
-      price: '₹ 2,707.00',
-      originalPrice: '₹ 2,849',
+      name: 'Organic Jaggery Powder',
+      hsn: 'HSN: 17011200',
       image: '/lovable-uploads/3d858f04-6710-4121-bdee-0eb6c06c4963.png',
-      hoverImage: '/lovable-uploads/e8effae9-a554-406f-a63b-176687ffccdf.png',
-      rating: 4.5,
-      reviews: '11 reviews',
-      sizes: ['2kg Khapli Atta + 1L Ghee'],
-      defaultSize: '2kg Khapli Atta + 1L Ghee',
-      onSale: true,
-      savings: '₹ 142.00',
-      badge: 'Sale'
+      hoverImage: '/lovable-uploads/e8effae9-a554-406f-a63b-176687ffccdf.png'
     }
   ];
 
+  const handleProductClick = (productId: number) => {
+    navigate(`/product/${productId}`);
+  };
+
+  const handleContactForMore = () => {
+    navigate('/contact');
+  };
+
   return (
-  <section className="py-16 bg-white">
+  <section className="py-16 bg-white font-poppins">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex justify-between items-center mb-12">
-          <h2 className="text-4xl font-bold text-rich-brown">Best Sellers</h2>
-          <button className="bg-olive-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300">
-            View All Products
-          </button>
+        <div className="flex justify-center items-center mb-8">
+          <h2 className="text-3xl font-wasted text-black">Best Sellers</h2>
         </div>
 
         {/* Products Grid */}
@@ -83,44 +58,58 @@ const ProductSection = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="bg-white rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 group border border-gray-100 h-full flex flex-col"
+              className="cursor-pointer flex flex-col items-center"
+              onClick={() => handleProductClick(product.id)}
             >
-              {/* Product Image */}
-              <div className="relative bg-gradient-to-br from-warm-beige to-cream p-4 h-48 overflow-hidden">
-                {/* Product Image with Hover Effect */}
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="max-w-full max-h-full object-contain transition-opacity duration-300 group-hover:opacity-0"
-                  />
-                  <img
-                    src={product.hoverImage}
-                    alt={`${product.name} hover`}
-                    className="absolute inset-0 max-w-full max-h-full object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100 m-auto"
-                  />
-                </div>
-              </div>
-
-              {/* Product Info */}
-              <div className="p-4 flex-1 flex flex-col">
-                <h3 className="text-lg font-bold text-rich-brown mb-2 line-clamp-2">
-                  {product.name}
-                </h3>
-
-                {/* Price */}
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="text-xl font-bold text-rich-brown">{product.price}</span>
-                  {product.originalPrice && (
-                    <span className="text-gray-400 line-through text-sm">{product.originalPrice}</span>
+              {/* Subtle card background */}
+              <div className="w-full max-w-[280px] rounded-2xl p-4 flex flex-col items-center border border-gray-100 bg-transparent">
+                {/* White Square Image Box with hover swap */}
+                <div className="bg-white rounded-xl shadow-sm transition-all duration-300 aspect-square w-full max-w-[220px] p-4 flex items-center justify-center relative overflow-hidden group">
+                  {product.image ? (
+                    <>
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full max-w-[140px] max-h-[140px] object-contain transition-opacity duration-300"
+                      />
+                      {product.hoverImage && (
+                        <img
+                          src={product.hoverImage}
+                          alt={`${product.name} hover`}
+                          className="absolute inset-0 m-auto w-full h-full max-w-[140px] max-h-[140px] object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                        />
+                      )}
+                    </>
+                  ) : (
+                    <span className="text-6xl opacity-30">📦</span>
                   )}
                 </div>
 
-                {/* Contact for more Button */}
-                <button className="w-full bg-olive-green text-white py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 mt-auto flex items-center justify-center gap-2">
-                  <ShoppingCart className="h-4 w-4" />
+                {/* Free-floating Product Info Below */}
+                <div className="flex flex-col items-center gap-3 mt-4 w-full">
+                {/* Product Name */}
+                <h3 className="text-base font-bold text-black text-center leading-tight line-clamp-2">
+                  {product.name}
+                </h3>
+
+                {/* HSN Code */}
+                <p className="text-xs text-black text-center font-medium">
+                  {product.hsn}
+                </p>
+
+                {/* Contact Button */}
+                <button 
+                  className="text-white py-2 px-6 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:shadow-md text-sm"
+                  style={{ backgroundColor: '#2e3e27' }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleContactForMore();
+                  }}
+                >
                   Contact for more
                 </button>
+              </div>
+              {/* close subtle card wrapper */}
               </div>
             </motion.div>
           ))}

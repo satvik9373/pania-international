@@ -64,142 +64,156 @@ export const products: Product[] = [
   // Fresh Fruits & Vegetables (Category 1)
   {
     id: 1,
-    name: 'Organic Apples',
-    hsnCode: '08081000',
+    name: 'Fresh Mangoes',
+    hsnCode: '0804.50',
     categoryId: 1,
-    description: 'Fresh organic apples sourced directly from farms. Rich in vitamins and perfect for healthy snacking.',
+    description: 'Premium quality fresh mangoes sourced directly from Indian orchards. Sweet, juicy and rich in vitamins.',
     image: '/lovable-uploads/3d858f04-6710-4121-bdee-0eb6c06c4963.png'
   },
   {
     id: 2,
-    name: 'Fresh Tomatoes',
-    hsnCode: '07020000',
+    name: 'Fresh Onions',
+    hsnCode: '0703.10',
     categoryId: 1,
-    description: 'Farm-fresh tomatoes, perfect for cooking and salads. High in antioxidants and vitamin C.',
+    description: 'Farm-fresh onions with excellent storage life. Essential ingredient for Indian cuisine.',
   },
   {
     id: 3,
-    name: 'Organic Spinach',
-    hsnCode: '07041000',
+    name: 'Other Fresh Vegetables',
+    hsnCode: '0709.99',
     categoryId: 1,
-    description: 'Nutrient-rich organic spinach leaves, ideal for healthy meals and smoothies.',
+    description: 'Variety of fresh seasonal vegetables including leafy greens, root vegetables and more.',
   },
-  
-  // Oils, Fats & Ghee - Dairy Fat Products (Category 2)
   {
     id: 4,
-    name: 'Gir Cow A2 Ghee',
-    hsnCode: '04050010',
-    categoryId: 2,
-    description: 'Pure A2 ghee made from Gir cow milk using traditional methods. Rich in nutrients and flavor.',
-    image: '/lovable-uploads/8e8c0e63-775d-49d4-a697-1974ae91bba3.png'
-  },
-  {
-    id: 5,
-    name: 'Organic Butter',
-    hsnCode: '04050020',
-    categoryId: 2,
-    description: 'Creamy organic butter made from grass-fed cow milk. Perfect for cooking and spreading.',
-  },
-  {
-    id: 6,
-    name: 'Cultured Buttermilk',
-    hsnCode: '04031000',
-    categoryId: 2,
-    description: 'Traditional cultured buttermilk with probiotics. Great for digestion and health.',
+    name: 'Frozen Mixed Vegetables',
+    hsnCode: '0710.80',
+    categoryId: 1,
+    description: 'Premium frozen vegetable mix retaining nutritional value and freshness.',
   },
   
-  // Oils, Fats & Ghee - Cold Pressed Edible Oils (Category 3)
+  // Dairy Fat Products (Category 2)
   {
-    id: 7,
-    name: 'Cold Pressed Coconut Oil',
-    hsnCode: '15131100',
+    id: 5,
+    name: 'A2 Bilona Ghee',
+    hsnCode: '0405.90',
+    categoryId: 2,
+    description: 'Pure A2 ghee made from Gir cow milk using traditional bilona method. Rich in nutrients and authentic flavor.',
+    image: '/lovable-uploads/8e8c0e63-775d-49d4-a697-1974ae91bba3.png'
+  },
+  
+  // Cold Pressed Edible Oils (Category 3)
+  {
+    id: 6,
+    name: 'Cold Pressed Peanut Oil',
+    hsnCode: '1508.10',
     categoryId: 3,
-    description: 'Virgin coconut oil extracted using cold-press method. Retains all natural nutrients.',
+    description: 'Traditional cold-pressed peanut oil retaining natural flavor and nutrients.',
     image: '/lovable-uploads/e8effae9-a554-406f-a63b-176687ffccdf.png'
   },
   {
-    id: 8,
-    name: 'Cold Pressed Sesame Oil',
-    hsnCode: '15151100',
+    id: 7,
+    name: 'Cold Pressed Mustard Oil',
+    hsnCode: '1514.19',
     categoryId: 3,
-    description: 'Traditional cold-pressed sesame oil. Rich in antioxidants and perfect for cooking.',
+    description: 'Pungent mustard oil made using traditional cold-press methods. Perfect for cooking and pickles.',
+  },
+  {
+    id: 8,
+    name: 'Cold Pressed Coconut Oil',
+    hsnCode: '1513.11',
+    categoryId: 3,
+    description: 'Virgin coconut oil extracted using cold-press method. Retains all natural nutrients.',
   },
   {
     id: 9,
-    name: 'Cold Pressed Mustard Oil',
-    hsnCode: '15154100',
+    name: 'Cold Pressed Safflower Oil',
+    hsnCode: '1512.19',
     categoryId: 3,
-    description: 'Pungent mustard oil made using traditional cold-press methods. Great for pickles and cooking.',
+    description: 'Heart-healthy safflower oil rich in unsaturated fats and vitamin E.',
   },
-  
-  // Oils, Fats & Ghee - Refined Oils (Category 4)
   {
     id: 10,
-    name: 'Refined Sunflower Oil',
-    hsnCode: '15121100',
-    categoryId: 4,
-    description: 'Light and healthy refined sunflower oil. Perfect for everyday cooking and frying.',
+    name: 'Cold Pressed Almond Oil',
+    hsnCode: '1515.90',
+    categoryId: 3,
+    description: 'Premium edible almond oil with delicate flavor and high nutritional value.',
   },
+  
+  // Refined Oils (Category 4)
   {
     id: 11,
     name: 'Refined Soybean Oil',
-    hsnCode: '15071000',
+    hsnCode: '1507.90',
     categoryId: 4,
-    description: 'Neutral-tasting refined soybean oil. Ideal for all types of cooking applications.',
-  },
-  {
-    id: 12,
-    name: 'Refined Rice Bran Oil',
-    hsnCode: '15122100',
-    categoryId: 4,
-    description: 'Heart-healthy rice bran oil with high smoke point. Great for deep frying and cooking.',
+    description: 'High-quality refined soybean oil perfect for all cooking applications.',
   },
   
   // Natural Sweeteners & Sugars (Category 5)
   {
-    id: 13,
-    name: 'Organic Jaggery',
-    hsnCode: '17011000',
+    id: 12,
+    name: 'Solid Jaggery',
+    hsnCode: '1701.13',
     categoryId: 5,
-    description: 'Pure organic jaggery made from sugarcane. Natural sweetener rich in minerals.',
+    description: 'Pure organic jaggery blocks made from sugarcane. Natural sweetener rich in minerals.',
+  },
+  {
+    id: 13,
+    name: 'Jaggery Powder',
+    hsnCode: '1701.14',
+    categoryId: 5,
+    description: 'Finely ground jaggery powder for easy use in cooking and beverages.',
   },
   {
     id: 14,
-    name: 'Raw Honey',
-    hsnCode: '04090000',
+    name: 'Desi Khand',
+    hsnCode: '1701.99',
     categoryId: 5,
-    description: 'Unprocessed raw honey from local beekeepers. Contains natural enzymes and antioxidants.',
+    description: 'Traditional Indian sugar with natural sweetness and authentic taste.',
   },
   {
     id: 15,
-    name: 'Coconut Sugar',
-    hsnCode: '17019910',
+    name: 'Natural Honey',
+    hsnCode: '0409.00',
     categoryId: 5,
-    description: 'Natural coconut sugar with low glycemic index. Healthy alternative to refined sugar.',
+    description: 'Pure raw honey from local beekeepers. Contains natural enzymes and antioxidants.',
   },
   
-  // Grains & Staples - Wheat Flour & Rice (Category 6)
+  // Grains & Staples (Category 6)
   {
     id: 16,
-    name: 'Organic Wheat Flour',
-    hsnCode: '11010000',
+    name: 'Whole Wheat Flour (Atta)',
+    hsnCode: '1101.00',
     categoryId: 6,
-    description: 'Stone-ground organic wheat flour. Perfect for making rotis, bread, and baking.',
+    description: 'Stone-ground whole wheat flour perfect for making rotis, chapatis and bread.',
   },
   {
     id: 17,
-    name: 'Basmati Rice',
-    hsnCode: '10063000',
+    name: 'Kala Namak Rice (GI Tagged)',
+    hsnCode: '1006.30',
     categoryId: 6,
-    description: 'Aromatic basmati rice with long grains. Perfect for biryanis and special occasions.',
+    description: 'Premium GI-tagged Kala Namak rice with distinctive aroma and taste.',
   },
   {
     id: 18,
-    name: 'Brown Rice',
-    hsnCode: '10062000',
+    name: 'Basmati Rice',
+    hsnCode: '1006.30',
     categoryId: 6,
-    description: 'Nutritious brown rice with fiber and nutrients intact. Healthy alternative to white rice.',
+    description: 'Aromatic long-grain basmati rice perfect for biryanis and special dishes.',
+  },
+  {
+    id: 19,
+    name: 'Non-Basmati Rice',
+    hsnCode: '1006.30',
+    categoryId: 6,
+    description: 'High-quality non-basmati rice varieties for everyday cooking.',
+  },
+  {
+    id: 20,
+    name: 'Mixed Pulses',
+    hsnCode: '0713.33',
+    categoryId: 6,
+    description: 'Premium quality pulses including chana, moong, urad, masoor and arhar dal.',
   }
 ];
 
