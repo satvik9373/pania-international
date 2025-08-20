@@ -45,29 +45,26 @@ const HeroSlider = () => {
     {
       id: 1,
       type: 'image',
-      src: 'https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1920&h=1080',
-      alt: 'Natural landscape'
+      src: '/Blog Images/A2 BILONA GHEE - BLOG.png',
+      alt: 'A2 Bilona Ghee'
     },
     {
       id: 2,
-      type: 'video',
-      src: 'https://player.vimeo.com/external/371433846.hd.mp4?s=8a91b8c3c1c5ce6b9a8b5b1b8b1b8b1b'
+      type: 'image',
+      src: '/Blog Images/A2 BILONA GHEE - BLOG.png',
+      alt: 'Premium Quality Ghee'
     },
     {
       id: 3,
-      type: 'video',
-      src: 'https://player.vimeo.com/external/434045526.hd.mp4?s=8a91b8c3c1c5ce6b9a8b5b1b8b1b8b1b'
+      type: 'image',
+      src: '/Blog Images/A2 BILONA GHEE - BLOG.png',
+      alt: 'Traditional Ghee Making'
     },
     {
       id: 4,
       type: 'image',
-      src: 'https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&w=1920&h=1080',
-      alt: 'Starry night sky'
-    },
-    {
-      id: 5,
-      type: 'video',
-      src: 'https://player.vimeo.com/external/418979306.hd.mp4?s=8a91b8c3c1c5ce6b9a8b5b1b8b1b8b1b'
+      src: '/Blog Images/A2 BILONA GHEE - BLOG.png',
+      alt: 'Pure Organic Ghee'
     }
   ];
 
@@ -95,19 +92,6 @@ const HeroSlider = () => {
               />
             )}
           </div>
-        ))}
-      </div>
-      
-      {/* Navigation dots */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => instanceRef.current?.moveToIdx(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide ? 'bg-white' : 'bg-white bg-opacity-50'
-            }`}
-          />
         ))}
       </div>
     </section>

@@ -15,8 +15,7 @@ const blogs: Blog[] = [
 		title: 'How A2 Ghee Is Made: From Grass-Fed Cows to Your Table',
 		description:
 			'A simple walkthrough of the traditional bilona method and why A2 ghee tastes richer and feels lighter.',
-		image:
-			'https://images.unsplash.com/photo-1490818387583-1baba5e638af?q=80&w=1400&auto=format&fit=crop',
+		image: '/Blog Images/A2 BILONA GHEE - BLOG.png',
 		category: 'Ghee',
 	},
 	{
@@ -24,8 +23,7 @@ const blogs: Blog[] = [
 		title: 'Cold-Pressed Oils: Benefits and Best Uses in Daily Cooking',
 		description:
 			'Why cold-pressed oils retain more nutrients and how to use them for sautéing, dressings, and more.',
-		image:
-			'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1400&auto=format&fit=crop',
+		image: '/Blog Images/A2 BILONA GHEE - BLOG.png',
 		category: 'Oils',
 	},
 	{
@@ -33,8 +31,7 @@ const blogs: Blog[] = [
 		title: 'Raw Honey vs. Processed Honey: What You Should Know',
 		description:
 			'Natural enzymes, pollen, and flavor notes that make raw honey a better daily pick.',
-		image:
-			'https://images.unsplash.com/photo-1596649299486-3f2c8b423168?q=80&w=1400&auto=format&fit=crop',
+		image: '/Blog Images/A2 BILONA GHEE - BLOG.png',
 		category: 'Honey',
 	},
 	{
@@ -42,8 +39,7 @@ const blogs: Blog[] = [
 		title: 'Spices from Farm to Kitchen: How We Keep Them Fresh',
 		description:
 			'Sourcing, sun-drying, and small-batch grinding to preserve essential oils and aroma in your masalas.',
-		image:
-			'https://images.unsplash.com/photo-1511689660979-10d2b1aada49?q=80&w=1400&auto=format&fit=crop',
+		image: '/Blog Images/A2 BILONA GHEE - BLOG.png',
 		category: 'Spices',
 	},
 	{
@@ -51,8 +47,7 @@ const blogs: Blog[] = [
 		title: 'Sustainable Farming Practices Behind Our Staples',
 		description:
 			'Soil health, water conservation, and biodiversity: how responsible farming improves everyday staples.',
-		image:
-			'https://images.unsplash.com/photo-1598940190729-d23a6eb88b02?q=80&w=1400&auto=format&fit=crop',
+		image: '/Blog Images/A2 BILONA GHEE - BLOG.png',
 		category: 'Farming',
 	},
 	{
@@ -60,8 +55,7 @@ const blogs: Blog[] = [
 		title: 'Smart Storage for Grains & Pulses at Home',
 		description:
 			'Practical tips to keep staples fresh longer—right containers, humidity control, and pantry hygiene.',
-		image:
-			'https://images.unsplash.com/photo-1586201375761-83865001e31b?q=80&w=1400&auto=format&fit=crop',
+		image: '/Blog Images/A2 BILONA GHEE - BLOG.png',
 		category: 'Staples',
 	},
 ]
