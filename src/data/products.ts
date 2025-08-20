@@ -18,42 +18,42 @@ export interface Category {
 export const categories: Category[] = [
   {
     id: 1,
-    title: 'Fresh Fruits & Vegetables',
+    title: 'Fresh Fruits',
     bgColor: 'bg-green-500',
     textColor: 'text-white',
     icon: '🥕'
   },
   {
     id: 2,
-    title: 'Oils, Fats & Ghee - Dairy Fat Products',
+    title: 'Dairy Fat Products',
     bgColor: 'bg-amber-700',
     textColor: 'text-white',
     icon: '🥛'
   },
   {
     id: 3,
-    title: 'Oils, Fats & Ghee - Cold Pressed Edible Oils',
+    title: 'Edible Oils',
     bgColor: 'bg-blue-500',
     textColor: 'text-white',
     icon: '🏺'
   },
   {
     id: 4,
-    title: 'Oils, Fats & Ghee - Refined Oils',
+    title: 'Refined Oils',
     bgColor: 'bg-red-600',
     textColor: 'text-white',
     icon: '🥕'
   },
   {
     id: 5,
-    title: 'Natural Sweeteners & Sugars',
+    title: 'Sweeteners and Sugars',
     bgColor: 'bg-pink-600',
     textColor: 'text-white',
     icon: '🥛'
   },
   {
     id: 6,
-    title: 'Grains & Staples - Wheat Flour & Rice',
+    title: 'Rice and Staples',
     bgColor: 'bg-orange-600',
     textColor: 'text-white',
     icon: '🏺'

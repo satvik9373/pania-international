@@ -32,7 +32,7 @@ const CategorySection = () => {
               onClick={() => handleCategoryClick(category.id)}
               className={`relative rounded-2xl overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-300 min-h-[200px] shadow-lg hover:shadow-xl`}
             >
-              {/* Background Image for first two categories */}
+              {/* Background Images for categories based on sequence */}
               {category.id === 1 && (
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
@@ -40,41 +40,56 @@ const CategorySection = () => {
                     backgroundImage: `url('/category-image/Fresh Fruits & Vegetables.png')`
                   }}
                 >
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300"></div>
                 </div>
               )}
               {category.id === 2 && (
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
+                    backgroundImage: `url('/category-image/dairy&fat.png')`
+                  }}
+                >
+                </div>
+              )}
+              {category.id === 3 && (
+                <div 
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
                     backgroundImage: `url('/category-image/oil-fats&ghee.png')`
                   }}
                 >
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300"></div>
                 </div>
               )}
-              
-              {/* Fallback background for other categories */}
-              {category.id > 2 && (
-                <div className={`absolute inset-0 ${category.bgColor}`}></div>
+              {category.id === 4 && (
+                <div 
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url('/category-image/Refined Oils.png')`
+                  }}
+                >
+                </div>
+              )}
+              {category.id === 5 && (
+                <div 
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url('/category-image/natural-sweetners.jpg')`
+                  }}
+                >
+                </div>
+              )}
+              {category.id === 6 && (
+                <div 
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url('/category-image/Grains and staples.png')`
+                  }}
+                >
+                </div>
               )}
 
               <div className="relative z-10 flex h-full p-6">
-                {/* Text Content */}
-                <div className="flex-1 flex flex-col justify-center">
-                  <h3 className={`text-xl font-bold ${category.id <= 2 ? 'text-white' : category.textColor} leading-tight mb-2`}>
-                    {category.title}
-                  </h3>
-                </div>
-
-                {/* Icon - Only show for categories without background images */}
-                {category.id > 2 && (
-                  <div className="flex items-center justify-center">
-                    <span className="text-4xl opacity-80 group-hover:scale-110 transition-transform duration-300">
-                      {category.icon}
-                    </span>
-                  </div>
-                )}
+                {/* No text content - just background images */}
               </div>
             </motion.div>
           ))}
@@ -84,7 +99,7 @@ const CategorySection = () => {
         <div className="flex justify-center mt-12">
           <button
             onClick={() => navigate('/categories')}
-            className="bg-olive-green text-white px-12 py-4 rounded-md text-lg font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            className="bg-olive-green text-white px-8 py-3 rounded-md text-base font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
             Show More
           </button>
