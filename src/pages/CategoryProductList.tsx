@@ -47,12 +47,12 @@ const CategoryProductList = () => {
       
       {/* Category Banner */}
       <div className="relative w-full h-48 md:h-64 lg:h-80 overflow-hidden mb-8">
-        {/* New Green Banner for All Categories */}
+        {/* General Banner for All Categories */}
         <div className="w-full h-full flex items-center justify-center relative">
           {/* Banner Image */}
           <img
-            src="/labels/test.webp"
-            alt="Tradition Tastes Banner"
+            src="/general-banner.png"
+            alt="Veg-tastic Savings Event Banner"
             className="w-full h-full object-cover object-center"
           />
         </div>
