@@ -57,10 +57,10 @@ const ProductDetail = () => {
       case 'description':
         return (
           <div className="prose max-w-none">
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-black leading-relaxed">
               {product.description}
             </p>
-            <p className="text-gray-700 leading-relaxed mt-4">
+            <p className="text-black leading-relaxed mt-4">
               Our {product.name} is sourced directly from trusted suppliers and processed using traditional methods 
               to ensure maximum quality and authenticity. Each batch is carefully tested for purity and meets 
               international export standards.
@@ -72,20 +72,20 @@ const ProductDetail = () => {
           <div className="prose max-w-none">
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <span className="w-2 h-2 bg-olive-green rounded-full mt-2 flex-shrink-0"></span>
-                <span className="text-gray-700">Premium quality sourced from trusted Indian farms</span>
+                <span className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></span>
+                <span className="text-black">Premium quality sourced from trusted Indian farms</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="w-2 h-2 bg-olive-green rounded-full mt-2 flex-shrink-0"></span>
-                <span className="text-gray-700">Processed using traditional methods to retain natural properties</span>
+                <span className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></span>
+                <span className="text-black">Processed using traditional methods to retain natural properties</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="w-2 h-2 bg-olive-green rounded-full mt-2 flex-shrink-0"></span>
-                <span className="text-gray-700">Meets international export quality standards</span>
+                <span className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></span>
+                <span className="text-black">Meets international export quality standards</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="w-2 h-2 bg-olive-green rounded-full mt-2 flex-shrink-0"></span>
-                <span className="text-gray-700">Available for bulk orders and private labeling</span>
+                <span className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></span>
+                <span className="text-black">Available for bulk orders and private labeling</span>
               </li>
             </ul>
           </div>
@@ -93,13 +93,13 @@ const ProductDetail = () => {
       case 'ingredients':
         return (
           <div className="prose max-w-none">
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-black leading-relaxed">
               <strong>Primary Ingredient:</strong> 100% Pure {product.name}
             </p>
-            <p className="text-gray-700 leading-relaxed mt-4">
+            <p className="text-black leading-relaxed mt-4">
               <strong>Processing Method:</strong> Traditional methods ensuring no artificial additives or preservatives
             </p>
-            <p className="text-gray-700 leading-relaxed mt-4">
+            <p className="text-black leading-relaxed mt-4">
               <strong>Quality Certifications:</strong> FSSAI approved, Export quality standards
             </p>
           </div>
@@ -118,11 +118,11 @@ const ProductDetail = () => {
       <Navbar transparent />
 
       {/* Header */}
-      <div className="bg-white shadow-sm">
+      <div className="shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <button
             onClick={handleBackToCategory}
-            className="flex items-center gap-2 text-rich-brown hover:text-olive-green transition-colors duration-300"
+            className="flex items-center gap-2 text-black hover:text-gray-600 transition-colors duration-300"
           >
             <ArrowLeft className="h-5 w-5" />
             <span>Back to {category?.title}</span>
@@ -195,7 +195,7 @@ const ProductDetail = () => {
         </div>
 
         {/* Tabs Section */}
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-8">
+        <div className="rounded-2xl overflow-hidden mb-8">
           {/* Tab Headers */}
           <div className="border-b border-gray-200">
             <div className="flex">
@@ -205,8 +205,8 @@ const ProductDetail = () => {
                   onClick={() => setActiveTab(tab.id)}
                   className={`px-6 py-4 text-sm font-medium transition-colors duration-300 border-b-2 ${
                     activeTab === tab.id
-                      ? 'border-olive-green text-olive-green'
-                      : 'border-transparent text-gray-500 hover:text-gray-700'
+                      ? 'border-black text-black'
+                      : 'border-transparent text-black hover:text-gray-700'
                   }`}
                 >
                   {tab.label}
@@ -259,23 +259,28 @@ const ProductDetail = () => {
                       )}
                     </div>
                     
-                    {/* Free-floating Product Info Below */}
+                    {/* Pyramid Structure Product Info Below */}
                     <div className="flex flex-col items-center gap-2 mt-3 w-full">
-                      <h3 className="font-semibold text-black text-center text-sm leading-tight line-clamp-2">
+                      {/* Product Name - Top of pyramid */}
+                      <h3 className="text-lg font-medium font-sans text-black text-center leading-tight">
                         {relatedProduct.name}
                       </h3>
-                      <p className="text-xs text-black text-center">
+                      
+                      {/* HSN Code - Middle of pyramid */}
+                      <p className="text-sm text-black text-center font-medium font-sans">
                         HSN: {relatedProduct.hsnCode}
                       </p>
+                      
+                      {/* Contact Button - Bottom of pyramid */}
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
                           handleContactForMore();
                         }}
-                        className="text-white py-2 px-6 rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-300"
+                        className="text-white py-2 px-6 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all duration-300 mt-1"
                         style={{ backgroundColor: '#2e3e27' }}
                       >
-                        Contact for More
+                        Contact
                       </button>
                     </div>
                   </motion.div>

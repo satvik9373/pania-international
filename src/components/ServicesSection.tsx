@@ -15,7 +15,7 @@ const ServicesSection = () => {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="/graphical-assets/graphical-assets.webp"
+                src="/service-img/services.jpg"
                 alt="Our Services"
                 className="w-full h-[500px] object-cover"
               />
@@ -33,15 +33,13 @@ const ServicesSection = () => {
           >
             <div className="space-y-4">
               <h2 className="text-4xl lg:text-5xl font-bold text-rich-brown leading-tight">
-                Our Export & Professional Services
+                Our Export Services
               </h2>
             </div>
 
             {/* Export Services */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-olive-green flex items-center">
-                🔹 Export Services
-              </h3>
+            
               
               <div className="space-y-3 ml-6">
                 <div className="flex items-start space-x-3">
@@ -66,7 +64,7 @@ const ServicesSection = () => {
             {/* Professional Services */}
             <div className="space-y-4">
               <h3 className="text-2xl font-bold text-olive-green flex items-center">
-                🔹 Professional Services
+                🔹Our Professional Services
               </h3>
               
               <div className="space-y-3 ml-6">

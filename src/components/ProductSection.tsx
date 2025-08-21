@@ -101,32 +101,29 @@ const ProductSection = () => {
                   )}
                 </div>
 
-                {/* Product Info Below - Outside the fixed card */}
-                <div className="flex flex-col items-center gap-3 mt-4 w-full max-w-[260.5px]">
-                  {/* Product Name */}
+                {/* Product Info Below - Pyramid Structure */}
+                <div className="flex flex-col items-center gap-2 mt-4 w-full max-w-[260.5px]">
+                  {/* Product Name - Top of pyramid */}
                   <h3 className="text-lg font-medium font-sans text-black text-center leading-tight">
                     {product.name}
                   </h3>
 
-                  {/* Grid layout: HSN Code on left, Contact Button on right */}
-                  <div className="grid grid-cols-2 gap-2 w-full items-center">
-                    {/* HSN Code - Left side */}
-                    <p className="text-xs text-black text-left font-medium font-sans">
-                      {product.hsn}
-                    </p>
+                  {/* HSN Code - Middle of pyramid */}
+                  <p className="text-sm text-black text-center font-medium font-sans">
+                    HSN: {product.hsn}
+                  </p>
 
-                    {/* Contact Button - Right side (smaller) */}
-                    <button 
-                      className="text-white py-1.5 px-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:shadow-md text-xs font-sans"
-                      style={{ backgroundColor: '#2e3e27' }}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleContactForMore();
-                      }}
-                    >
-                      Contact
-                    </button>
-                  </div>
+                  {/* Contact Button - Bottom of pyramid */}
+                  <button 
+                    className="text-white py-2 px-6 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:shadow-md text-sm font-sans mt-1"
+                    style={{ backgroundColor: '#2e3e27' }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleContactForMore();
+                    }}
+                  >
+                    Contact
+                  </button>
                 </div>
               </div>
             </motion.div>
