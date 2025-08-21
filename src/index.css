@@ -24,8 +24,8 @@ All colors MUST be HSL.
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter_24pt-Medium.ttf') format('truetype');
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -126,7 +126,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6, .heading, .hero-title, .category-title, .product-title, .section-header {
@@ -138,7 +138,7 @@ All colors MUST be HSL.
   }
 
   .font-sans {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
 
   /* Global product/button brand color - used across CTAs */
