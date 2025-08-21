@@ -19,13 +19,10 @@ export default {
 			}
 		},
 		extend: {
-			fontFamily: {
-				// Use only Wasted Vindey across the entire site
-				'sans': ['Wasted Vindey', 'sans-serif'],
-				'serif': ['Wasted Vindey', 'sans-serif'],
-				'mono': ['Wasted Vindey', 'sans-serif'],
-				'playfair': ['Wasted Vindey', 'sans-serif'],
-			},
+					fontFamily: {
+						'sans': ['Inter', 'sans-serif'],
+						'serif': ['Cormorant Garamond', 'serif'],
+					},
 			letterSpacing: {
 				'tighter': '-0.05em',
 				'tight': '-0.025em',
