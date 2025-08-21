@@ -60,26 +60,27 @@ const blogs: Blog[] = [
 	},
 ]
 
-// Map category to card/badge colors using our palette
-function themeFor(category: Blog['category']) {
-	// Card background: sage (#BCD6C7) or light rose (#FCEDEA)
+// Map blog ID to card/badge colors using alternating pattern
+// Pattern: green, baby pink, green, green, pink, green
+function themeFor(blogId: number) {
+	// Card background: sage (#BCD6C7) for green or light rose (#FCEDEA) for baby pink
 	// Badge background: lighter tint of the same family
-	switch (category) {
-		case 'Ghee':
-		case 'Oils':
-		case 'Staples':
+	switch (blogId) {
+		case 1: // Green
+		case 3: // Green  
+		case 4: // Green
+		case 6: // Green
 			return { card: '#BCD6C7', badge: '#DCE7E0' }
-		case 'Honey':
-		case 'Spices':
-		case 'Farming':
+		case 2: // Baby Pink
+		case 5: // Pink
 			return { card: '#FCEDEA', badge: '#FEF3F1' }
 		default:
-			return { card: '#FCEDEA', badge: '#FEF3F1' }
+			return { card: '#BCD6C7', badge: '#DCE7E0' }
 	}
 }
 
 const BlogCard = ({ item }: { item: Blog }) => {
-	const colors = themeFor(item.category)
+	const colors = themeFor(item.id)
 	return (
 		<article
 			className="h-full rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden transition group hover:shadow-md hover:-translate-y-0.5 hover:scale-[1.02] duration-200 ease-out flex flex-col"
