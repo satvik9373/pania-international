@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { useState } from 'react';
+import Navbar from '@/components/Navbar';
+import AnnouncementBar from '@/components/AnnouncementBar';
+import Footer from '@/components/Footer';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -29,6 +32,12 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-warm-beige to-cream">
+      {/* Announcement */}
+      <AnnouncementBar />
+
+      {/* Navbar */}
+      <Navbar transparent />
+
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -229,6 +238,9 @@ const Contact = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

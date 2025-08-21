@@ -8,29 +8,29 @@ const ProductSection = () => {
       id: 1,
       name: 'Ghee',
       hsn: 'HSN: 04059020',
-      image: '/product-image/ghee.jpeg',
+      image: '/product-image/ghee.png',
       hoverImage: '/product-image/ghee.jpeg'
     },
     {
       id: 2,
       name: 'Cold Press Oil',
       hsn: 'HSN: 15155000',
-      image: '/product-image/ghee.jpeg',
+      image: '/product-image/Almond-Oil.webp',
       hoverImage: '/product-image/ghee.jpeg'
     },
     {
       id: 3,
       name: 'Wheat Flour',
       hsn: 'HSN: 11022000',
-      image: '/product-image/wheat.png',
+      image: '/product-image/wheat-flour.jpg',
       hoverImage: '/product-image/wheat.png'
     },
     {
       id: 4,
       name: 'Honey',
       hsn: 'HSN: 04090000',
-      image: '/product-image/wheat.png',
-      hoverImage: '/product-image/wheat.png'
+      image: '/product-image/honey.jpg',
+      hoverImage: '/product-image/ghee.jpeg'
     }
   ];
 
@@ -48,7 +48,7 @@ const ProductSection = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
         style={{
-          backgroundImage: "url('/wave-bg.svg')",
+          backgroundImage: "url('/graphical-assets/green_wave.png')",
           backgroundPosition: 'center bottom',
           backgroundSize: '100% auto'
         }}
@@ -75,27 +75,27 @@ const ProductSection = () => {
               <div className="flex flex-col items-center">
                 {/* Product Image Box - Fixed dimensions: 260.5px x 260.46px */}
                 <div 
-                  className="bg-white rounded-xl shadow-sm transition-all duration-300 p-6 flex items-center justify-center relative overflow-hidden group"
+                  className="bg-white rounded-2xl transition-all duration-300 flex items-center justify-center relative overflow-hidden group"
                   style={{ 
                     width: '260.5px', 
                     height: '260.46px' 
                   }}
                 >
                   {product.image ? (
-                    <>
+                    <div className="relative w-full h-full">
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="w-full h-full max-w-[200px] max-h-[200px] object-contain transition-opacity duration-500 group-hover:opacity-0"
+                        className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
                       />
-                      {product.hoverImage && (
+                      {product.hoverImage && product.hoverImage !== product.image && (
                         <img
                           src={product.hoverImage}
                           alt={`${product.name} hover`}
-                          className="absolute inset-0 m-auto w-full h-full max-w-[200px] max-h-[200px] object-contain opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                          className="absolute top-0 left-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                         />
                       )}
-                    </>
+                    </div>
                   ) : (
                     <span className="text-6xl opacity-30">📦</span>
                   )}

@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import AnnouncementBar from '@/components/AnnouncementBar';
+import Footer from '@/components/Footer';
 
 const About = () => {
   return (
@@ -42,10 +43,11 @@ const About = () => {
             If you'd like to learn more about our sourcing, certifications or
             partnership opportunities, please reach out via the Contact page.
           </p>
-  </section>
+        </section>
       </main>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
-};
-
-export default About;
+};export default About;

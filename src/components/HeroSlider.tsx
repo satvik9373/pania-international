@@ -1,6 +1,7 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import 'keen-slider/keen-slider.min.css';
 
 interface SlideData {
@@ -94,6 +95,23 @@ const HeroSlider = () => {
           </div>
         ))}
       </div>
+
+      {/* Navigation Arrows */}
+      <button
+        onClick={() => instanceRef.current?.prev()}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 transition-all duration-300 z-10"
+        aria-label="Previous slide"
+      >
+        <ChevronLeft className="w-6 h-6 text-white" />
+      </button>
+      
+      <button
+        onClick={() => instanceRef.current?.next()}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 transition-all duration-300 z-10"
+        aria-label="Next slide"
+      >
+        <ChevronRight className="w-6 h-6 text-white" />
+      </button>
     </section>
   );
 };

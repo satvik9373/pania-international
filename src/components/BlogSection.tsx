@@ -15,7 +15,7 @@ const blogs: Blog[] = [
 		title: 'How A2 Ghee Is Made: From Grass-Fed Cows to Your Table',
 		description:
 			'A simple walkthrough of the traditional bilona method and why A2 ghee tastes richer and feels lighter.',
-		image: '/Blog Images/A2 BILONA GHEE - BLOG.png',
+		image: '/product-image/ghee.png',
 		category: 'Ghee',
 	},
 	{
@@ -23,7 +23,7 @@ const blogs: Blog[] = [
 		title: 'Cold-Pressed Oils: Benefits and Best Uses in Daily Cooking',
 		description:
 			'Why cold-pressed oils retain more nutrients and how to use them for sautéing, dressings, and more.',
-		image: '/Blog Images/A2 BILONA GHEE - BLOG.png',
+		image: '/product-image/Mustard-Oil.webp',
 		category: 'Oils',
 	},
 	{
@@ -31,7 +31,7 @@ const blogs: Blog[] = [
 		title: 'Raw Honey vs. Processed Honey: What You Should Know',
 		description:
 			'Natural enzymes, pollen, and flavor notes that make raw honey a better daily pick.',
-		image: '/Blog Images/A2 BILONA GHEE - BLOG.png',
+		image: '/product-image/honey.jpg',
 		category: 'Honey',
 	},
 	{
@@ -39,7 +39,7 @@ const blogs: Blog[] = [
 		title: 'Spices from Farm to Kitchen: How We Keep Them Fresh',
 		description:
 			'Sourcing, sun-drying, and small-batch grinding to preserve essential oils and aroma in your masalas.',
-		image: '/Blog Images/A2 BILONA GHEE - BLOG.png',
+		image: '/product-image/black-saltkala-namak-powder-100-g-quick-pantry.jpg',
 		category: 'Spices',
 	},
 	{
@@ -47,7 +47,7 @@ const blogs: Blog[] = [
 		title: 'Sustainable Farming Practices Behind Our Staples',
 		description:
 			'Soil health, water conservation, and biodiversity: how responsible farming improves everyday staples.',
-		image: '/Blog Images/A2 BILONA GHEE - BLOG.png',
+		image: '/product-image/basmati rice.jpg',
 		category: 'Farming',
 	},
 	{
@@ -55,7 +55,7 @@ const blogs: Blog[] = [
 		title: 'Smart Storage for Grains & Pulses at Home',
 		description:
 			'Practical tips to keep staples fresh longer—right containers, humidity control, and pantry hygiene.',
-		image: '/Blog Images/A2 BILONA GHEE - BLOG.png',
+		image: '/product-image/wheat-flour.jpg',
 		category: 'Staples',
 	},
 ]

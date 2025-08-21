@@ -7,7 +7,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Products', href: '/products' },
+    { name: 'Products', href: '/categories' },
     { name: 'About us', href: '/about' },
     { name: 'Services', href: '/services' },
     { name: 'contact us', href: '/contact' },

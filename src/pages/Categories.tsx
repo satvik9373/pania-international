@@ -1,82 +1,74 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
+import AnnouncementBar from '@/components/AnnouncementBar';
+import Footer from '@/components/Footer';
 
 const Categories = () => {
+  const navigate = useNavigate();
+
   const allCategories = [
     {
       id: 1,
       title: 'Fresh Fruits & Vegetables',
-      image: '/lovable-uploads/3d858f04-6710-4121-bdee-0eb6c06c4963.png',
-      bgColor: 'bg-green-600',
-      textColor: 'text-white'
+      image: '/category-image/Fresh Fruits & Vegetables.png'
     },
     {
       id: 2,
       title: 'Oils, Fats & Ghee – Dairy Fat Products',
-      image: '/lovable-uploads/8e8c0e63-775d-49d4-a697-1974ae91bba3.png',
-      bgColor: 'bg-amber-800',
-      textColor: 'text-white'
+      image: '/category-image/dairy&fat.png'
     },
     {
       id: 3,
       title: 'Oils, Fats & Ghee – Cold Pressed Edible Oils',
-      image: '/lovable-uploads/e8effae9-a554-406f-a63b-176687ffccdf.png',
-      bgColor: 'bg-blue-400',
-      textColor: 'text-white'
+      image: '/category-image/oil-fats&ghee.png'
     },
     {
       id: 4,
       title: 'Oils, Fats & Ghee – Refined Oils',
-      image: '/lovable-uploads/3d858f04-6710-4121-bdee-0eb6c06c4963.png',
-      bgColor: 'bg-red-700',
-      textColor: 'text-white'
+      image: '/category-image/Refined Oils.png'
     },
     {
       id: 5,
       title: 'Natural Sweeteners & Sugars',
-      image: '/lovable-uploads/8e8c0e63-775d-49d4-a697-1974ae91bba3.png',
-      bgColor: 'bg-pink-600',
-      textColor: 'text-white'
+      image: '/category-image/natural-sweetners.jpg'
     },
     {
       id: 6,
       title: 'Grains & Staples – Wheat Flour & Rice',
-      image: '/lovable-uploads/e8effae9-a554-406f-a63b-176687ffccdf.png',
-      bgColor: 'bg-orange-600',
-      textColor: 'text-white'
+      image: '/category-image/Grains and staples.png'
     },
     {
       id: 7,
       title: 'Grains & Staples – Pulses',
-      image: '/lovable-uploads/3d858f04-6710-4121-bdee-0eb6c06c4963.png',
-      bgColor: 'bg-teal-600',
-      textColor: 'text-white'
+      image: '/category-image/Grains and staples.png'
     },
     {
       id: 8,
       title: 'Pharmaceuticals & Nutraceuticals',
-      image: '/lovable-uploads/8e8c0e63-775d-49d4-a697-1974ae91bba3.png',
-      bgColor: 'bg-purple-600',
-      textColor: 'text-white'
+      image: '/category-image/natural-sweetners.jpg'
     },
     {
       id: 9,
       title: 'Essential Oils (Natural, Therapeutic Grade)',
-      image: '/lovable-uploads/e8effae9-a554-406f-a63b-176687ffccdf.png',
-      bgColor: 'bg-indigo-600',
-      textColor: 'text-white'
+      image: '/category-image/oil-fats&ghee.png'
     },
     {
       id: 10,
       title: 'Oleoresins (Spice Extracts)',
-      image: '/lovable-uploads/3d858f04-6710-4121-bdee-0eb6c06c4963.png',
-      bgColor: 'bg-yellow-600',
-      textColor: 'text-white'
+      image: '/category-image/Grains and staples.png'
     }
   ];
 
+  const handleCategoryClick = (categoryId: number) => {
+    navigate(`/category/${categoryId}`);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-warm-beige to-cream font-sans">
+      {/* Announcement */}
+      <AnnouncementBar />
+      
       <Navbar />
       
       <section className="py-16">
@@ -93,38 +85,59 @@ const Categories = () => {
             </p>
           </div>
 
-          {/* Categories Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {allCategories.map((category, index) => (
-              <motion.div
-                key={category.id}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                className={`relative ${category.bgColor} rounded-2xl overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-300 min-h-[250px]`}
-              >
-                <div className="flex h-full">
-                  {/* Text Content */}
-                  <div className="flex-1 p-8 flex flex-col justify-center">
-                    <h3 className={`text-2xl font-bold ${category.textColor} leading-tight mb-4`}>
-                      {category.title}
-                    </h3>
-                  </div>
-
-                  {/* Product Image */}
-                  <div className="flex-1 flex items-center justify-center p-4">
+          {/* Categories Grid - 3-3-3-1 layout */}
+          <div className="space-y-6">
+            {/* First 9 categories in 3x3 grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {allCategories.slice(0, 9).map((category, index) => (
+                <motion.div
+                  key={category.id}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.6 }}
+                  className="relative bg-white rounded-2xl overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-300 min-h-[250px] shadow-lg"
+                  onClick={() => handleCategoryClick(category.id)}
+                >
+                  {/* Just the image, no text */}
+                  <div className="w-full h-full flex items-center justify-center p-4">
                     <img
                       src={category.image}
                       alt={category.title}
-                      className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                      className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
                     />
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Last category centered */}
+            {allCategories.length > 9 && (
+              <div className="flex justify-center">
+                <motion.div
+                  key={allCategories[9].id}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.9, duration: 0.6 }}
+                  className="relative bg-white rounded-2xl overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-300 min-h-[250px] shadow-lg w-full max-w-sm"
+                  onClick={() => handleCategoryClick(allCategories[9].id)}
+                >
+                  {/* Just the image, no text */}
+                  <div className="w-full h-full flex items-center justify-center p-4">
+                    <img
+                      src={allCategories[9].image}
+                      alt={allCategories[9].title}
+                      className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                </motion.div>
+              </div>
+            )}
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

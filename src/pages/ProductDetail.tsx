@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { getProductById, getCategoryById, getProductsByCategory } from '@/data/products';
+import Navbar from '@/components/Navbar';
+import AnnouncementBar from '@/components/AnnouncementBar';
+import Footer from '@/components/Footer';
 
 const ProductDetail = () => {
   const { productId } = useParams<{ productId: string }>();
@@ -108,6 +111,12 @@ const ProductDetail = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
+      {/* Announcement */}
+      <AnnouncementBar />
+
+      {/* Navbar */}
+      <Navbar transparent />
+
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -276,6 +285,9 @@ const ProductDetail = () => {
           </div>
         )}
       </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

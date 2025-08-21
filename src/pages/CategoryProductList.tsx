@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getProductsByCategory, getCategoryById } from '@/data/products';
 import Navbar from '@/components/Navbar';
+import AnnouncementBar from '@/components/AnnouncementBar';
+import Footer from '@/components/Footer';
 
 const CategoryProductList = () => {
   const { categoryId } = useParams<{ categoryId: string }>();
@@ -10,46 +12,6 @@ const CategoryProductList = () => {
   const categoryIdNum = categoryId ? parseInt(categoryId) : 0;
   const category = getCategoryById(categoryIdNum);
   const products = getProductsByCategory(categoryIdNum);
-
-  // Function to get category-specific announcement bar
-  const getCategoryAnnouncementBar = (categoryId: number) => {
-    const announcements = {
-      1: { // Fresh Fruits & Vegetables
-        bg: 'bg-olive-green',
-        text: '🍎 Farm Fresh Guarantee | 100% Organic & Pesticide-Free Produce',
-        emoji: '🌱'
-      },
-      2: { // Oils, Fats & Ghee - Dairy Fat Products
-        bg: 'bg-olive-green',
-        text: '🥛 Pure A2 Bilona Ghee | Traditional Methods | 100% Natural',
-        emoji: '✨'
-      },
-      3: { // Oils, Fats & Ghee - Cold Pressed Edible Oils
-        bg: 'bg-olive-green',
-        text: '🏺 Cold Pressed Excellence | Zero Chemicals | Maximum Nutrition',
-        emoji: '💧'
-      },
-      4: { // Oils, Fats & Ghee - Refined Oils
-        bg: 'bg-olive-green',
-        text: '🔥 Premium Refined Oils | Heart Healthy | Perfect for Cooking',
-        emoji: '❤️'
-      },
-      5: { // Natural Sweeteners & Sugars
-        bg: 'bg-olive-green',
-        text: '🍯 Natural Sweetness | No Artificial Additives | Pure & Healthy',
-        emoji: '🌿'
-      },
-      6: { // Grains & Staples - Wheat Flour & Rice
-        bg: 'bg-olive-green',
-        text: '🌾 Farm to Table | Premium Quality Grains | Nutrition Rich',
-        emoji: '🥖'
-      }
-    };
-
-    return announcements[categoryId as keyof typeof announcements] || announcements[1];
-  };
-
-  const announcement = getCategoryAnnouncementBar(categoryIdNum);
 
   if (!category) {
     return (
@@ -77,14 +39,8 @@ const CategoryProductList = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-warm-beige to-cream font-sans">
-      {/* Dynamic Announcement Bar */}
-      <div className={`${announcement.bg} text-white py-2 px-4 text-center text-sm font-medium`}>
-        <div className="flex items-center justify-center space-x-2">
-          <span>{announcement.emoji}</span>
-          <span>{announcement.text}</span>
-          <span>{announcement.emoji}</span>
-        </div>
-      </div>
+      {/* Standard Announcement Bar */}
+      <AnnouncementBar />
       
       {/* Navbar */}
       <Navbar />
@@ -120,48 +76,63 @@ const CategoryProductList = () => {
                 className="cursor-pointer flex flex-col items-center"
                 onClick={() => handleProductClick(product.id)}
               >
-                {/* White Square Image Box */}
-                <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-square w-full max-w-[250px] p-6 flex items-center justify-center">
-                  {product.image ? (
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-full max-w-[140px] max-h-[140px] object-contain hover:scale-105 transition-transform duration-300"
-                    />
-                  ) : (
-                    <span className="text-6xl opacity-30">📦</span>
-                  )}
-                </div>
-
-                {/* Free-floating Product Info Below */}
-                <div className="flex flex-col items-center gap-3 mt-4 w-full">
-                  {/* Product Name */}
-                  <h3 className="text-lg font-bold text-rich-brown text-center leading-tight line-clamp-2">
-                    {product.name}
-                  </h3>
-
-                  {/* HSN Code */}
-                  <p className="text-sm text-gray-600 text-center font-medium">
-                    HSN: {product.hsnCode}
-                  </p>
-
-                  {/* Contact Button */}
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleContactUs();
+                {/* Fixed size product card - Same as Best Sellers */}
+                <div className="flex flex-col items-center">
+                  {/* Product Image Box - Fixed dimensions: 260.5px x 260.46px */}
+                  <div 
+                    className="bg-white rounded-2xl transition-all duration-300 flex items-center justify-center relative overflow-hidden"
+                    style={{ 
+                      width: '260.5px', 
+                      height: '260.46px' 
                     }}
-                    className="text-white py-3 px-8 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all duration-300 hover:shadow-md"
-                    style={{ backgroundColor: '#2e3e27' }}
                   >
-                    Contact For More
-                  </button>
+                    {product.image ? (
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <span className="text-6xl opacity-30">📦</span>
+                    )}
+                  </div>
+
+                  {/* Product Info Below - Outside the fixed card */}
+                  <div className="flex flex-col items-center gap-3 mt-4 w-full max-w-[260.5px]">
+                    {/* Product Name */}
+                    <h3 className="text-lg font-medium font-sans text-black text-center leading-tight">
+                      {product.name}
+                    </h3>
+
+                    {/* Grid layout: HSN Code on left, Contact Button on right */}
+                    <div className="grid grid-cols-2 gap-2 w-full items-center">
+                      {/* HSN Code - Left side */}
+                      <p className="text-xs text-black text-left font-medium font-sans">
+                        HSN: {product.hsnCode}
+                      </p>
+
+                      {/* Contact Button - Right side (smaller) */}
+                      <button 
+                        className="text-white py-1.5 px-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:shadow-md text-xs font-sans"
+                        style={{ backgroundColor: '#2e3e27' }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleContactUs();
+                        }}
+                      >
+                        Contact
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
         )}
       </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
