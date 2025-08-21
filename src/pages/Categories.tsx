@@ -76,7 +76,7 @@ const Categories = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-warm-beige to-cream font-poppins">
+    <div className="min-h-screen bg-gradient-to-br from-warm-beige to-cream font-sans">
       <Navbar />
       
       <section className="py-16">

@@ -76,7 +76,7 @@ const CategoryProductList = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-warm-beige to-cream font-poppins">
+    <div className="min-h-screen bg-gradient-to-br from-warm-beige to-cream font-sans">
       {/* Dynamic Announcement Bar */}
       <div className={`${announcement.bg} text-white py-2 px-4 text-center text-sm font-medium`}>
         <div className="flex items-center justify-center space-x-2">

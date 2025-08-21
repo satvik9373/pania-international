@@ -43,15 +43,25 @@ const ProductSection = () => {
   };
 
   return (
-  <section className="py-16 bg-white font-poppins">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section className="py-16 bg-white font-sans relative">
+      {/* Wave Background */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
+        style={{
+          backgroundImage: "url('/wave-bg.svg')",
+          backgroundPosition: 'center bottom',
+          backgroundSize: '100% auto'
+        }}
+      ></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="flex justify-start items-center mb-12">
-          <h2 className="text-5xl font-wasted text-black">Best Selling Products</h2>
+          <h2 className="text-5xl font-serif text-black">Best Selling Products</h2>
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
           {products.map((product, index) => (
             <motion.div
               key={product.id}
@@ -61,10 +71,16 @@ const ProductSection = () => {
               className="cursor-pointer flex flex-col items-center"
               onClick={() => handleProductClick(product.id)}
             >
-              {/* Larger card background */}
-              <div className="w-full max-w-[320px] rounded-2xl p-6 flex flex-col items-center border border-gray-100 bg-transparent">
-                {/* Larger White Square Image Box with proper hover swap */}
-                <div className="bg-white rounded-xl shadow-sm transition-all duration-300 aspect-square w-full max-w-[280px] p-6 flex items-center justify-center relative overflow-hidden group">
+              {/* Fixed size product card */}
+              <div className="flex flex-col items-center">
+                {/* Product Image Box - Fixed dimensions: 260.5px x 260.46px */}
+                <div 
+                  className="bg-white rounded-xl shadow-sm transition-all duration-300 p-6 flex items-center justify-center relative overflow-hidden group"
+                  style={{ 
+                    width: '260.5px', 
+                    height: '260.46px' 
+                  }}
+                >
                   {product.image ? (
                     <>
                       <img
@@ -85,34 +101,33 @@ const ProductSection = () => {
                   )}
                 </div>
 
-                {/* Product Info Below */}
-                <div className="flex flex-col items-center gap-3 mt-6 w-full">
-                {/* Product Name */}
-                <h3 className="text-lg font-bold text-black text-center leading-tight line-clamp-2">
-                  {product.name}
-                </h3>
+                {/* Product Info Below - Outside the fixed card */}
+                <div className="flex flex-col items-center gap-3 mt-4 w-full max-w-[260.5px]">
+                  {/* Product Name */}
+                  <h3 className="text-lg font-medium font-sans text-black text-center leading-tight">
+                    {product.name}
+                  </h3>
 
-                {/* Grid layout: HSN Code on left, Contact Button on right */}
-                <div className="grid grid-cols-2 gap-2 w-full items-center">
-                  {/* HSN Code - Left side */}
-                  <p className="text-xs text-black text-left font-medium">
-                    {product.hsn}
-                  </p>
+                  {/* Grid layout: HSN Code on left, Contact Button on right */}
+                  <div className="grid grid-cols-2 gap-2 w-full items-center">
+                    {/* HSN Code - Left side */}
+                    <p className="text-xs text-black text-left font-medium font-sans">
+                      {product.hsn}
+                    </p>
 
-                  {/* Contact Button - Right side (smaller) */}
-                  <button 
-                    className="text-white py-1.5 px-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:shadow-md text-xs"
-                    style={{ backgroundColor: '#2e3e27' }}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleContactForMore();
-                    }}
-                  >
-                    Contact
-                  </button>
+                    {/* Contact Button - Right side (smaller) */}
+                    <button 
+                      className="text-white py-1.5 px-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:shadow-md text-xs font-sans"
+                      style={{ backgroundColor: '#2e3e27' }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleContactForMore();
+                      }}
+                    >
+                      Contact
+                    </button>
+                  </div>
                 </div>
-              </div>
-              {/* close card wrapper */}
               </div>
             </motion.div>
           ))}
