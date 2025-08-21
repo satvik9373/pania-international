@@ -68,7 +68,7 @@ export const products: Product[] = [
     hsnCode: '0804.50',
     categoryId: 1,
     description: 'Premium quality fresh mangoes sourced directly from Indian orchards. Sweet, juicy and rich in vitamins.',
-    image: '/lovable-uploads/3d858f04-6710-4121-bdee-0eb6c06c4963.png'
+    image: '/product-image/mango.jpg'
   },
   {
     id: 2,
@@ -76,6 +76,7 @@ export const products: Product[] = [
     hsnCode: '0703.10',
     categoryId: 1,
     description: 'Farm-fresh onions with excellent storage life. Essential ingredient for Indian cuisine.',
+    image: '/product-image/onion.jpg'
   },
   {
     id: 3,
@@ -83,6 +84,7 @@ export const products: Product[] = [
     hsnCode: '0709.99',
     categoryId: 1,
     description: 'Variety of fresh seasonal vegetables including leafy greens, root vegetables and more.',
+    image: '/product-image/Fresh-Veggies.jpg'
   },
   {
     id: 4,
@@ -90,6 +92,7 @@ export const products: Product[] = [
     hsnCode: '0710.80',
     categoryId: 1,
     description: 'Premium frozen vegetable mix retaining nutritional value and freshness.',
+    image: '/product-image/Frozen-Mixed-img.jpg'
   },
   
   // Dairy Fat Products (Category 2)

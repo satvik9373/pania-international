@@ -60,23 +60,12 @@ const blogs: Blog[] = [
 	},
 ]
 
-// Map blog ID to card/badge colors using alternating pattern
-// Pattern: green, baby pink, green, green, pink, green
+// Map blog ID to card/badge colors - All green
 function themeFor(blogId: number) {
-	// Card background: sage (#BCD6C7) for green or light rose (#FCEDEA) for baby pink
+	// All cards will be green
+	// Card background: sage (#BCD6C7) for green
 	// Badge background: lighter tint of the same family
-	switch (blogId) {
-		case 1: // Green
-		case 3: // Green  
-		case 4: // Green
-		case 6: // Green
-			return { card: '#BCD6C7', badge: '#DCE7E0' }
-		case 2: // Baby Pink
-		case 5: // Pink
-			return { card: '#FCEDEA', badge: '#FEF3F1' }
-		default:
-			return { card: '#BCD6C7', badge: '#DCE7E0' }
-	}
+	return { card: '#BCD6C7', badge: '#DCE7E0' }
 }
 
 const BlogCard = ({ item }: { item: Blog }) => {

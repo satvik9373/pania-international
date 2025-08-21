@@ -33,14 +33,15 @@ export default function FAQSection() {
           <p className="mt-3 text-rich-brown/70">Answers to common questions about our products, shipping, and care.</p>
         </div>
 
-        <div className="mx-auto max-w-3xl">
-          <Accordion type="single" collapsible className="w-full">
+        <div className="mx-auto max-w-3xl px-6">
+          <Accordion type="single" collapsible className="w-full space-y-4">
             {faqs.map((item, idx) => (
-              <AccordionItem key={idx} value={`item-${idx}`}>
+              <AccordionItem key={idx} value={`item-${idx}`} className="border rounded-lg px-4">
                 <AccordionTrigger className="text-left text-lg md:text-xl text-rich-brown">
+                  <span className="font-bold mr-3">Q{idx + 1}.</span>
                   {item.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-rich-brown/80 leading-relaxed">
+                <AccordionContent className="text-rich-brown/80 leading-relaxed ml-8">
                   {item.a}
                 </AccordionContent>
               </AccordionItem>
