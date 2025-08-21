@@ -6,31 +6,31 @@ const ProductSection = () => {
   const products = [
     {
       id: 1,
-      name: 'A2 Bilona Ghee',
+      name: 'Ghee',
       hsn: 'HSN: 04059020',
       image: '/product-image/ghee.jpeg',
-      hoverImage: '/product-image/wheat.png'
+      hoverImage: '/product-image/ghee.jpeg'
     },
     {
       id: 2,
-      name: 'Organic Wheat Flour',
-      hsn: 'HSN: 11022000',
-      image: '/product-image/wheat.png',
+      name: 'Cold Press Oil',
+      hsn: 'HSN: 15155000',
+      image: '/product-image/ghee.jpeg',
       hoverImage: '/product-image/ghee.jpeg'
     },
     {
       id: 3,
-      name: 'A2 Bilona Ghee',
-      hsn: 'HSN: 04059020',
-      image: '/product-image/ghee.jpeg',
+      name: 'Wheat Flour',
+      hsn: 'HSN: 11022000',
+      image: '/product-image/wheat.png',
       hoverImage: '/product-image/wheat.png'
     },
     {
       id: 4,
-      name: 'Organic Wheat Flour',
-      hsn: 'HSN: 11022000',
+      name: 'Honey',
+      hsn: 'HSN: 04090000',
       image: '/product-image/wheat.png',
-      hoverImage: '/product-image/ghee.jpeg'
+      hoverImage: '/product-image/wheat.png'
     }
   ];
 
@@ -47,7 +47,7 @@ const ProductSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex justify-start items-center mb-12">
-          <h2 className="text-5xl font-wasted text-black">Best Sellers</h2>
+          <h2 className="text-5xl font-wasted text-black">Best Selling Products</h2>
         </div>
 
         {/* Products Grid */}
