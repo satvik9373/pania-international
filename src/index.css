@@ -3,23 +3,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global letter-spacing for all text elements */
+h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, label, li {
+  letter-spacing: -0.025em;
+}
+
+/* Hide scrollbars for webkit browsers */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
 
 @font-face {
-  font-family: 'Cormorant Garamond';
-  src: url('/fonts/CormorantGaramond-Regular.ttf') format('truetype');
+  font-family: 'Rasedia';
+  src: url('/fonts/Rasedia-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Cormorant Garamond';
-  src: url('/fonts/CormorantGaramond-Italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
   font-display: swap;
 }
 
@@ -130,11 +136,11 @@ All colors MUST be HSL.
   }
 
   h1, h2, h3, h4, h5, h6, .heading, .hero-title, .category-title, .product-title, .section-header {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Rasedia', serif;
   }
 
   .font-serif {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Rasedia', serif;
   }
 
   .font-sans {

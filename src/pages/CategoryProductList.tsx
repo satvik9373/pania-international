@@ -100,25 +100,25 @@ const CategoryProductList = () => {
                   {/* Product Info Below - Pyramid Structure */}
                   <div className="flex flex-col items-center gap-2 mt-4 w-full max-w-[260.5px]">
                     {/* Product Name - Top of pyramid */}
-                    <h3 className="text-lg font-medium font-sans text-black text-center leading-tight">
+                    <h3 className="text-lg font-medium font-sans text-black text-center leading-tight tracking-tight">
                       {product.name}
                     </h3>
 
                     {/* HSN Code - Middle of pyramid */}
-                    <p className="text-sm text-black text-center font-medium font-sans">
+                    <p className="text-sm text-black text-center font-medium font-sans tracking-tight">
                       HSN: {product.hsnCode}
                     </p>
 
                     {/* Contact Button - Bottom of pyramid */}
                     <button 
-                      className="text-white py-2 px-6 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:shadow-md text-sm font-sans mt-1"
+                      className="text-white py-2 px-6 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:shadow-md text-sm font-sans mt-1 tracking-tight"
                       style={{ backgroundColor: '#2e3e27' }}
                       onClick={(e) => {
                         e.stopPropagation();
                         handleContactUs();
                       }}
                     >
-                      Contact
+                      Order Now
                     </button>
                   </div>
                 </div>

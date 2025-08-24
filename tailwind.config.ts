@@ -21,7 +21,7 @@ export default {
 		extend: {
 			fontFamily: {
 				'sans': ['Montserrat', 'sans-serif'],
-				'serif': ['Cormorant Garamond', 'serif'],
+				'serif': ['Rasedia', 'serif'],
 			},
 			letterSpacing: {
 				'tighter': '-0.05em',

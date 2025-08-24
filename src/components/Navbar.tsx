@@ -16,7 +16,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
   const navClass = transparent ? 'bg-transparent border-none' : 'bg-white border-b border-gray-100';
   const linkClass = (transparent
     ? 'text-white hover:text-cream'
-    : 'text-gray-700 hover:text-olive-green') + ' transition-colors duration-200 leading-tightish';
+    : 'text-gray-700 hover:text-olive-green') + ' transition-colors duration-200 leading-tightish font-bold tracking-tight';
   const logoClass = transparent ? 'text-white tracking-tight uppercase' : 'text-2xl text-rich-brown tracking-tight uppercase';
 
   return (

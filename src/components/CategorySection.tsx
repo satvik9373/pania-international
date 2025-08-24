@@ -16,7 +16,7 @@ const CategorySection = () => {
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-4">
             <div className="h-px bg-terracotta w-24"></div>
-            <h2 className="text-4xl font-bold text-rich-brown mx-8">Shop By Category</h2>
+            <h2 className="text-4xl font-bold text-rich-brown mx-8 tracking-tight">SHOP BY CATEGORY</h2>
             <div className="h-px bg-terracotta w-24"></div>
           </div>
         </div>

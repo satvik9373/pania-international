@@ -57,7 +57,7 @@ const ProductSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="flex justify-start items-center mb-12">
-          <h2 className="text-5xl font-serif text-black">Best Selling Products</h2>
+          <h2 className="text-5xl font-serif text-black tracking-tight">BEST SELLING PRODUCTS</h2>
         </div>
 
         {/* Products Grid */}
@@ -104,25 +104,25 @@ const ProductSection = () => {
                 {/* Product Info Below - Pyramid Structure */}
                 <div className="flex flex-col items-center gap-2 mt-4 w-full max-w-[260.5px]">
                   {/* Product Name - Top of pyramid */}
-                  <h3 className="text-lg font-medium font-sans text-black text-center leading-tight">
+                  <h3 className="text-lg font-medium font-sans text-black text-center leading-tight tracking-tight">
                     {product.name}
                   </h3>
 
                   {/* HSN Code - Middle of pyramid */}
-                  <p className="text-sm text-black text-center font-medium font-sans">
+                  <p className="text-sm text-black text-center font-medium font-sans tracking-tight">
                     HSN: {product.hsn}
                   </p>
 
                   {/* Contact Button - Bottom of pyramid */}
                   <button 
-                    className="text-white py-2 px-6 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:shadow-md text-sm font-sans mt-1"
+                    className="text-white py-2 px-6 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:shadow-md text-sm font-sans mt-1 tracking-tight"
                     style={{ backgroundColor: '#2e3e27' }}
                     onClick={(e) => {
                       e.stopPropagation();
                       handleContactForMore();
                     }}
                   >
-                    Contact
+                    Order Now
                   </button>
                 </div>
               </div>
