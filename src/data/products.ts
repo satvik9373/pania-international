@@ -76,7 +76,7 @@ export const products: Product[] = [
     hsnCode: '0703.10',
     categoryId: 1,
     description: 'Farm-fresh onions with excellent storage life. Essential ingredient for Indian cuisine.',
-    image: '/product-image/onion.jpg'
+    image: '/product-image/red-onions.jpg'
   },
   {
     id: 3,
@@ -92,7 +92,7 @@ export const products: Product[] = [
     hsnCode: '0710.80',
     categoryId: 1,
     description: 'Premium frozen vegetable mix retaining nutritional value and freshness.',
-    image: '/product-image/Frozen-Mixed-img.jpg'
+    image: '/product-image/frozen-peas.jpg'
   },
   
   // Dairy Fat Products (Category 2)

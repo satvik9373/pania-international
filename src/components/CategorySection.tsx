@@ -13,11 +13,10 @@ const CategorySection = () => {
     <section className="py-16 bg-gradient-to-br from-warm-beige to-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center mb-4">
+        <div className="text-left mb-12">
+          <div className="flex items-center mb-4">
             <div className="h-px bg-terracotta w-24"></div>
-            <h2 className="text-4xl font-bold text-rich-brown mx-8 tracking-tight">SHOP BY CATEGORY</h2>
-            <div className="h-px bg-terracotta w-24"></div>
+            <h2 className="text-5xl font-serif text-rich-brown ml-8">Shop By Category</h2>
           </div>
         </div>
 

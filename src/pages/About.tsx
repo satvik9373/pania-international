@@ -14,7 +14,7 @@ const About = () => {
       {/* Hero */}
       <header className="relative bg-olive-green text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif tracking-tight">ABOUT US</h1>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif tracking-wide">ABOUT US</h1>
           <div className="mt-6">
             <a href="/" className="text-sm text-white underline mr-2">Home</a>
             <span className="text-sm text-white">›</span>

@@ -14,7 +14,7 @@ const Services = () => {
       {/* Hero */}
       <header className="relative bg-olive-green text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif tracking-tight">OUR SERVICES</h1>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif tracking-wide">OUR SERVICES</h1>
           <div className="mt-6">
             <a href="/" className="text-sm text-white underline mr-2">Home</a>
             <span className="text-sm text-white">›</span>
@@ -37,7 +37,7 @@ const Services = () => {
           {/* Introduction */}
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif text-olive-green mb-4">What We Offer</h2>
-            <p className="text-lg">
+            <p className="text-lg font-sans">
               Pania International provides comprehensive solutions for natural food ingredients, 
               connecting traditional producers with global markets through quality and transparency.
             </p>
@@ -49,7 +49,7 @@ const Services = () => {
             {/* Service 1 */}
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-serif text-olive-green mb-3">Premium Sourcing</h3>
-              <p>
+              <p className="font-sans">
                 We source the finest natural ingredients directly from trusted farmers and producers 
                 across India, ensuring authenticity and superior quality in every product.
               </p>
@@ -58,7 +58,7 @@ const Services = () => {
             {/* Service 2 */}
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-serif text-olive-green mb-3">Quality Processing</h3>
-              <p>
+              <p className="font-sans">
                 Our state-of-the-art processing facilities maintain the integrity of natural ingredients 
                 while meeting international food safety and quality standards.
               </p>
@@ -67,7 +67,7 @@ const Services = () => {
             {/* Service 3 */}
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-serif text-olive-green mb-3">Global Distribution</h3>
-              <p>
+              <p className="font-sans">
                 We handle complete logistics and distribution, ensuring your products reach global 
                 markets efficiently while maintaining freshness and quality.
               </p>
@@ -76,7 +76,7 @@ const Services = () => {
             {/* Service 4 */}
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-serif text-olive-green mb-3">Partnership Support</h3>
-              <p>
+              <p className="font-sans">
                 We build long-term partnerships with farmers and manufacturers, providing ongoing 
                 support, fair pricing, and sustainable business relationships.
               </p>
@@ -106,7 +106,7 @@ const Services = () => {
           {/* Call to Action */}
           <div className="text-center bg-olive-green/10 p-8 rounded-lg">
             <h3 className="text-2xl font-serif text-olive-green mb-4">Ready to Partner With Us?</h3>
-            <p className="mb-6">
+            <p className="mb-6 font-sans">
               Discover how our services can help you access premium natural ingredients 
               with complete transparency and reliability.
             </p>

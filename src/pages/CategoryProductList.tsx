@@ -47,12 +47,12 @@ const CategoryProductList = () => {
       
       {/* Category Banner */}
       <div className="relative w-full h-48 md:h-64 lg:h-80 overflow-hidden mb-8">
-        {/* General Banner for All Categories */}
+        {/* New Green Banner for All Categories */}
         <div className="w-full h-full flex items-center justify-center relative">
           {/* Banner Image */}
           <img
-            src="/general-banner.png"
-            alt="Veg-tastic Savings Event Banner"
+            src="/labels/test.webp"
+            alt="Tradition Tastes Banner"
             className="w-full h-full object-cover object-center"
           />
         </div>
@@ -100,25 +100,25 @@ const CategoryProductList = () => {
                   {/* Product Info Below - Pyramid Structure */}
                   <div className="flex flex-col items-center gap-2 mt-4 w-full max-w-[260.5px]">
                     {/* Product Name - Top of pyramid */}
-                    <h3 className="text-lg font-medium font-sans text-black text-center leading-tight tracking-tight">
+                    <h3 className="text-lg font-medium font-sans text-black text-center leading-tight">
                       {product.name}
                     </h3>
 
                     {/* HSN Code - Middle of pyramid */}
-                    <p className="text-sm text-black text-center font-medium font-sans tracking-tight">
+                    <p className="text-sm text-black text-center font-medium font-sans">
                       HSN: {product.hsnCode}
                     </p>
 
                     {/* Contact Button - Bottom of pyramid */}
                     <button 
-                      className="text-white py-2 px-6 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:shadow-md text-sm font-sans mt-1 tracking-tight"
+                      className="text-white py-2 px-6 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:shadow-md text-sm font-sans mt-1"
                       style={{ backgroundColor: '#2e3e27' }}
                       onClick={(e) => {
                         e.stopPropagation();
                         handleContactUs();
                       }}
                     >
-                      Order Now
+                      Contact
                     </button>
                   </div>
                 </div>

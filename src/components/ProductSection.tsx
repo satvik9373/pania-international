@@ -6,10 +6,10 @@ const ProductSection = () => {
   const products = [
     {
       id: 1,
-      name: 'Ghee',
+      name: 'A2 Bilona Ghee',
       hsn: 'HSN: 04059020',
-      image: '/product-image/ghee.png',
-      hoverImage: '/product-image/ghee.jpeg'
+      image: '/product-image/A2-Bilona-Ghee.png',
+      hoverImage: '/product-image/ghee.png'
     },
     {
       id: 2,
@@ -22,15 +22,15 @@ const ProductSection = () => {
       id: 3,
       name: 'Wheat Flour',
       hsn: 'HSN: 11022000',
-      image: '/product-image/wheat-flour.jpg',
-      hoverImage: '/product-image/wheat.png'
+      image: '/product-image/wheat-flour-2.webp',
+      hoverImage: '/product-image/wheat-flour.jpg'
     },
     {
       id: 4,
       name: 'Honey',
       hsn: 'HSN: 04090000',
-      image: '/product-image/honey.jpg',
-      hoverImage: '/product-image/ghee.jpeg'
+      image: '/product-image/honey-2.webp',
+      hoverImage: '/product-image/honey.jpg'
     }
   ];
 
@@ -43,7 +43,7 @@ const ProductSection = () => {
   };
 
   return (
-  <section className="py-16 bg-white font-sans relative">
+  <section className="py-16 bg-white relative">
       {/* Wave Background */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
@@ -57,7 +57,7 @@ const ProductSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="flex justify-start items-center mb-12">
-          <h2 className="text-5xl font-serif text-black tracking-tight">BEST SELLING PRODUCTS</h2>
+          <h2 className="text-5xl font-serif text-black">Best Selling Products</h2>
         </div>
 
         {/* Products Grid */}
@@ -101,29 +101,32 @@ const ProductSection = () => {
                   )}
                 </div>
 
-                {/* Product Info Below - Pyramid Structure */}
-                <div className="flex flex-col items-center gap-2 mt-4 w-full max-w-[260.5px]">
-                  {/* Product Name - Top of pyramid */}
-                  <h3 className="text-lg font-medium font-sans text-black text-center leading-tight tracking-tight">
+                {/* Product Info Below - Outside the fixed card */}
+                <div className="flex flex-col items-center gap-3 mt-4 w-full max-w-[260.5px]">
+                  {/* Product Name */}
+                  <h3 className="text-lg font-medium font-sans text-black text-center leading-tight">
                     {product.name}
                   </h3>
 
-                  {/* HSN Code - Middle of pyramid */}
-                  <p className="text-sm text-black text-center font-medium font-sans tracking-tight">
-                    HSN: {product.hsn}
-                  </p>
+                  {/* Grid layout: HSN Code on left, Contact Button on right */}
+                  <div className="grid grid-cols-2 gap-2 w-full items-center">
+                    {/* HSN Code - Left side */}
+                    <p className="text-xs text-black text-left font-medium font-sans">
+                      {product.hsn}
+                    </p>
 
-                  {/* Contact Button - Bottom of pyramid */}
-                  <button 
-                    className="text-white py-2 px-6 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:shadow-md text-sm font-sans mt-1 tracking-tight"
-                    style={{ backgroundColor: '#2e3e27' }}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleContactForMore();
-                    }}
-                  >
-                    Order Now
-                  </button>
+                    {/* Contact Button - Right side (smaller) */}
+                    <button 
+                      className="text-white py-1.5 px-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:shadow-md text-xs font-sans"
+                      style={{ backgroundColor: '#2e3e27' }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleContactForMore();
+                      }}
+                    >
+                      Contact
+                    </button>
+                  </div>
                 </div>
               </div>
             </motion.div>
