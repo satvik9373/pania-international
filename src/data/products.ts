@@ -57,6 +57,20 @@ export const categories: Category[] = [
     bgColor: 'bg-orange-600',
     textColor: 'text-white',
     icon: '🏺'
+  },
+  {
+    id: 7,
+    title: 'Oleoresin',
+    bgColor: 'bg-purple-600',
+    textColor: 'text-white',
+    icon: '🌿'
+  },
+  {
+    id: 8,
+    title: 'Pharma',
+    bgColor: 'bg-teal-600',
+    textColor: 'text-white',
+    icon: '💊'
   }
 ];
 
@@ -76,7 +90,7 @@ export const products: Product[] = [
     hsnCode: '0703.10',
     categoryId: 1,
     description: 'Farm-fresh onions with excellent storage life. Essential ingredient for Indian cuisine.',
-    image: '/product-image/red-onions.jpg'
+    image: '/product-image/onion.jpg'
   },
   {
     id: 3,
@@ -88,11 +102,11 @@ export const products: Product[] = [
   },
   {
     id: 4,
-    name: 'Frozen Mixed Vegetables',
+    name: 'Frozen Vegetables',
     hsnCode: '0710.80',
     categoryId: 1,
-    description: 'Premium frozen vegetable mix retaining nutritional value and freshness.',
-    image: '/product-image/frozen-peas.jpg'
+    description: 'Assorted frozen vegetables mix, convenient and nutritious.',
+    image: '/product-image/Frozen-Mixed-img.jpg'
   },
   
   // Dairy Fat Products (Category 2)

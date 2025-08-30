@@ -9,7 +9,9 @@ import CategoryProductList from "./pages/CategoryProductList";
 import ProductDetail from "./pages/ProductDetail";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import Services from "./pages/Services";
 import NotFound from "./pages/NotFound";
+import StickyIcons from "./components/StickyIcons";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +21,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <StickyIcons />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/categories" element={<Categories />} />
@@ -26,6 +29,7 @@ const App = () => (
           <Route path="/product/:productId" element={<ProductDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

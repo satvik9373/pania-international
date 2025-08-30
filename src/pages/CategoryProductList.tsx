@@ -51,8 +51,8 @@ const CategoryProductList = () => {
         <div className="w-full h-full flex items-center justify-center relative">
           {/* Banner Image */}
           <img
-            src="/labels/test.webp"
-            alt="Tradition Tastes Banner"
+            src="/category-product-banners/Fruits-and-Veg.webp"
+            alt="Fruits and Vegetables Banner"
             className="w-full h-full object-cover object-center"
           />
         </div>
@@ -80,7 +80,7 @@ const CategoryProductList = () => {
                 <div className="flex flex-col items-center">
                   {/* Product Image Box - Fixed dimensions: 260.5px x 260.46px */}
                   <div 
-                    className="bg-white rounded-2xl transition-all duration-300 flex items-center justify-center relative overflow-hidden"
+                    className="bg-white rounded-2xl transition-all duration-300 flex items-center justify-center relative overflow-hidden group"
                     style={{ 
                       width: '260.5px', 
                       height: '260.46px' 
@@ -90,7 +90,7 @@ const CategoryProductList = () => {
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                       />
                     ) : (
                       <span className="text-6xl opacity-30">📦</span>
@@ -109,7 +109,7 @@ const CategoryProductList = () => {
                       HSN: {product.hsnCode}
                     </p>
 
-                    {/* Contact Button - Bottom of pyramid */}
+                    {/* Buy Now Button - Bottom of pyramid */}
                     <button 
                       className="text-white py-2 px-6 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:shadow-md text-sm font-sans mt-1"
                       style={{ backgroundColor: '#2e3e27' }}
@@ -118,7 +118,7 @@ const CategoryProductList = () => {
                         handleContactUs();
                       }}
                     >
-                      Contact
+                      Buy Now
                     </button>
                   </div>
                 </div>

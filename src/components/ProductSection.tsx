@@ -8,29 +8,25 @@ const ProductSection = () => {
       id: 1,
       name: 'A2 Bilona Ghee',
       hsn: 'HSN: 04059020',
-      image: '/product-image/A2-Bilona-Ghee.png',
-      hoverImage: '/product-image/ghee.png'
+      image: '/product-image/A2-Bilona-Ghee.png'
     },
     {
       id: 2,
       name: 'Cold Press Oil',
       hsn: 'HSN: 15155000',
-      image: '/product-image/Almond-Oil.webp',
-      hoverImage: '/product-image/ghee.jpeg'
+      image: '/product-image/Almond-Oil.webp'
     },
     {
       id: 3,
       name: 'Wheat Flour',
       hsn: 'HSN: 11022000',
-      image: '/product-image/wheat-flour-2.webp',
-      hoverImage: '/product-image/wheat-flour.jpg'
+      image: '/product-image/wheat-flour-2.webp'
     },
     {
       id: 4,
       name: 'Honey',
       hsn: 'HSN: 04090000',
-      image: '/product-image/honey-2.webp',
-      hoverImage: '/product-image/honey.jpg'
+      image: '/product-image/honey-2.webp'
     }
   ];
 
@@ -82,19 +78,12 @@ const ProductSection = () => {
                   }}
                 >
                   {product.image ? (
-                    <div className="relative w-full h-full">
+                    <div className="relative w-full h-full overflow-hidden">
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0"
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                       />
-                      {product.hoverImage && product.hoverImage !== product.image && (
-                        <img
-                          src={product.hoverImage}
-                          alt={`${product.name} hover`}
-                          className="absolute top-0 left-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                        />
-                      )}
                     </div>
                   ) : (
                     <span className="text-6xl opacity-30">📦</span>
@@ -108,14 +97,14 @@ const ProductSection = () => {
                     {product.name}
                   </h3>
 
-                  {/* Grid layout: HSN Code on left, Contact Button on right */}
+                  {/* Grid layout: HSN Code on left, Buy Now Button on right */}
                   <div className="grid grid-cols-2 gap-2 w-full items-center">
                     {/* HSN Code - Left side */}
                     <p className="text-xs text-black text-left font-medium font-sans">
                       {product.hsn}
                     </p>
 
-                    {/* Contact Button - Right side (smaller) */}
+                    {/* Buy Now Button - Right side (smaller) */}
                     <button 
                       className="text-white py-1.5 px-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:shadow-md text-xs font-sans"
                       style={{ backgroundColor: '#2e3e27' }}
@@ -124,7 +113,7 @@ const ProductSection = () => {
                         handleContactForMore();
                       }}
                     >
-                      Contact
+                      Buy now
                     </button>
                   </div>
                 </div>

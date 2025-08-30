@@ -4,8 +4,8 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <h3 className="text-3xl mb-6 font-serif">
-              Pania<span className="text-olive-green">International</span>
+            <h3 className="text-3xl mb-6 font-serif uppercase">
+              PANIA<span className="text-olive-green">INTERNATIONAL</span>
             </h3>
             <p className="text-gray-300 mb-6 text-lg tracking-normal">
               Bringing you the finest natural products from farm to table. 

@@ -36,7 +36,7 @@ const Contact = () => {
       <AnnouncementBar />
 
       {/* Navbar */}
-      <Navbar transparent />
+      <Navbar />
 
       {/* Header */}
       <div className="bg-white shadow-sm">

@@ -15,7 +15,7 @@ const ServicesSection = () => {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="/service-img/services.jpg"
+                src="/service-img/Services.webp"
                 alt="Our Services"
                 className="w-full h-[500px] object-cover"
               />

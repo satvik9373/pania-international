@@ -10,7 +10,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
     { name: 'Products', href: '/categories' },
     { name: 'About us', href: '/about' },
     { name: 'Services', href: '/services' },
-    { name: 'contact us', href: '/contact' },
+    { name: 'Contact Us', href: '/contact' },
   ];
 
   const navClass = transparent ? 'bg-transparent border-none' : 'bg-white border-b border-gray-100';

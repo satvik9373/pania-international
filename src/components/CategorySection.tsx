@@ -86,6 +86,24 @@ const CategorySection = () => {
                 >
                 </div>
               )}
+              {category.id === 7 && (
+                <div 
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url('/category-image/Oleoresin.webp')`
+                  }}
+                >
+                </div>
+              )}
+              {category.id === 8 && (
+                <div 
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url('/category-image/Pharma.webp')`
+                  }}
+                >
+                </div>
+              )}
 
               <div className="relative z-10 flex h-full p-6">
                 {/* No text content - just background images */}

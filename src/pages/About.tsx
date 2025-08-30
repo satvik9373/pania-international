@@ -9,7 +9,7 @@ const About = () => {
       <AnnouncementBar />
 
   {/* Navbar */}
-  <Navbar transparent />
+  <Navbar />
 
       {/* Hero */}
       <header className="relative bg-olive-green text-white">
