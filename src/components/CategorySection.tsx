@@ -45,7 +45,7 @@ const CategorySection = () => {
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('/category-image/dairy&fat.png')`
+                    backgroundImage: `url('/category-image/oil-fats&ghee.png')`
                   }}
                 >
                 </div>
@@ -54,7 +54,7 @@ const CategorySection = () => {
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('/category-image/oil-fats&ghee.png')`
+                    backgroundImage: `url('/category-image/Refined Oils.png')`
                   }}
                 >
                 </div>
@@ -63,7 +63,7 @@ const CategorySection = () => {
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('/category-image/Refined Oils.png')`
+                    backgroundImage: `url('/category-image/natural-sweetners.jpg')`
                   }}
                 >
                 </div>
@@ -72,7 +72,7 @@ const CategorySection = () => {
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('/category-image/natural-sweetners.jpg')`
+                    backgroundImage: `url('/category-image/Grains and staples.png')`
                   }}
                 >
                 </div>
@@ -81,21 +81,12 @@ const CategorySection = () => {
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('/category-image/Grains and staples.png')`
-                  }}
-                >
-                </div>
-              )}
-              {category.id === 7 && (
-                <div 
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{
                     backgroundImage: `url('/category-image/Oleoresin.webp')`
                   }}
                 >
                 </div>
               )}
-              {category.id === 8 && (
+              {category.id === 7 && (
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
                   style={{

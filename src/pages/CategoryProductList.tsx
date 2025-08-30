@@ -37,6 +37,48 @@ const CategoryProductList = () => {
     navigate(`/product/${productId}`);
   };
 
+  const getCategoryBanner = (categoryId: number) => {
+    switch (categoryId) {
+      case 1:
+        return '/category-product-banners/Fruits-and-Veg.webp';
+      case 2:
+        return '/category-product-banners/Cold-press.webp';
+      case 3:
+        return '/category-product-banners/Refined-oil.webp';
+      case 4:
+        return '/category-product-banners/Wheat-and-Rice.webp';
+      case 5:
+        return '/category-product-banners/Pulse.webp';
+      case 6:
+        return '/category-product-banners/OleoResin.webp';
+      case 7:
+        return '/category-product-banners/Pharmaceuticals-&-Nutraceuticals.webp';
+      default:
+        return '/category-product-banners/Fruits-and-Veg.webp';
+    }
+  };
+
+  const getCategoryBannerAlt = (categoryId: number) => {
+    switch (categoryId) {
+      case 1:
+        return 'Fruits and Vegetables Banner';
+      case 2:
+        return 'Oils, Fats & Ghee Banner';
+      case 3:
+        return 'Refined Oils Banner';
+      case 4:
+        return 'Sweeteners & Sugars Banner';
+      case 5:
+        return 'Grains & Staples Banner';
+      case 6:
+        return 'Oleoresin Banner';
+      case 7:
+        return 'Pharma Banner';
+      default:
+        return 'Category Banner';
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-warm-beige to-cream font-sans">
       {/* Standard Announcement Bar */}
@@ -51,8 +93,8 @@ const CategoryProductList = () => {
         <div className="w-full h-full flex items-center justify-center relative">
           {/* Banner Image */}
           <img
-            src="/category-product-banners/Fruits-and-Veg.webp"
-            alt="Fruits and Vegetables Banner"
+            src={getCategoryBanner(categoryIdNum)}
+            alt={getCategoryBannerAlt(categoryIdNum)}
             className="w-full h-full object-cover object-center"
           />
         </div>
