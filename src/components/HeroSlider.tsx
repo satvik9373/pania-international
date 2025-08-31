@@ -46,25 +46,25 @@ const HeroSlider = () => {
     {
       id: 1,
       type: 'image',
-      src: '/Banner Image/1.png',
+      src: '/Banner Image/1.webp',
       alt: 'Premium A2 Ghee Products'
     },
     {
       id: 2,
       type: 'image',
-      src: '/Banner Image/2.png',
+      src: '/Banner Image/2.webp',
       alt: 'Pure Organic Ghee Collection'
     },
     {
       id: 3,
       type: 'image',
-      src: '/Banner Image/3.png',
+      src: '/Banner Image/3.webp',
       alt: 'Traditional Bilona Ghee'
     },
     {
       id: 4,
       type: 'image',
-      src: '/Banner Image/4.png',
+      src: '/Banner Image/4.webp',
       alt: 'Natural Health Products'
     }
   ];

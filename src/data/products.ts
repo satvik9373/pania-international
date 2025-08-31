@@ -18,7 +18,7 @@ export interface Category {
 export const categories: Category[] = [
   {
     id: 1,
-    title: 'Fresh Fruits',
+    title: 'Fresh Fruits & Vegetables',
     bgColor: 'bg-green-500',
     textColor: 'text-white',
     icon: '🥕'
@@ -35,35 +35,42 @@ export const categories: Category[] = [
     title: 'Refined Oils',
     bgColor: 'bg-red-600',
     textColor: 'text-white',
-    icon: '🥕'
+    icon: '�'
   },
   {
     id: 4,
-    title: 'Sweeteners and Sugars',
+    title: 'Natural Sweeteners & Sugars',
     bgColor: 'bg-pink-600',
     textColor: 'text-white',
-    icon: '🥛'
+    icon: '�'
   },
   {
     id: 5,
-    title: 'Rice and Staples',
+    title: 'Grains & Staples',
     bgColor: 'bg-orange-600',
     textColor: 'text-white',
-    icon: '🏺'
+    icon: '🌾'
   },
   {
     id: 6,
-    title: 'Oleoresin',
+    title: 'Pharmaceuticals & Nutraceuticals',
     bgColor: 'bg-purple-600',
     textColor: 'text-white',
-    icon: '🌿'
+    icon: '💊'
   },
   {
     id: 7,
-    title: 'Pharma',
-    bgColor: 'bg-teal-600',
+    title: 'Essential Oils',
+    bgColor: 'bg-emerald-600',
     textColor: 'text-white',
-    icon: '💊'
+    icon: '🫧'
+  },
+  {
+    id: 8,
+    title: 'Oleoresins',
+    bgColor: 'bg-amber-600',
+    textColor: 'text-white',
+    icon: '🌿'
   }
 ];
 
@@ -91,42 +98,40 @@ export const products: Product[] = [
     hsnCode: '0709.99',
     categoryId: 1,
     description: 'Variety of fresh seasonal vegetables including leafy greens, root vegetables and more.',
-    image: '/product-image/Fresh-Veggies.jpg'
+    image: '/product-image/fresh-vegetables-mix.jpg'
   },
   {
     id: 4,
-    name: 'Frozen Vegetables',
+    name: 'Frozen Vegetables (Mixed/Processed)',
     hsnCode: '0710.80',
     categoryId: 1,
-    description: 'Assorted frozen vegetables mix, convenient and nutritious.',
+    description: 'High-quality frozen vegetables processed and packed to retain nutrients and freshness.',
     image: '/product-image/Frozen-Mixed-img.jpg'
   },
-  
-  // Oils, Fats, & Ghee (Category 2)
+
+  // Oils, Fats & Ghee (Category 2)
   {
     id: 5,
     name: 'A2 Bilona Ghee',
     hsnCode: '0405.90',
     categoryId: 2,
-    description: 'Pure A2 ghee made from Gir cow milk using traditional bilona method. Rich in nutrients and authentic flavor.',
+    description: 'Pure A2 Bilona Ghee made from indigenous cow milk using traditional churning methods.',
     image: '/product-image/A2-Bilona-Ghee.png'
   },
-  
-  // Cold Pressed Edible Oils (Category 2)
   {
     id: 6,
     name: 'Cold Pressed Peanut Oil',
     hsnCode: '1508.10',
     categoryId: 2,
-    description: 'Traditional cold-pressed peanut oil retaining natural flavor and nutrients.',
-    image: '/product-image/Peanut-Oil.webp'
+    description: 'Natural cold pressed peanut oil retaining all essential nutrients and flavor.',
+    image: '/product-image/oil-bottles.jpg'
   },
   {
     id: 7,
     name: 'Cold Pressed Mustard Oil',
     hsnCode: '1514.19',
     categoryId: 2,
-    description: 'Pungent mustard oil made using traditional cold-press methods. Perfect for cooking and pickles.',
+    description: 'Traditional cold pressed mustard oil known for its pungent flavor and health benefits.',
     image: '/product-image/Mustard-Oil.webp'
   },
   {
@@ -134,42 +139,43 @@ export const products: Product[] = [
     name: 'Cold Pressed Coconut Oil',
     hsnCode: '1513.11',
     categoryId: 2,
-    description: 'Virgin coconut oil extracted using cold-press method. Retains all natural nutrients.',
+    description: 'Virgin cold pressed coconut oil with natural aroma and health benefits.',
+    image: '/product-image/oil-bottles.jpg'
   },
   {
     id: 9,
     name: 'Cold Pressed Safflower Oil',
     hsnCode: '1512.19',
     categoryId: 2,
-    description: 'Heart-healthy safflower oil rich in unsaturated fats and vitamin E.',
-    image: '/product-image/Safflower-Oil.webp'
+    description: 'Heart-healthy cold pressed safflower oil rich in oleic acid.',
+    image: '/product-image/oil-bottles.jpg'
   },
   {
     id: 10,
     name: 'Cold Pressed Almond Oil',
     hsnCode: '1515.90',
     categoryId: 2,
-    description: 'Premium edible almond oil with delicate flavor and high nutritional value.',
+    description: 'Premium cold pressed almond oil for culinary and cosmetic use.',
     image: '/product-image/Almond-Oil.webp'
   },
-  
+
   // Refined Oils (Category 3)
   {
     id: 11,
     name: 'Refined Soybean Oil',
     hsnCode: '1507.90',
     categoryId: 3,
-    description: 'High-quality refined soybean oil perfect for all cooking applications.',
+    description: 'High-quality refined soybean oil suitable for all cooking purposes.',
     image: '/product-image/Refined-Oil.png'
   },
-  
+
   // Natural Sweeteners & Sugars (Category 4)
   {
     id: 12,
-    name: 'Solid Jaggery',
+    name: 'Jaggery (Solid)',
     hsnCode: '1701.13',
     categoryId: 4,
-    description: 'Pure organic jaggery blocks made from sugarcane. Natural sweetener rich in minerals.',
+    description: 'Pure solid jaggery made from sugarcane, rich in minerals and natural sweetness.',
     image: '/product-image/gud.jpg'
   },
   {
@@ -177,61 +183,368 @@ export const products: Product[] = [
     name: 'Jaggery Powder',
     hsnCode: '1701.14',
     categoryId: 4,
-    description: 'Finely ground jaggery powder for easy use in cooking and beverages.',
-    image: '/product-image/organic-jaggery-powder.avif'
+    description: 'Finely ground jaggery powder for easy mixing and cooking applications.',
+    image: '/product-image/gud powder.jpeg'
   },
   {
     id: 14,
-    name: 'Desi Khand',
+    name: 'Desi Khand (Traditional Sugar)',
     hsnCode: '1701.99',
     categoryId: 4,
-    description: 'Traditional Indian sugar with natural sweetness and authentic taste.',
-    image: '/product-image/khand.avif'
+    description: 'Traditional unrefined sugar with natural minerals and authentic taste.',
+    image: '/product-image/organic-jaggery-powder.avif'
   },
   {
     id: 15,
     name: 'Natural Honey',
     hsnCode: '0409.00',
     categoryId: 4,
-    description: 'Pure raw honey from local beekeepers. Contains natural enzymes and antioxidants.',
+    description: 'Pure natural honey harvested from bee farms, rich in antioxidants.',
     image: '/product-image/honey.jpg'
   },
-  
+
   // Grains & Staples (Category 5)
   {
     id: 16,
     name: 'Whole Wheat Flour (Atta)',
     hsnCode: '1101.00',
     categoryId: 5,
-    description: 'Stone-ground whole wheat flour perfect for making rotis, chapatis and bread.',
+    description: 'Fresh ground whole wheat flour perfect for making rotis and bread.',
+    image: '/product-image/wheat-flour.jpg'
   },
   {
     id: 17,
     name: 'Kala Namak Rice (GI Tagged)',
     hsnCode: '1006.30',
     categoryId: 5,
-    description: 'Premium GI-tagged Kala Namak rice with distinctive aroma and taste.',
+    description: 'Authentic GI tagged Kala Namak rice with unique aroma and taste.',
+    image: '/product-image/rice.jpeg'
   },
   {
     id: 18,
     name: 'Basmati Rice',
     hsnCode: '1006.30',
     categoryId: 5,
-    description: 'Aromatic long-grain basmati rice perfect for biryanis and special dishes.',
+    description: 'Premium long grain basmati rice with distinctive aroma and flavor.',
+    image: '/product-image/basmati rice.jpg'
   },
   {
     id: 19,
     name: 'Non-Basmati Rice',
     hsnCode: '1006.30',
     categoryId: 5,
-    description: 'High-quality non-basmati rice varieties for everyday cooking.',
+    description: 'High-quality non-basmati rice suitable for daily consumption.',
+    image: '/product-image/rice.jpeg'
   },
   {
     id: 20,
-    name: 'Mixed Pulses',
+    name: 'Chana',
+    hsnCode: '0713.20',
+    categoryId: 5,
+    description: 'Premium quality chickpeas rich in protein and fiber.',
+    image: '/product-image/rf.jpg'
+  },
+  {
+    id: 21,
+    name: 'Moong',
+    hsnCode: '0713.31',
+    categoryId: 5,
+    description: 'Green gram beans perfect for dal and sprouting.',
+    image: '/product-image/rf.jpg'
+  },
+  {
+    id: 22,
+    name: 'Urad',
+    hsnCode: '0713.32',
+    categoryId: 5,
+    description: 'Black gram lentils essential for South Indian cuisine.',
+    image: '/product-image/rf.jpg'
+  },
+  {
+    id: 23,
+    name: 'Masoor',
     hsnCode: '0713.33',
     categoryId: 5,
-    description: 'Premium quality pulses including chana, moong, urad, masoor and arhar dal.',
+    description: 'Red lentils that cook quickly and are rich in protein.',
+    image: '/product-image/rf.jpg'
+  },
+  {
+    id: 24,
+    name: 'Other Pulses',
+    hsnCode: '0713.xx',
+    categoryId: 5,
+    description: 'Variety of other pulses including arhar, rajma, and regional varieties.',
+    image: '/product-image/rf.jpg'
+  },
+
+  // Pharmaceuticals & Nutraceuticals (Category 6)
+  {
+    id: 25,
+    name: 'General Nutraceuticals (Capsules, Oils, etc.)',
+    hsnCode: '2106.90',
+    categoryId: 6,
+    description: 'Health supplements and nutraceutical products for wellness and nutrition.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 26,
+    name: 'Herbal/Plant-based Health Products',
+    hsnCode: '3004.90',
+    categoryId: 6,
+    description: 'Natural herbal products and plant-based health supplements.',
+    image: '/product-image/placeholder.svg'
+  },
+
+  // Essential Oils (Category 7)
+  {
+    id: 27,
+    name: 'Lavender Essential Oil',
+    hsnCode: '3301.29',
+    categoryId: 7,
+    description: 'Pure lavender essential oil for aromatherapy and relaxation.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 28,
+    name: 'Tea Tree Essential Oil',
+    hsnCode: '3301.29',
+    categoryId: 7,
+    description: 'Antiseptic tea tree essential oil for skincare and wellness.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 29,
+    name: 'Peppermint Essential Oil',
+    hsnCode: '3301.29',
+    categoryId: 7,
+    description: 'Refreshing peppermint essential oil for aromatherapy and cooling effects.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 30,
+    name: 'Sandalwood Essential Oil',
+    hsnCode: '3301.29',
+    categoryId: 7,
+    description: 'Premium sandalwood essential oil with calming and spiritual properties.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 31,
+    name: 'Jasmine Essential Oil',
+    hsnCode: '3301.29',
+    categoryId: 7,
+    description: 'Exotic jasmine essential oil with floral fragrance and therapeutic benefits.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 32,
+    name: 'Ylang Ylang Essential Oil',
+    hsnCode: '3301.29',
+    categoryId: 7,
+    description: 'Tropical ylang ylang essential oil for emotional balance and relaxation.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 33,
+    name: 'Clary Sage Essential Oil',
+    hsnCode: '3301.29',
+    categoryId: 7,
+    description: 'Clary sage essential oil for hormonal balance and stress relief.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 34,
+    name: 'Geranium Essential Oil',
+    hsnCode: '3301.29',
+    categoryId: 7,
+    description: 'Balancing geranium essential oil for skincare and emotional wellness.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 35,
+    name: 'Bergamot Essential Oil',
+    hsnCode: '3301.29',
+    categoryId: 7,
+    description: 'Citrusy bergamot essential oil for mood enhancement and relaxation.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 36,
+    name: 'Patchouli Essential Oil',
+    hsnCode: '3301.29',
+    categoryId: 7,
+    description: 'Earthy patchouli essential oil for grounding and skin benefits.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 37,
+    name: 'Cinnamon Essential Oil',
+    hsnCode: '3301.29',
+    categoryId: 7,
+    description: 'Warming cinnamon essential oil with antimicrobial properties.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 38,
+    name: 'Lemongrass Essential Oil',
+    hsnCode: '3301.29',
+    categoryId: 7,
+    description: 'Fresh lemongrass essential oil with insect repelling and cleansing properties.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 39,
+    name: 'Orange Essential Oil',
+    hsnCode: '3301.29',
+    categoryId: 7,
+    description: 'Uplifting orange essential oil for energy and mood enhancement.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 40,
+    name: 'Cedarwood Essential Oil',
+    hsnCode: '3301.29',
+    categoryId: 7,
+    description: 'Grounding cedarwood essential oil for meditation and focus.',
+    image: '/product-image/placeholder.svg'
+  },
+
+  // Oleoresins (Category 8)
+  {
+    id: 41,
+    name: 'Black Pepper Oleoresin',
+    hsnCode: '1302.19',
+    categoryId: 8,
+    description: 'Concentrated black pepper oleoresin for food flavoring and pharmaceutical use.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 42,
+    name: 'Paprika Oleoresin',
+    hsnCode: '1302.19',
+    categoryId: 8,
+    description: 'Natural paprika oleoresin for color and flavor enhancement in food products.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 43,
+    name: 'Turmeric Oleoresin',
+    hsnCode: '1302.19',
+    categoryId: 8,
+    description: 'Pure turmeric oleoresin with anti-inflammatory and coloring properties.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 44,
+    name: 'Ginger Oleoresin',
+    hsnCode: '1302.19',
+    categoryId: 8,
+    description: 'Concentrated ginger oleoresin for flavoring and medicinal applications.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 45,
+    name: 'Capsicum (Chilli) Oleoresin',
+    hsnCode: '1302.19',
+    categoryId: 8,
+    description: 'Hot capsicum oleoresin for spice and heat enhancement in food products.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 46,
+    name: 'Cinnamon Oleoresin',
+    hsnCode: '1302.19',
+    categoryId: 8,
+    description: 'Aromatic cinnamon oleoresin for flavoring and fragrance applications.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 47,
+    name: 'Cardamom Oleoresin',
+    hsnCode: '1302.19',
+    categoryId: 8,
+    description: 'Premium cardamom oleoresin with intense flavor and aroma.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 48,
+    name: 'Nutmeg Oleoresin',
+    hsnCode: '1302.19',
+    categoryId: 8,
+    description: 'Concentrated nutmeg oleoresin for culinary and therapeutic use.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 49,
+    name: 'Clove Oleoresin',
+    hsnCode: '1302.19',
+    categoryId: 8,
+    description: 'Potent clove oleoresin with antimicrobial and flavoring properties.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 50,
+    name: 'Coriander Oleoresin',
+    hsnCode: '1302.19',
+    categoryId: 8,
+    description: 'Fresh coriander oleoresin for seasoning and pharmaceutical applications.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 51,
+    name: 'Cumin Oleoresin',
+    hsnCode: '1302.19',
+    categoryId: 8,
+    description: 'Aromatic cumin oleoresin essential for Indian cuisine flavoring.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 52,
+    name: 'Garlic Oleoresin',
+    hsnCode: '1302.19',
+    categoryId: 8,
+    description: 'Concentrated garlic oleoresin for flavor enhancement and health benefits.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 53,
+    name: 'Fenugreek Oleoresin',
+    hsnCode: '1302.19',
+    categoryId: 8,
+    description: 'Bitter-sweet fenugreek oleoresin with medicinal and culinary applications.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 54,
+    name: 'Celery Oleoresin',
+    hsnCode: '1302.19',
+    categoryId: 8,
+    description: 'Fresh celery oleoresin for seasoning and natural flavoring.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 55,
+    name: 'Mace Oleoresin',
+    hsnCode: '1302.19',
+    categoryId: 8,
+    description: 'Delicate mace oleoresin with warm, spicy flavor profile.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 56,
+    name: 'Mustard Oleoresin',
+    hsnCode: '1302.19',
+    categoryId: 8,
+    description: 'Pungent mustard oleoresin for condiment and pharmaceutical use.',
+    image: '/product-image/placeholder.svg'
+  },
+  {
+    id: 57,
+    name: 'Bay Leaf Oleoresin',
+    hsnCode: '1302.19',
+    categoryId: 8,
+    description: 'Aromatic bay leaf oleoresin for flavoring and preservative applications.',
+    image: '/product-image/placeholder.svg'
   }
 ];
 

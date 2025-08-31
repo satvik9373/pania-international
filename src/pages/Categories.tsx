@@ -7,18 +7,14 @@ import Footer from '@/components/Footer';
 const Categories = () => {
   const navigate = useNavigate();
 
-  // Create 8 total categories (7 with images, 1 empty)
+  // Create 8 total categories (all with images)
   const allCategories = [
-    ...categories, // First 7 categories with images
-    // 1 empty category
-    { id: 8, title: 'Coming Soon', bgColor: 'bg-gray-200', textColor: 'text-gray-600', icon: '📦' }
+    ...categories // All 8 categories with images
   ];
 
   const handleCategoryClick = (categoryId: number) => {
-    // Only navigate for categories with actual content (1-7)
-    if (categoryId <= 7) {
-      navigate(`/category/${categoryId}`);
-    }
+    // Navigate for all categories (1-8)
+    navigate(`/category/${categoryId}`);
   };
 
   return (
@@ -45,9 +41,9 @@ const Categories = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 onClick={() => handleCategoryClick(category.id)}
-                className={`relative rounded-2xl overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-300 min-h-[200px] shadow-lg hover:shadow-xl ${category.id >= 8 ? 'cursor-not-allowed opacity-60' : ''}`}
+                className={`relative rounded-2xl overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-300 min-h-[200px] shadow-lg hover:shadow-xl`}
               >
-                {/* Background Images for categories 1-7 */}
+                {/* Background Images for categories 1-8 */}
                 {category.id === 1 && (
                   <div 
                     className="absolute inset-0 bg-cover bg-center"
@@ -97,7 +93,7 @@ const Categories = () => {
                   <div 
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
-                      backgroundImage: `url('/category-image/Oleoresin.webp')`
+                      backgroundImage: `url('/category-image/Pharma.webp')`
                     }}
                   >
                   </div>
@@ -106,24 +102,23 @@ const Categories = () => {
                   <div 
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
-                      backgroundImage: `url('/category-image/Pharma.webp')`
+                      backgroundImage: `url('/category-image/essential-oil.webp')`
+                    }}
+                  >
+                  </div>
+                )}
+                {category.id === 8 && (
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url('/category-image/oleo.webp')`
                     }}
                   >
                   </div>
                 )}
 
-                {/* Empty boxes styling for categories 8+ (Coming Soon) */}
-                {category.id >= 8 && (
-                  <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="text-4xl mb-2">{category.icon}</div>
-                      <p className="text-gray-500 font-medium">{category.title}</p>
-                    </div>
-                  </div>
-                )}
-
                 <div className="relative z-10 flex h-full p-6">
-                  {/* No text content - just background images for first 7, coming soon for last 1 */}
+                  {/* No text content - just background images */}
                 </div>
               </motion.div>
             ))}

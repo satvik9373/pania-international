@@ -81,7 +81,7 @@ const CategorySection = () => {
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('/category-image/Oleoresin.webp')`
+                    backgroundImage: `url('/category-image/Pharma.webp')`
                   }}
                 >
                 </div>
@@ -90,13 +90,24 @@ const CategorySection = () => {
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('/category-image/Pharma.webp')`
+                    backgroundImage: `url('/category-image/essential-oil.webp')`
+                  }}
+                >
+                </div>
+              )}
+              {category.id === 8 && (
+                <div 
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url('/category-image/oleo.webp')`
                   }}
                 >
                 </div>
               )}
 
               <div className="relative z-10 flex h-full p-6">
+                {/* Dark overlay for better contrast */}
+                <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-300"></div>
                 {/* No text content - just background images */}
               </div>
             </motion.div>

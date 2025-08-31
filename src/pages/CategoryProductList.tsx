@@ -46,13 +46,15 @@ const CategoryProductList = () => {
       case 3:
         return '/category-product-banners/Refined-oil.webp';
       case 4:
-        return '/category-product-banners/Wheat-and-Rice.webp';
+        return '/category-product-banners/natural-sweetner.webp';
       case 5:
         return '/category-product-banners/Pulse.webp';
       case 6:
-        return '/category-product-banners/OleoResin.webp';
-      case 7:
         return '/category-product-banners/Pharmaceuticals-&-Nutraceuticals.webp';
+      case 7:
+        return '/category-product-banners/Essential-Oil.webp';
+      case 8:
+        return '/category-product-banners/OleoResin.webp';
       default:
         return '/category-product-banners/Fruits-and-Veg.webp';
     }
@@ -61,19 +63,21 @@ const CategoryProductList = () => {
   const getCategoryBannerAlt = (categoryId: number) => {
     switch (categoryId) {
       case 1:
-        return 'Fruits and Vegetables Banner';
+        return 'Fresh Fruits & Vegetables Banner';
       case 2:
         return 'Oils, Fats & Ghee Banner';
       case 3:
         return 'Refined Oils Banner';
       case 4:
-        return 'Sweeteners & Sugars Banner';
+        return 'Natural Sweeteners & Sugars Banner';
       case 5:
         return 'Grains & Staples Banner';
       case 6:
-        return 'Oleoresin Banner';
+        return 'Pharmaceuticals & Nutraceuticals Banner';
       case 7:
-        return 'Pharma Banner';
+        return 'Essential Oils Banner';
+      case 8:
+        return 'Oleoresins Banner';
       default:
         return 'Category Banner';
     }
