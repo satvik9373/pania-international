@@ -38,7 +38,7 @@ const CategorySection = () => {
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('/product-image/Fresh-Veggies.jpg')`
+                    backgroundImage: `url('/category-image/Fresh Fruits & Vegetables.png')`
                   }}
                 >
                 </div>
