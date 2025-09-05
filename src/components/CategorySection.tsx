@@ -23,7 +23,7 @@ const CategorySection = () => {
         </div>
 
         {/* Categories Grid - Responsive Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {categories.map((category, index) => (
             <motion.div
               key={category.id}
@@ -31,14 +31,14 @@ const CategorySection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               onClick={() => handleCategoryClick(category.id)}
-              className={`relative rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-300 min-h-[150px] sm:min-h-[180px] lg:min-h-[200px] shadow-lg hover:shadow-xl`}
+              className={`relative rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-300 min-h-[120px] sm:min-h-[150px] lg:min-h-[180px] shadow-lg hover:shadow-xl`}
             >
               {/* Background Images for categories based on sequence */}
               {category.id === 1 && (
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('/category-image/Fresh Fruits & Vegetables.png')`
+                    backgroundImage: `url('/product-image/Fresh-Veggies.jpg')`
                   }}
                 >
                 </div>
@@ -47,7 +47,7 @@ const CategorySection = () => {
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('/category-image/oil-fats&ghee.png')`
+                    backgroundImage: `url('/product-image/Peanut-Oil.webp')`
                   }}
                 >
                 </div>
@@ -92,7 +92,7 @@ const CategorySection = () => {
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('/category-image/essential-oil.webp')`
+                    backgroundImage: `url('/product-image/Lavender,-Tea-Tree,-Peppermint,-etc..webp')`
                   }}
                 >
                 </div>
@@ -108,8 +108,6 @@ const CategorySection = () => {
               )}
 
               <div className="relative z-10 flex h-full p-3 sm:p-4 lg:p-6">
-                {/* Dark overlay for better contrast */}
-                <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-300"></div>
                 {/* No text content - just background images */}
               </div>
             </motion.div>

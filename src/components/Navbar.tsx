@@ -58,20 +58,27 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className={`md:hidden absolute top-full left-0 right-0 ${transparent ? 'bg-black/90 backdrop-blur-sm' : 'bg-white'} border-t border-gray-100 shadow-lg z-40`}>
-          <div className="px-3 py-2 space-y-1">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className={`block px-3 py-2 text-sm ${transparent ? 'text-white hover:text-cream hover:bg-white/10' : 'text-gray-700 hover:text-olive-green hover:bg-gray-50'} transition-colors rounded-md`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </a>
-            ))}
+        <>
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 bg-black/50 z-30 md:hidden"
+            onClick={() => setIsMenuOpen(false)}
+          />
+          <div className={`md:hidden absolute top-full left-0 right-0 ${transparent ? 'bg-black/90 backdrop-blur-sm' : 'bg-white'} border-t border-gray-100 shadow-lg z-40`}>
+            <div className="px-3 py-2 space-y-1">
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={`block px-3 py-2 text-sm ${transparent ? 'text-white hover:text-cream hover:bg-white/10' : 'text-gray-700 hover:text-olive-green hover:bg-gray-50'} transition-colors rounded-md`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
+        </>
       )}
     </nav>
   );

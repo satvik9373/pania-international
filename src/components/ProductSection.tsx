@@ -26,7 +26,7 @@ const ProductSection = () => {
       id: 4,
       name: 'Honey',
       hsn: 'HSN: 04090000',
-      image: '/product-image/honey-2.webp'
+      image: '/product-image/honey.jpg'
     }
   ];
 

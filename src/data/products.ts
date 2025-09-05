@@ -98,7 +98,7 @@ export const products: Product[] = [
     hsnCode: '0709.99',
     categoryId: 1,
     description: 'Variety of fresh seasonal vegetables including leafy greens, root vegetables and more.',
-    image: '/product-image/fresh-vegetables-mix.jpg'
+    image: '/product-image/Fresh-Veggies.jpg'
   },
   {
     id: 4,
@@ -124,7 +124,7 @@ export const products: Product[] = [
     hsnCode: '1508.10',
     categoryId: 2,
     description: 'Natural cold pressed peanut oil retaining all essential nutrients and flavor.',
-    image: '/product-image/oil-bottles.jpg'
+    image: '/product-image/Peanut-Oil.webp'
   },
   {
     id: 7,
@@ -140,7 +140,7 @@ export const products: Product[] = [
     hsnCode: '1513.11',
     categoryId: 2,
     description: 'Virgin cold pressed coconut oil with natural aroma and health benefits.',
-    image: '/product-image/oil-bottles.jpg'
+    image: '/product-image/Coconut oil.webp'
   },
   {
     id: 9,
@@ -148,7 +148,7 @@ export const products: Product[] = [
     hsnCode: '1512.19',
     categoryId: 2,
     description: 'Heart-healthy cold pressed safflower oil rich in oleic acid.',
-    image: '/product-image/oil-bottles.jpg'
+    image: '/product-image/Safflower-Oil.webp'
   },
   {
     id: 10,
@@ -302,7 +302,7 @@ export const products: Product[] = [
     hsnCode: '3301.29',
     categoryId: 7,
     description: 'Pure lavender essential oil for aromatherapy and relaxation.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Lavender,-Tea-Tree,-Peppermint,-etc..webp'
   },
   {
     id: 28,
@@ -310,7 +310,7 @@ export const products: Product[] = [
     hsnCode: '3301.29',
     categoryId: 7,
     description: 'Antiseptic tea tree essential oil for skincare and wellness.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Lavender,-Tea-Tree,-Peppermint,-etc..webp'
   },
   {
     id: 29,
@@ -318,7 +318,7 @@ export const products: Product[] = [
     hsnCode: '3301.29',
     categoryId: 7,
     description: 'Refreshing peppermint essential oil for aromatherapy and cooling effects.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Lavender,-Tea-Tree,-Peppermint,-etc..webp'
   },
   {
     id: 30,
@@ -326,7 +326,7 @@ export const products: Product[] = [
     hsnCode: '3301.29',
     categoryId: 7,
     description: 'Premium sandalwood essential oil with calming and spiritual properties.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Sandalwood.webp'
   },
   {
     id: 31,
@@ -342,7 +342,7 @@ export const products: Product[] = [
     hsnCode: '3301.29',
     categoryId: 7,
     description: 'Tropical ylang ylang essential oil for emotional balance and relaxation.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Ylang-Ylang.webp'
   },
   {
     id: 33,
@@ -350,7 +350,7 @@ export const products: Product[] = [
     hsnCode: '3301.29',
     categoryId: 7,
     description: 'Clary sage essential oil for hormonal balance and stress relief.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Clary-Sage,-Geranium,-Bergamot,-Patchouli.webp'
   },
   {
     id: 34,
@@ -358,7 +358,7 @@ export const products: Product[] = [
     hsnCode: '3301.29',
     categoryId: 7,
     description: 'Balancing geranium essential oil for skincare and emotional wellness.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Clary-Sage,-Geranium,-Bergamot,-Patchouli.webp'
   },
   {
     id: 35,
@@ -366,7 +366,7 @@ export const products: Product[] = [
     hsnCode: '3301.29',
     categoryId: 7,
     description: 'Citrusy bergamot essential oil for mood enhancement and relaxation.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Clary-Sage,-Geranium,-Bergamot,-Patchouli.webp'
   },
   {
     id: 36,
@@ -374,7 +374,7 @@ export const products: Product[] = [
     hsnCode: '3301.29',
     categoryId: 7,
     description: 'Earthy patchouli essential oil for grounding and skin benefits.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Clary-Sage,-Geranium,-Bergamot,-Patchouli.webp'
   },
   {
     id: 37,
@@ -382,7 +382,7 @@ export const products: Product[] = [
     hsnCode: '3301.29',
     categoryId: 7,
     description: 'Warming cinnamon essential oil with antimicrobial properties.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Cinnamon.webp'
   },
   {
     id: 38,
@@ -390,7 +390,7 @@ export const products: Product[] = [
     hsnCode: '3301.29',
     categoryId: 7,
     description: 'Fresh lemongrass essential oil with insect repelling and cleansing properties.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Lemongrass,-Orange-Essential-Oil.webp'
   },
   {
     id: 39,
@@ -398,7 +398,7 @@ export const products: Product[] = [
     hsnCode: '3301.29',
     categoryId: 7,
     description: 'Uplifting orange essential oil for energy and mood enhancement.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Lemongrass,-Orange-Essential-Oil.webp'
   },
   {
     id: 40,
@@ -406,7 +406,7 @@ export const products: Product[] = [
     hsnCode: '3301.29',
     categoryId: 7,
     description: 'Grounding cedarwood essential oil for meditation and focus.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Cedarwood-Essential-Oil.webp'
   },
 
   // Oleoresins (Category 8)
