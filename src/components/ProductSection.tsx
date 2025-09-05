@@ -52,30 +52,26 @@ const ProductSection = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex justify-start items-center mb-12">
-          <h2 className="text-5xl font-serif text-black">Best Selling Products</h2>
+        <div className="flex justify-start items-center mb-8 sm:mb-12">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-black">Best Selling Products</h2>
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 justify-items-center">
           {products.map((product, index) => (
             <motion.div
               key={product.id}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="cursor-pointer flex flex-col items-center"
+              className="cursor-pointer flex flex-col items-center w-full max-w-[280px] sm:max-w-[260px]"
               onClick={() => handleProductClick(product.id)}
             >
               {/* Fixed size product card */}
-              <div className="flex flex-col items-center">
-                {/* Product Image Box - Fixed dimensions: 260.5px x 260.46px */}
+              <div className="flex flex-col items-center w-full">
+                {/* Product Image Box - Responsive dimensions */}
                 <div 
-                  className="bg-white rounded-2xl transition-all duration-300 flex items-center justify-center relative overflow-hidden group"
-                  style={{ 
-                    width: '260.5px', 
-                    height: '260.46px' 
-                  }}
+                  className="bg-white rounded-2xl transition-all duration-300 flex items-center justify-center relative overflow-hidden group w-full aspect-square max-w-[260px] sm:max-w-[240px] mx-auto"
                 >
                   {product.image ? (
                     <div className="relative w-full h-full overflow-hidden">
@@ -86,27 +82,27 @@ const ProductSection = () => {
                       />
                     </div>
                   ) : (
-                    <span className="text-6xl opacity-30">📦</span>
+                    <span className="text-4xl sm:text-6xl opacity-30">📦</span>
                   )}
                 </div>
 
                 {/* Product Info Below - Outside the fixed card */}
-                <div className="flex flex-col items-center gap-3 mt-4 w-full max-w-[260.5px]">
+                <div className="flex flex-col items-center gap-2 sm:gap-3 mt-3 sm:mt-4 w-full">
                   {/* Product Name */}
-                  <h3 className="text-lg font-medium font-sans text-black text-center leading-tight">
+                  <h3 className="text-base sm:text-lg font-medium font-sans text-black text-center leading-tight px-2">
                     {product.name}
                   </h3>
 
                   {/* Grid layout: HSN Code on left, Buy Now Button on right */}
                   <div className="grid grid-cols-2 gap-2 w-full items-center">
                     {/* HSN Code - Left side */}
-                    <p className="text-xs text-black text-left font-medium font-sans">
+                    <p className="text-xs sm:text-sm text-black text-left font-medium font-sans">
                       {product.hsn}
                     </p>
 
                     {/* Buy Now Button - Right side (smaller) */}
                     <button 
-                      className="text-white py-1.5 px-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:shadow-md text-xs font-sans"
+                      className="text-white py-1.5 px-2 sm:px-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:shadow-md text-xs sm:text-sm font-sans"
                       style={{ backgroundColor: '#2e3e27' }}
                       onClick={(e) => {
                         e.stopPropagation();

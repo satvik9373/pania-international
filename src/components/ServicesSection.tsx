@@ -17,7 +17,7 @@ const ServicesSection = () => {
               <img
                 src="/service-img/Services.webp"
                 alt="Our Services"
-                className="w-full h-[500px] object-cover"
+                className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>

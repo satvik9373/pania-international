@@ -51,11 +51,11 @@ const Index = () => {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-5xl text-white mb-12">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl text-white mb-8 sm:mb-12">
                   Why Pania?
                 </h2>
                 
-                <div className="grid md:grid-cols-4 gap-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
                   <div className="text-center">
                     <div className="w-20 h-20 border-2 border-white rounded-full flex items-center justify-center mx-auto mb-6">
                       <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

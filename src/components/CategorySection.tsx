@@ -10,18 +10,20 @@ const CategorySection = () => {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-warm-beige to-cream">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-br from-warm-beige to-cream">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
         {/* Section Header */}
-        <div className="text-left mb-12">
-          <div className="flex items-center mb-4">
-            <div className="h-px bg-terracotta w-24"></div>
-            <h2 className="text-5xl font-serif text-rich-brown ml-8">Shop By Category</h2>
+        <div className="text-left mb-6 sm:mb-8 lg:mb-12">
+          <div className="flex items-center mb-2 sm:mb-4">
+            <div className="h-px bg-terracotta w-12 sm:w-16 lg:w-24"></div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-rich-brown ml-4 sm:ml-6 lg:ml-8">
+              Shop By Category
+            </h2>
           </div>
         </div>
 
-        {/* Categories Grid - 3x2 Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Categories Grid - Responsive Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
           {categories.map((category, index) => (
             <motion.div
               key={category.id}
@@ -29,7 +31,7 @@ const CategorySection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               onClick={() => handleCategoryClick(category.id)}
-              className={`relative rounded-2xl overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-300 min-h-[200px] shadow-lg hover:shadow-xl`}
+              className={`relative rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-300 min-h-[150px] sm:min-h-[180px] lg:min-h-[200px] shadow-lg hover:shadow-xl`}
             >
               {/* Background Images for categories based on sequence */}
               {category.id === 1 && (
@@ -105,7 +107,7 @@ const CategorySection = () => {
                 </div>
               )}
 
-              <div className="relative z-10 flex h-full p-6">
+              <div className="relative z-10 flex h-full p-3 sm:p-4 lg:p-6">
                 {/* Dark overlay for better contrast */}
                 <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-300"></div>
                 {/* No text content - just background images */}
@@ -115,10 +117,10 @@ const CategorySection = () => {
         </div>
 
         {/* Show More Button */}
-        <div className="flex justify-center mt-12">
+        <div className="flex justify-center mt-6 sm:mt-8 lg:mt-12">
           <button
             onClick={() => navigate('/categories')}
-            className="bg-olive-green text-white px-8 py-3 rounded-md text-base font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            className="bg-olive-green text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-md text-sm sm:text-base font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
             Show More
           </button>
