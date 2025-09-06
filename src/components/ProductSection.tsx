@@ -93,14 +93,14 @@ const ProductSection = () => {
                     {product.name}
                   </h3>
 
-                  {/* Grid layout: HSN Code on left, Buy Now Button on right */}
+                  {/* Grid layout: HSN Code on left, Order now Button on right */}
                   <div className="grid grid-cols-2 gap-2 w-full items-center">
                     {/* HSN Code - Left side */}
                     <p className="text-xs sm:text-sm text-black text-left font-medium font-sans">
                       {product.hsn}
                     </p>
 
-                    {/* Buy Now Button - Right side (smaller) */}
+                    {/* Order now Button - Right side (smaller) */}
                     <button 
                       className="text-white py-1.5 px-2 sm:px-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:shadow-md text-xs sm:text-sm font-sans"
                       style={{ backgroundColor: '#2e3e27' }}
@@ -109,7 +109,7 @@ const ProductSection = () => {
                         handleContactForMore();
                       }}
                     >
-                      Buy now
+                      Order now
                     </button>
                   </div>
                 </div>
