@@ -31,7 +31,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-warm-beige to-cream">
+    <div className="min-h-screen">
       {/* Announcement */}
       <AnnouncementBar />
 
@@ -39,18 +39,32 @@ const Contact = () => {
       <Navbar />
 
       {/* Header */}
-      <div className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="relative text-white">
+        {/* Background Wave Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('/graphical-assets/graphical-assets.webp')`
+          }}
+        ></div>
+        
+        {/* Content Overlay */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-rich-brown mb-4">Contact Us</h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif tracking-wide mb-4">CONTACT US</h1>
+            <p className="text-lg text-white/90 max-w-2xl mx-auto">
               Ready to proceed with your purchase? Get in touch with our team for personalized assistance and bulk pricing.
             </p>
+            <div className="mt-6">
+              <a href="/" className="text-sm text-white underline mr-2">Home</a>
+              <span className="text-sm text-white">›</span>
+              <span className="text-sm text-white ml-2">Contact Us</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <motion.div

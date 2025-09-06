@@ -218,7 +218,7 @@ export const products: Product[] = [
     hsnCode: '1006.30',
     categoryId: 5,
     description: 'Authentic GI tagged Kala Namak rice with unique aroma and taste.',
-    image: '/product-image/rice.jpeg'
+    image: '/product-image/black-saltkala-namak-powder-100-g-quick-pantry.jpg'
   },
   {
     id: 18,
@@ -242,7 +242,7 @@ export const products: Product[] = [
     hsnCode: '0713.20',
     categoryId: 5,
     description: 'Premium quality chickpeas rich in protein and fiber.',
-    image: '/product-image/rf.jpg'
+    image: '/product-image/chana.jpg'
   },
   {
     id: 21,
@@ -250,7 +250,7 @@ export const products: Product[] = [
     hsnCode: '0713.31',
     categoryId: 5,
     description: 'Green gram beans perfect for dal and sprouting.',
-    image: '/product-image/rf.jpg'
+    image: '/product-image/moong.webp'
   },
   {
     id: 22,
@@ -258,7 +258,7 @@ export const products: Product[] = [
     hsnCode: '0713.32',
     categoryId: 5,
     description: 'Black gram lentils essential for South Indian cuisine.',
-    image: '/product-image/rf.jpg'
+    image: '/product-image/urad.webp'
   },
   {
     id: 23,
@@ -266,7 +266,7 @@ export const products: Product[] = [
     hsnCode: '0713.33',
     categoryId: 5,
     description: 'Red lentils that cook quickly and are rich in protein.',
-    image: '/product-image/rf.jpg'
+    image: '/product-image/massor.jpg'
   },
   {
     id: 24,
@@ -274,7 +274,7 @@ export const products: Product[] = [
     hsnCode: '0713.xx',
     categoryId: 5,
     description: 'Variety of other pulses including arhar, rajma, and regional varieties.',
-    image: '/product-image/rf.jpg'
+    image: '/product-image/otherpulses.jpg'
   },
 
   // Pharmaceuticals & Nutraceuticals (Category 6)

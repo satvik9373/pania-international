@@ -47,7 +47,7 @@ const CategorySection = () => {
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('/product-image/Peanut-Oil.webp')`
+                    backgroundImage: `url('/category-image/oil-fats&ghee.png')`
                   }}
                 >
                 </div>

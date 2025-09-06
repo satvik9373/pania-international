@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const Services = () => {
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen">
       {/* Announcement */}
       <AnnouncementBar />
 
@@ -13,8 +13,17 @@ const Services = () => {
       <Navbar />
 
       {/* Hero */}
-      <header className="relative bg-olive-green text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
+      <header className="relative text-white">
+        {/* Background Wave Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('/graphical-assets/graphical-assets.webp')`
+          }}
+        ></div>
+        
+        {/* Content Overlay */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif tracking-wide">OUR SERVICES</h1>
           <div className="mt-6">
             <a href="/" className="text-sm text-white underline mr-2">Home</a>
@@ -22,20 +31,13 @@ const Services = () => {
             <span className="text-sm text-white ml-2">Services</span>
           </div>
         </div>
-
-        {/* Curved Bottom Wave */}
-        <div className="absolute left-0 right-0 bottom-0 overflow-hidden leading-[0]">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-24 md:h-32">
-            <path d="M0,0 C150,100 350,100 600,50 C850,0 1050,0 1200,80 L1200,120 L0,120 Z" fill="#edeee8"></path>
-          </svg>
-        </div>
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
         
         {/* Services Section from Home Page */}
-        <section className="py-16 bg-white mb-12">
+        <section className="py-16 mb-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Image on Left */}
@@ -141,7 +143,7 @@ const Services = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             
             {/* Service 1 */}
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="p-6">
               <h3 className="text-xl font-serif text-olive-green mb-3">Premium Sourcing</h3>
               <p className="font-sans">
                 We source the finest natural ingredients directly from trusted farmers and producers 
@@ -150,7 +152,7 @@ const Services = () => {
             </div>
 
             {/* Service 2 */}
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="p-6">
               <h3 className="text-xl font-serif text-olive-green mb-3">Quality Processing</h3>
               <p className="font-sans">
                 Our state-of-the-art processing facilities maintain the integrity of natural ingredients 
@@ -159,7 +161,7 @@ const Services = () => {
             </div>
 
             {/* Service 3 */}
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="p-6">
               <h3 className="text-xl font-serif text-olive-green mb-3">Global Distribution</h3>
               <p className="font-sans">
                 We handle complete logistics and distribution, ensuring your products reach global 
@@ -168,7 +170,7 @@ const Services = () => {
             </div>
 
             {/* Service 4 */}
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="p-6">
               <h3 className="text-xl font-serif text-olive-green mb-3">Partnership Support</h3>
               <p className="font-sans">
                 We build long-term partnerships with farmers and manufacturers, providing ongoing 
@@ -176,25 +178,6 @@ const Services = () => {
               </p>
             </div>
 
-          </div>
-
-          {/* Categories We Serve */}
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-serif text-olive-green mb-6">Product Categories</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <h4 className="text-lg font-semibold text-rich-brown mb-2">Natural Oils & Ghee</h4>
-                <p className="text-sm text-gray-600">Cold-pressed oils and traditional A2 bilona ghee</p>
-              </div>
-              <div className="text-center">
-                <h4 className="text-lg font-semibold text-rich-brown mb-2">Organic Grains</h4>
-                <p className="text-sm text-gray-600">Premium wheat flour, rice, and traditional grains</p>
-              </div>
-              <div className="text-center">
-                <h4 className="text-lg font-semibold text-rich-brown mb-2">Natural Sweeteners</h4>
-                <p className="text-sm text-gray-600">Pure jaggery and traditional sweetening solutions</p>
-              </div>
-            </div>
           </div>
 
           {/* Call to Action */}
