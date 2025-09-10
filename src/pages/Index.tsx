@@ -52,7 +52,7 @@ const Index = () => {
                 viewport={{ once: true }}
               >
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl text-white mb-8 sm:mb-12">
-                  Why Pania?
+                  Why Choose Pania?
                 </h2>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">

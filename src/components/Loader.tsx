@@ -54,7 +54,7 @@ const Loader = ({ onComplete }: LoaderProps) => {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-warm-beige to-cream"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-warm-beige"
     >
       <div className="flex items-center justify-center">
         {/* Simple image display - no effects */}

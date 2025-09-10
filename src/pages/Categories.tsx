@@ -21,7 +21,7 @@ const Categories = () => {
     <div className="min-h-screen bg-white">
       <Navbar />
       
-      <section className="py-16 bg-gradient-to-br from-warm-beige to-cream">
+      <section className="py-16 bg-warm-beige">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center mb-12">

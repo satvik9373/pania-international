@@ -10,7 +10,7 @@ const CategorySection = () => {
   };
 
   return (
-    <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-br from-warm-beige to-cream">
+    <section className="py-8 sm:py-12 lg:py-16 bg-warm-beige">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
         {/* Section Header */}
         <div className="text-left mb-6 sm:mb-8 lg:mb-12">

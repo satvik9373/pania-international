@@ -37,7 +37,7 @@ const ImageSlider = () => {
   }, [images.length]);
 
   return (
-    <section className="py-16 bg-gradient-to-br from-warm-beige to-cream">
+    <section className="py-16 bg-warm-beige">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-rich-brown mb-4">
@@ -67,7 +67,7 @@ const ImageSlider = () => {
                     alt={image.alt}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                  <div className="absolute inset-0 bg-black/20"></div>
                   
                   {/* Content overlay */}
                   <div className="absolute bottom-8 left-8 text-white">

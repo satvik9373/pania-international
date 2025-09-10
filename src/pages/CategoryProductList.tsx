@@ -84,7 +84,7 @@ const CategoryProductList = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-warm-beige to-cream font-sans">
+    <div className="min-h-screen bg-warm-beige font-sans">
       {/* Standard Announcement Bar */}
       <AnnouncementBar />
       

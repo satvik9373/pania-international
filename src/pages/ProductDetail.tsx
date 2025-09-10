@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { getProductById, getCategoryById, getProductsByCategory } from '@/data/products';
@@ -132,16 +131,11 @@ const ProductDetail = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Hero Section */}
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-8">
+        <div className="bg-white overflow-hidden mb-8">
           <div className="grid lg:grid-cols-2 gap-8 p-8">
             {/* Product Image */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="relative"
-            >
-              <div className="aspect-square bg-gradient-to-br from-olive-green to-terracotta rounded-2xl overflow-hidden">
+            <div className="relative">
+              <div className="aspect-square bg-white overflow-hidden">
                 {product.image ? (
                   <img
                     src={product.image}
@@ -150,52 +144,38 @@ const ProductDetail = () => {
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center">
-                    <span className="text-8xl text-white opacity-50">📦</span>
+                    <span className="text-8xl text-gray-300">📦</span>
                   </div>
                 )}
               </div>
-            </motion.div>
+            </div>
 
             {/* Product Info */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex flex-col justify-center space-y-6"
-            >
+            <div className="flex flex-col justify-start space-y-6">
               <div>
-                <h1 className="text-3xl lg:text-4xl font-bold text-rich-brown mb-4">
+                <h1 className="text-3xl lg:text-4xl font-bold text-black mb-4">
                   {product.name}
                 </h1>
-                <div className="flex items-center gap-2 mb-6">
-                  <span className="text-sm font-medium text-gray-500">HSN Code:</span>
-                  <span className="text-lg font-semibold text-olive-green bg-gray-100 px-3 py-1 rounded-full">
+                <div className="mb-6">
+                  <span className="text-sm font-medium text-gray-500">HSN CODE: </span>
+                  <span className="text-lg font-semibold text-black">
                     {product.hsnCode}
                   </span>
                 </div>
               </div>
 
               <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-black">Description</h3>
                 <p className="text-gray-600 leading-relaxed">
                   {product.description}
                 </p>
               </div>
-
-              <motion.button
-                onClick={handleContactForMore}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl w-fit"
-                style={{ backgroundColor: '#2e3e27' }}
-              >
-                Contact for More
-              </motion.button>
-            </motion.div>
+            </div>
           </div>
         </div>
 
         {/* Tabs Section */}
-        <div className="rounded-2xl overflow-hidden mb-8">
+        <div className="bg-white overflow-hidden mb-8">
           {/* Tab Headers */}
           <div className="border-b border-gray-200">
             <div className="flex">
@@ -206,7 +186,7 @@ const ProductDetail = () => {
                   className={`px-6 py-4 text-sm font-medium transition-colors duration-300 border-b-2 ${
                     activeTab === tab.id
                       ? 'border-black text-black'
-                      : 'border-transparent text-black hover:text-gray-700'
+                      : 'border-transparent text-gray-500 hover:text-black'
                   }`}
                 >
                   {tab.label}
@@ -217,61 +197,50 @@ const ProductDetail = () => {
 
           {/* Tab Content */}
           <div className="p-8">
-            <motion.div
-              key={activeTab}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-            >
+            <div>
               {getTabContent()}
-            </motion.div>
+            </div>
           </div>
         </div>
 
         {/* Related Products */}
         {relatedProducts.length > 0 && (
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+          <div className="bg-white overflow-hidden">
             <div className="p-8">
-              <h2 className="text-2xl font-bold text-rich-brown mb-8 text-center">
+              <h2 className="text-2xl font-bold text-black mb-8 text-center">
                 You Might Also Like
               </h2>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {relatedProducts.map((relatedProduct, index) => (
-                  <motion.div
+                  <div
                     key={relatedProduct.id}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.6 }}
                     className="cursor-pointer flex flex-col items-center"
                     onClick={() => handleRelatedProductClick(relatedProduct.id)}
                   >
-                    {/* White Square Image Box */}
-                    <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 aspect-square w-full max-w-[200px] p-4 flex items-center justify-center">
+                    {/* Simple Image Box */}
+                    <div className="bg-white aspect-square w-full max-w-[200px] p-4 flex items-center justify-center">
                       {relatedProduct.image ? (
                         <img
                           src={relatedProduct.image}
                           alt={relatedProduct.name}
-                          className="w-full h-full max-w-[120px] max-h-[120px] object-contain hover:scale-105 transition-transform duration-300"
+                          className="w-full h-full max-w-[120px] max-h-[120px] object-contain"
                         />
                       ) : (
                         <span className="text-4xl opacity-30">📦</span>
                       )}
                     </div>
                     
-                    {/* Pyramid Structure Product Info Below */}
+                    {/* Product Info */}
                     <div className="flex flex-col items-center gap-2 mt-3 w-full">
-                      {/* Product Name - Top of pyramid */}
-                      <h3 className="text-lg font-medium font-sans text-black text-center leading-tight">
+                      <h3 className="text-lg font-medium text-black text-center leading-tight">
                         {relatedProduct.name}
                       </h3>
                       
-                      {/* HSN Code - Middle of pyramid */}
-                      <p className="text-sm text-black text-center font-medium font-sans">
+                      <p className="text-sm text-gray-500 text-center font-medium">
                         HSN: {relatedProduct.hsnCode}
                       </p>
                       
-                      {/* Contact Button - Bottom of pyramid */}
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
@@ -280,10 +249,10 @@ const ProductDetail = () => {
                         className="text-white py-2 px-6 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all duration-300 mt-1"
                         style={{ backgroundColor: '#2e3e27' }}
                       >
-                        Contact
+                        Order Now
                       </button>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>

@@ -34,10 +34,6 @@ const ProductSection = () => {
     navigate(`/product/${productId}`);
   };
 
-  const handleContactForMore = () => {
-    navigate('/contact');
-  };
-
   return (
   <section className="py-16 bg-white relative">
       {/* Wave Background */}
@@ -106,7 +102,7 @@ const ProductSection = () => {
                       style={{ backgroundColor: '#2e3e27' }}
                       onClick={(e) => {
                         e.stopPropagation();
-                        handleContactForMore();
+                        handleProductClick(product.id);
                       }}
                     >
                       Order now

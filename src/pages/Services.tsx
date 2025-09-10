@@ -54,7 +54,7 @@ const Services = () => {
                     alt="Our Services"
                     className="w-full h-[500px] object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                  <div className="absolute inset-0 bg-black/20"></div>
                 </div>
               </motion.div>
 

@@ -25,7 +25,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
         <div className="flex justify-between items-center h-14 sm:h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className={`${logoClass} text-lg sm:text-xl lg:text-2xl`}>
+            <h1 className={`${logoClass} text-lg sm:text-xl lg:text-2xl`} style={{ fontFamily: 'Soria, serif' }}>
               PANIA<span className={`${transparent ? 'text-cream' : 'text-olive-green'}`}>INTERNATIONAL</span>
             </h1>
           </div>
