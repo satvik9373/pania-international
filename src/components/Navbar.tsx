@@ -16,8 +16,8 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
   const navClass = transparent ? 'bg-transparent border-none' : 'bg-white border-b border-gray-100';
   const linkClass = (transparent
     ? 'text-white hover:text-cream'
-    : 'text-gray-700 hover:text-olive-green') + ' transition-colors duration-200 leading-tightish';
-  const logoClass = transparent ? 'text-white tracking-tight uppercase font-serif' : 'text-2xl text-rich-brown tracking-tight uppercase font-serif';
+    : 'text-gray-700 hover:text-olive-green') + ' transition-colors duration-200 leading-tightish font-medium';
+  const logoClass = transparent ? 'text-white tracking-tight uppercase' : 'text-2xl text-rich-brown tracking-tight uppercase';
 
   return (
     <nav className={`${navClass} relative z-50`}>
@@ -37,6 +37,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
                 key={item.name}
                 href={item.href}
                 className={`${linkClass} text-sm lg:text-base`}
+                style={{ fontFamily: 'InterTight-Medium, sans-serif' }}
               >
                 {item.name}
               </a>
@@ -47,7 +48,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`${transparent ? 'text-white hover:text-cream' : 'text-gray-700 hover:text-olive-green'} transition-colors p-1`}
+              className={`${transparent ? 'text-white hover:text-cream' : 'text-gray-700 hover:text-olive-green'} transition-colors p-2`}
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -70,7 +71,8 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`block px-3 py-2 text-sm ${transparent ? 'text-white hover:text-cream hover:bg-white/10' : 'text-gray-700 hover:text-olive-green hover:bg-gray-50'} transition-colors rounded-md`}
+                  className={`block px-3 py-2 text-sm ${transparent ? 'text-white hover:text-cream hover:bg-white/10' : 'text-gray-700 hover:text-olive-green hover:bg-gray-50'} transition-colors rounded-md font-medium`}
+                  style={{ fontFamily: 'InterTight-Medium, sans-serif' }}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}

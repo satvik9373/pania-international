@@ -416,7 +416,7 @@ export const products: Product[] = [
     hsnCode: '1302.19',
     categoryId: 8,
     description: 'Concentrated black pepper oleoresin for food flavoring and pharmaceutical use.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Black Pepper Oleoresin.jpg'
   },
   {
     id: 42,
@@ -424,7 +424,7 @@ export const products: Product[] = [
     hsnCode: '1302.19',
     categoryId: 8,
     description: 'Natural paprika oleoresin for color and flavor enhancement in food products.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Paprika Oleoresin.jpg'
   },
   {
     id: 43,
@@ -432,7 +432,7 @@ export const products: Product[] = [
     hsnCode: '1302.19',
     categoryId: 8,
     description: 'Pure turmeric oleoresin with anti-inflammatory and coloring properties.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Turmeric Oleoresin.jpg'
   },
   {
     id: 44,
@@ -440,7 +440,7 @@ export const products: Product[] = [
     hsnCode: '1302.19',
     categoryId: 8,
     description: 'Concentrated ginger oleoresin for flavoring and medicinal applications.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Ginger Oleoresin.webp'
   },
   {
     id: 45,
@@ -448,7 +448,7 @@ export const products: Product[] = [
     hsnCode: '1302.19',
     categoryId: 8,
     description: 'Hot capsicum oleoresin for spice and heat enhancement in food products.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Capsicum (Chilli) Oleoresin.jpg'
   },
   {
     id: 46,
@@ -456,7 +456,7 @@ export const products: Product[] = [
     hsnCode: '1302.19',
     categoryId: 8,
     description: 'Aromatic cinnamon oleoresin for flavoring and fragrance applications.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Cinnamon Oleoresin.png'
   },
   {
     id: 47,
@@ -464,7 +464,7 @@ export const products: Product[] = [
     hsnCode: '1302.19',
     categoryId: 8,
     description: 'Premium cardamom oleoresin with intense flavor and aroma.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Cardamom Oleoresin.webp'
   },
   {
     id: 48,
@@ -472,7 +472,7 @@ export const products: Product[] = [
     hsnCode: '1302.19',
     categoryId: 8,
     description: 'Concentrated nutmeg oleoresin for culinary and therapeutic use.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Nutmeg Oleoresin.jpg'
   },
   {
     id: 49,
@@ -480,7 +480,7 @@ export const products: Product[] = [
     hsnCode: '1302.19',
     categoryId: 8,
     description: 'Potent clove oleoresin with antimicrobial and flavoring properties.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Clove Oleoresin.jpg'
   },
   {
     id: 50,
@@ -488,7 +488,7 @@ export const products: Product[] = [
     hsnCode: '1302.19',
     categoryId: 8,
     description: 'Fresh coriander oleoresin for seasoning and pharmaceutical applications.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Coriander Oleoresin.webp'
   },
   {
     id: 51,
@@ -496,7 +496,7 @@ export const products: Product[] = [
     hsnCode: '1302.19',
     categoryId: 8,
     description: 'Aromatic cumin oleoresin essential for Indian cuisine flavoring.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Cumin Oleoresin.webp'
   },
   {
     id: 52,
@@ -504,7 +504,7 @@ export const products: Product[] = [
     hsnCode: '1302.19',
     categoryId: 8,
     description: 'Concentrated garlic oleoresin for flavor enhancement and health benefits.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Garlic Oleoresin.jpeg'
   },
   {
     id: 53,
@@ -512,7 +512,7 @@ export const products: Product[] = [
     hsnCode: '1302.19',
     categoryId: 8,
     description: 'Bitter-sweet fenugreek oleoresin with medicinal and culinary applications.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Fenugreek Oleoresin.jpg'
   },
   {
     id: 54,
@@ -520,7 +520,7 @@ export const products: Product[] = [
     hsnCode: '1302.19',
     categoryId: 8,
     description: 'Fresh celery oleoresin for seasoning and natural flavoring.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Celery Oleoresin.webp'
   },
   {
     id: 55,
@@ -528,7 +528,7 @@ export const products: Product[] = [
     hsnCode: '1302.19',
     categoryId: 8,
     description: 'Delicate mace oleoresin with warm, spicy flavor profile.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Mace Oleoresin.jpg'
   },
   {
     id: 56,
@@ -536,7 +536,7 @@ export const products: Product[] = [
     hsnCode: '1302.19',
     categoryId: 8,
     description: 'Pungent mustard oleoresin for condiment and pharmaceutical use.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Mustard Oleoresin.jpg'
   },
   {
     id: 57,
@@ -544,7 +544,7 @@ export const products: Product[] = [
     hsnCode: '1302.19',
     categoryId: 8,
     description: 'Aromatic bay leaf oleoresin for flavoring and preservative applications.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Bay Leaf Oleoresin.jpg'
   }
 ];
 

@@ -8,6 +8,8 @@ import Categories from "./pages/Categories";
 import CategoryProductList from "./pages/CategoryProductList";
 import ProductDetail from "./pages/ProductDetail";
 import Contact from "./pages/Contact";
+import SpiceImportForm from "./pages/SpiceImportForm";
+import ThankYou from "./pages/ThankYou";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import NotFound from "./pages/NotFound";
@@ -28,6 +30,8 @@ const App = () => (
           <Route path="/category/:categoryId" element={<CategoryProductList />} />
           <Route path="/product/:productId" element={<ProductDetail />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/spice-import-form" element={<SpiceImportForm />} />
+          <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

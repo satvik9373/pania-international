@@ -5,25 +5,25 @@ const ProductSection = () => {
   const navigate = useNavigate();
   const products = [
     {
-      id: 1,
+      id: 5,
       name: 'A2 Bilona Ghee',
       hsn: 'HSN: 04059020',
       image: '/product-image/A2-Bilona-Ghee.png'
     },
     {
-      id: 2,
+      id: 10,
       name: 'Cold Press Oil',
       hsn: 'HSN: 15155000',
       image: '/product-image/Almond-Oil.webp'
     },
     {
-      id: 3,
+      id: 16,
       name: 'Wheat Flour',
       hsn: 'HSN: 11022000',
       image: '/product-image/wheat-flour-2.webp'
     },
     {
-      id: 4,
+      id: 15,
       name: 'Honey',
       hsn: 'HSN: 04090000',
       image: '/product-image/honey.jpg'

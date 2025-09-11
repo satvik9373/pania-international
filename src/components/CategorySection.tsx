@@ -92,7 +92,7 @@ const CategorySection = () => {
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('/product-image/Lavender,-Tea-Tree,-Peppermint,-etc..webp')`
+                    backgroundImage: `url('/category-image/essential-oil.webp')`
                   }}
                 >
                 </div>
