@@ -22,7 +22,7 @@ const AnnouncementBar = () => {
   }, [announcements.length]);
 
   return (
-    <div className="bg-[#2e3e27] text-white py-3 overflow-hidden relative">
+    <div className="bg-white text-black py-3 overflow-hidden relative">
       <div className="flex">
         <div className="flex whitespace-nowrap animate-marquee">
           <span className="text-sm font-medium font-sans px-8 flex items-center">

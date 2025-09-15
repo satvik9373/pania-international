@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { categories } from '@/data/products';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import AnnouncementBar from '@/components/AnnouncementBar';
 
 const Categories = () => {
   const navigate = useNavigate();
@@ -19,6 +20,7 @@ const Categories = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <AnnouncementBar />
       <Navbar />
       
       <section className="py-16 bg-warm-beige">

@@ -11,6 +11,8 @@ const ProductDetail = () => {
   const { productId } = useParams<{ productId: string }>();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('description');
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [quantity, setQuantity] = useState(1);
 
   const product = getProductById(Number(productId));
   
@@ -43,6 +45,23 @@ const ProductDetail = () => {
     navigate(`/product/${suggestedProductId}`);
   };
 
+  // Create multiple product images (using same image for demo)
+  const productImages = [
+    product.image,
+    product.image,
+    product.image,
+    product.image,
+    product.image
+  ];
+
+  const handleAddToCart = () => {
+    navigate('/spice-import-form');
+  };
+
+  const handleQuantityChange = (change: number) => {
+    setQuantity(prev => Math.max(1, prev + change));
+  };
+
   const tabs = [
     { id: 'description', label: 'Product Description' },
     { id: 'benefits', label: 'Key Benefits' },
@@ -55,12 +74,7 @@ const ProductDetail = () => {
         return (
           <div className="prose max-w-none">
             <p className="text-gray-700 leading-relaxed text-base">
-              {product.description}
-            </p>
-            <p className="text-gray-700 leading-relaxed mt-4 text-base">
-              Our {product.name} is sourced directly from trusted suppliers and processed using traditional methods 
-              to ensure maximum quality and authenticity. Each batch is carefully tested for purity and meets 
-              international export standards.
+              Wild Flower Honey is a multi-floral honey, responsibly collected from bees feeding on wild forest flowers nectar from the forest of the Himalayas. The honey is rich in bio-diverse vitamins, minerals, and amino acids boosting good health. 100% Natural | Ayurvedic | No added sugar
             </p>
           </div>
         );
@@ -106,86 +120,130 @@ const ProductDetail = () => {
       <Navbar />
       
       <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
-          {/* Left Side - Single Image */}
-          <div className="flex justify-center">
-            <div className="aspect-square rounded-2xl overflow-hidden bg-white shadow-lg max-w-md w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          {/* Left Side - Single Product Image */}
+          <div className="lg:col-span-1">
+            <div className="relative aspect-square rounded-2xl overflow-hidden bg-white shadow-lg">
               <img
                 src={product.image}
                 alt={product.name}
                 className="w-full h-full object-cover"
               />
             </div>
+            
+            {/* Add to Cart Button - Below Image */}
+            <button
+              onClick={handleAddToCart}
+              className="w-full mt-4 bg-pink-500 hover:bg-pink-600 text-white py-4 rounded-lg text-lg font-semibold transition-colors"
+            >
+              Add To Cart
+            </button>
           </div>
 
-          {/* Right Side - Product Info */}
-          <div className="space-y-6">
+          {/* Right Side - Product Details */}
+          <div className="lg:col-span-1 space-y-6">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-6" style={{ fontFamily: 'Soria, serif' }}>{product.name}</h1>
-              
+              <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 mt-8" style={{ fontFamily: 'Soria, serif' }}>
+                {product.name}
+              </h1>
+
               {/* HSN Code */}
-              <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+              <div className="mb-6 p-3 bg-gray-50 rounded-lg">
                 <div className="flex items-center gap-2">
-                  <span className="text-sm font-medium text-gray-500" style={{ fontFamily: 'InterTight-Medium, sans-serif' }}>HSN CODE: </span>
-                  <span className="text-lg font-bold text-gray-900" style={{ fontFamily: 'InterTight-Medium, sans-serif' }}>
-                    {product.hsnCode}
-                  </span>
+                  <span className="text-sm font-medium text-gray-500">HSN CODE:</span>
+                  <span className="text-base font-bold text-gray-900">{product.hsnCode}</span>
                 </div>
               </div>
 
-              {/* Order Now Button */}
-              <div className="flex justify-start">
-                <button
-                  onClick={handleOrderNow}
-                  className="bg-green-700 hover:bg-green-800 text-white py-3 px-8 rounded-full text-base font-semibold transition-colors w-fit"
-                  style={{ fontFamily: 'InterTight-Medium, sans-serif' }}
+              {/* Product Description Expandable Sections */}
+              <div className="bg-green-50 rounded-lg mb-4 overflow-hidden">
+                <div 
+                  className="flex items-center justify-between p-3 cursor-pointer hover:bg-green-100 transition-colors"
+                  onClick={() => setActiveTab(activeTab === 'description' ? 'description' : 'description')}
                 >
-                  ORDER NOW
-                </button>
+                  <div>
+                    <span className="text-green-600 font-medium">Product Description</span>
+                    <div className="text-sm text-gray-600">View detailed information</div>
+                  </div>
+                  <div className={`text-orange-500 cursor-pointer transform transition-transform rotate-90`}>{'>'}</div>
+                </div>
+                <div className="px-3 pb-3 border-t border-green-200">
+                  <div className="pt-3">
+                    <p className="text-gray-700 leading-relaxed text-base">
+                      Wild Flower Honey is a multi-floral honey, responsibly collected from bees feeding on wild forest flowers nectar from the forest of the Himalayas. The honey is rich in bio-diverse vitamins, minerals, and amino acids boosting good health. 100% Natural | Ayurvedic | No added sugar
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-green-50 rounded-lg mb-4 overflow-hidden">
+                <div 
+                  className="flex items-center justify-between p-3 cursor-pointer hover:bg-green-100 transition-colors"
+                  onClick={() => setActiveTab(activeTab === 'benefits' ? '' : 'benefits')}
+                >
+                  <div>
+                    <span className="text-green-600 font-medium">Key Benefits</span>
+                    <div className="text-sm text-gray-600">Health & quality benefits</div>
+                  </div>
+                  <div className={`text-orange-500 cursor-pointer transform transition-transform ${
+                    activeTab === 'benefits' ? 'rotate-90' : ''
+                  }`}>{'>'}</div>
+                </div>
+                {activeTab === 'benefits' && (
+                  <div className="px-3 pb-3 border-t border-green-200">
+                    <div className="pt-3 space-y-3">
+                      <div className="flex items-start gap-3">
+                        <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
+                        <span className="text-gray-700">Premium quality sourced from trusted Indian farms</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
+                        <span className="text-gray-700">Processed using traditional methods to retain natural properties</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
+                        <span className="text-gray-700">Meets international food safety and quality standards</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
+                        <span className="text-gray-700">Rich in natural flavors and nutritional benefits</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              <div className="bg-green-50 rounded-lg mb-6 overflow-hidden">
+                <div 
+                  className="flex items-center justify-between p-3 cursor-pointer hover:bg-green-100 transition-colors"
+                  onClick={() => setActiveTab(activeTab === 'ingredients' ? '' : 'ingredients')}
+                >
+                  <div>
+                    <span className="text-green-600 font-medium">Ingredients</span>
+                    <div className="text-sm text-gray-600">View composition details</div>
+                  </div>
+                  <div className={`text-orange-500 cursor-pointer transform transition-transform ${
+                    activeTab === 'ingredients' ? 'rotate-90' : ''
+                  }`}>{'>'}</div>
+                </div>
+                {activeTab === 'ingredients' && (
+                  <div className="px-3 pb-3 border-t border-green-200">
+                    <div className="pt-3 space-y-3">
+                      <p className="text-gray-700 leading-relaxed">
+                        100% Pure {product.name} - No artificial additives, preservatives, or chemicals added.
+                      </p>
+                      <p className="text-gray-700 leading-relaxed">
+                        Our products are naturally processed and contain only authentic ingredients sourced from certified organic farms.
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
         </div>
 
-        {/* Product Details Tabs */}
-        <div className="rounded-3xl shadow-lg mb-12 overflow-hidden backdrop-blur-sm bg-gradient-to-br from-white/80 to-gray-50/60">
-          {/* Tab Headers */}
-          <div className="border-b border-gray-200/50">
-            <div className="flex">
-              {tabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`px-8 py-5 text-sm font-medium transition-all duration-300 relative group hover:bg-white/30 hover:backdrop-blur-md ${
-                    activeTab === tab.id
-                      ? 'text-green-700 bg-white/40 border-b-3 border-green-600 shadow-sm'
-                      : 'text-gray-600 hover:text-green-600'
-                  } rounded-t-2xl mx-1 first:ml-0 last:mr-0 hover:transform hover:scale-105`}
-                  style={{ fontFamily: 'InterTight-Medium, sans-serif' }}
-                >
-                  <div className={`absolute inset-0 rounded-t-2xl transition-all duration-300 ${
-                    activeTab === tab.id 
-                      ? 'bg-gradient-to-b from-green-50/50 to-transparent' 
-                      : 'group-hover:bg-gradient-to-b group-hover:from-gray-50/30 group-hover:to-transparent'
-                  }`} />
-                  <span className="relative z-10">{tab.label}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Tab Content */}
-          <div 
-            className="p-8 bg-gradient-to-br from-white/70 to-gray-50/40 backdrop-blur-sm transition-all duration-500 hover:bg-gradient-to-br hover:from-white/80 hover:to-gray-50/50" 
-            style={{ fontFamily: 'Soria, serif' }}
-          >
-            <div className="transition-all duration-300 hover:transform hover:translateY(-1px)">
-              {getTabContent()}
-            </div>
-          </div>
-        </div>
-
-        {/* Suggested Products Section */}
+        {/* Suggested Products Section */}  
         {relatedProducts.length > 0 && (
           <div className="bg-white rounded-lg shadow-sm p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center" style={{ fontFamily: 'InterTight-Medium, sans-serif' }}>Related Products</h2>

@@ -13,21 +13,23 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
     { name: 'Contact Us', href: '/contact' },
   ];
 
-  const navClass = transparent ? 'bg-transparent border-none' : 'bg-white border-b border-gray-100';
-  const linkClass = (transparent
-    ? 'text-white hover:text-cream'
-    : 'text-gray-700 hover:text-olive-green') + ' transition-colors duration-200 leading-tightish font-medium';
-  const logoClass = transparent ? 'text-white tracking-tight uppercase' : 'text-2xl text-rich-brown tracking-tight uppercase';
+  const navClass = 'bg-[#2e3e27] border-none';
+  const linkClass = 'text-white hover:text-gray-200 transition-colors duration-200 leading-tightish font-medium';
+  const logoClass = 'text-white tracking-tight uppercase';
 
   return (
     <nav className={`${navClass} relative z-50`}>
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-        <div className="flex justify-between items-center h-14 sm:h-16">
+        <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className={`${logoClass} text-lg sm:text-xl lg:text-2xl`} style={{ fontFamily: 'Soria, serif' }}>
-              PANIA<span className={`${transparent ? 'text-cream' : 'text-olive-green'}`}>INTERNATIONAL</span>
-            </h1>
+            <a href="/" className="block">
+              <img 
+                src="/Pania-logo.png" 
+                alt="Pania International" 
+                className="h-20 sm:h-24 lg:h-28 w-auto"
+              />
+            </a>
           </div>
 
           {/* Desktop Navigation */}
@@ -48,7 +50,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`${transparent ? 'text-white hover:text-cream' : 'text-gray-700 hover:text-olive-green'} transition-colors p-2`}
+              className="text-white hover:text-gray-200 transition-colors p-2"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -65,13 +67,13 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
             className="fixed inset-0 bg-black/50 z-30 md:hidden"
             onClick={() => setIsMenuOpen(false)}
           />
-          <div className={`md:hidden absolute top-full left-0 right-0 ${transparent ? 'bg-black/90 backdrop-blur-sm' : 'bg-white'} border-t border-gray-100 shadow-lg z-40`}>
+          <div className="md:hidden absolute top-full left-0 right-0 bg-[#2e3e27] border-t border-gray-600 shadow-lg z-40">
             <div className="px-3 py-2 space-y-1">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`block px-3 py-2 text-sm ${transparent ? 'text-white hover:text-cream hover:bg-white/10' : 'text-gray-700 hover:text-olive-green hover:bg-gray-50'} transition-colors rounded-md font-medium`}
+                  className="block px-3 py-2 text-sm text-white hover:text-gray-200 hover:bg-white/10 transition-colors rounded-md font-medium"
                   style={{ fontFamily: 'InterTight-Medium, sans-serif' }}
                   onClick={() => setIsMenuOpen(false)}
                 >

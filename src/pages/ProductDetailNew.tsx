@@ -252,7 +252,7 @@ const ProductDetail = () => {
         </div>
 
         {/* Product Details Tabs */}
-        <div className="bg-white rounded-lg shadow-sm">
+        <div className="rounded-lg shadow-sm">
           {/* Tab Headers */}
           <div className="border-b border-gray-200">
             <div className="flex">
@@ -260,13 +260,16 @@ const ProductDetail = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`px-8 py-4 text-sm font-medium transition-colors relative ${
+                  className={`px-8 py-4 text-sm font-medium transition-all duration-300 relative ${
                     activeTab === tab.id
-                      ? 'text-gray-900 border-b-2 border-green-600'
+                      ? 'text-gray-900'
                       : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
-                  {tab.label}
+                  <span className="relative z-10">{tab.label}</span>
+                  <div className={`absolute bottom-0 left-0 right-0 h-0.5 transition-all duration-300 ${
+                    activeTab === tab.id ? 'scale-x-100' : 'scale-x-0'
+                  }`} />
                 </button>
               ))}
             </div>

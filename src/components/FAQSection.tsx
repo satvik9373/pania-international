@@ -13,12 +13,8 @@ const faqs: FAQ[] = [
     a: "We source directly from trusted farms and artisan producers, focusing on traditional methods, clean ingredients, and small-batch quality for freshness and authenticity.",
   },
   {
-    q: "Do you ship across India?",
-    a: "Yes. We ship pan-India with reliable courier partners. Shipping timelines typically range from 3–7 business days depending on your location.",
-  },
-  {
-    q: "What is your return or replacement policy?",
-    a: "If your order is damaged, incorrect, or compromised in quality, contact us within 48 hours of delivery. We’ll arrange a prompt replacement or resolution.",
+    q: "Do you ship worldwide?",
+    a: "Yes. We ship worldwide with trusted international courier partners. Delivery timelines typically range from 7–21 business days, depending on your country and location.",
   },
   {
     q: "How should I store ghee, oils, and spices?",
