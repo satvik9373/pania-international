@@ -146,7 +146,7 @@ const CategoryProductList = () => {
                   {/* Product Info Below - Pyramid Structure */}
                   <div className="flex flex-col items-center gap-2 mt-4 w-full max-w-[260.5px]">
                     {/* Product Name - Top of pyramid */}
-                    <h3 className="text-lg font-medium font-sans text-black text-center leading-tight">
+                    <h3 className="text-lg font-medium text-black text-center leading-tight" style={{ fontFamily: 'Coolvetica, sans-serif' }}>
                       {product.name}
                     </h3>
 

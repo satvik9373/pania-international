@@ -124,79 +124,18 @@ const SpiceImportForm = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Contact Information */}
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-3xl font-bold text-black mb-6">Get in Touch</h2>
-              <p className="text-gray-600 mb-8">
-                We're here to help you with your product inquiries, bulk orders, and any questions you may have about our offerings.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-md">
-                <div className="bg-gray-100 p-3 rounded-lg">
-                  <Phone className="h-6 w-6 text-black" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-black mb-1">Phone</h3>
-                  <p className="text-gray-600">+91 98765 43210</p>
-                  <p className="text-gray-600">+91 87654 32109</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-md">
-                <div className="bg-gray-100 p-3 rounded-lg">
-                  <Mail className="h-6 w-6 text-black" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-black mb-1">Email</h3>
-                  <p className="text-gray-600">sales@paniainternational.com</p>
-                  <p className="text-gray-600">info@paniainternational.com</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-md">
-                <div className="bg-gray-100 p-3 rounded-lg">
-                  <MapPin className="h-6 w-6 text-black" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-black mb-1">Address</h3>
-                  <p className="text-gray-600">
-                    123 Agriculture Hub,<br />
-                    Natural Products District,<br />
-                    Mumbai, Maharashtra 400001
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-md">
-                <div className="bg-gray-100 p-3 rounded-lg">
-                  <Clock className="h-6 w-6 text-black" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-black mb-1">Business Hours</h3>
-                  <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                  <p className="text-gray-600">Saturday: 9:00 AM - 2:00 PM</p>
-                  <p className="text-gray-600">Sunday: Closed</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Spice Import Requirement Form */}
-          <div className="lg:col-span-2">
-            <div className="bg-white p-8 rounded-xl shadow-lg">
+        {/* Spice Import Requirement Form */}
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white p-8 rounded-lg shadow-sm">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-black mb-2">PANIA INTERNATIONAL PRIVATE LIMITED</h3>
                 <h4 className="text-xl font-semibold text-gray-700">Spice Import Requirement Form</h4>
               </div>
               
-              <form onSubmit={handleSubmit} className="space-y-8">
+              <form onSubmit={handleSubmit} className="space-y-8" style={{ fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.035em' }}>
                 {/* 1. Company Information */}
                 <div>
-                  <h5 className="text-lg font-bold text-black mb-4 bg-gray-100 p-3 rounded">1. Company Information</h5>
+                  <h5 className="text-lg font-bold text-black mb-4 bg-gray-100 p-3 rounded" style={{ fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.035em' }}>1. Company Information</h5>
                   <div className="space-y-4">
                     <div>
                       <label className="block text-sm font-medium text-black mb-2">Company Name</label>
@@ -229,6 +168,7 @@ const SpiceImportForm = () => {
                         <input
                           type="text"
                           name="designation"
+                          required
                           value={formData.designation}
                           onChange={handleInputChange}
                           className="w-full px-3 py-2 border-b-2 border-gray-300 focus:border-black focus:outline-none bg-transparent"
@@ -278,10 +218,11 @@ const SpiceImportForm = () => {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-black mb-2">Website/Social Handles (if any)</label>
+                        <label className="block text-sm font-medium text-black mb-2">Website/Social Handles</label>
                         <input
                           type="url"
                           name="website"
+                          required
                           value={formData.website}
                           onChange={handleInputChange}
                           className="w-full px-3 py-2 border-b-2 border-gray-300 focus:border-black focus:outline-none bg-transparent"
@@ -294,7 +235,7 @@ const SpiceImportForm = () => {
 
                 {/* 2. Product Requirement */}
                 <div>
-                  <h5 className="text-lg font-bold text-black mb-4 bg-gray-100 p-3 rounded">2. Product Requirement</h5>
+                  <h5 className="text-lg font-bold text-black mb-4 bg-gray-100 p-3 rounded" style={{ fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.035em' }}>2. Product Requirement</h5>
                   <div className="space-y-4">
                     {formData.products.map((product, index) => (
                       <div key={index} className="border border-gray-200 p-4 rounded">
@@ -314,7 +255,7 @@ const SpiceImportForm = () => {
                             <select
                               value={product.gradeType}
                               onChange={(e) => handleProductChange(index, 'gradeType', e.target.value)}
-                              className="w-full px-3 py-2 border border-gray-300 rounded focus:border-black focus:outline-none"
+                              className="w-full px-3 py-2 border-b-2 border-gray-300 focus:border-black focus:outline-none bg-transparent"
                             >
                               <option value="">Select type</option>
                               <option value="Whole">Whole</option>
@@ -327,7 +268,7 @@ const SpiceImportForm = () => {
                             <select
                               value={product.organicConventional}
                               onChange={(e) => handleProductChange(index, 'organicConventional', e.target.value)}
-                              className="w-full px-3 py-2 border border-gray-300 rounded focus:border-black focus:outline-none"
+                              className="w-full px-3 py-2 border-b-2 border-gray-300 focus:border-black focus:outline-none bg-transparent"
                             >
                               <option value="">Select type</option>
                               <option value="Organic">Organic</option>
@@ -394,7 +335,7 @@ const SpiceImportForm = () => {
 
                 {/* 3. Certification Requirements */}
                 <div>
-                  <h5 className="text-lg font-bold text-black mb-4 bg-gray-100 p-3 rounded">3. Certification Requirements (Tick all that apply)</h5>
+                  <h5 className="text-lg font-bold text-black mb-4 bg-gray-100 p-3 rounded" style={{ fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.035em' }}>3. Certification Requirements (Tick all that apply)</h5>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
                       { key: 'fssai', label: 'FSSAI' },
@@ -443,7 +384,7 @@ const SpiceImportForm = () => {
 
                 {/* 4. Shipment & Delivery Details */}
                 <div>
-                  <h5 className="text-lg font-bold text-black mb-4 bg-gray-100 p-3 rounded">4. Shipment & Delivery Details</h5>
+                  <h5 className="text-lg font-bold text-black mb-4 bg-gray-100 p-3 rounded" style={{ fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.035em' }}>4. Shipment & Delivery Details</h5>
                   <div className="space-y-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
@@ -477,7 +418,7 @@ const SpiceImportForm = () => {
                           name="shippingMethod"
                           value={formData.shippingMethod}
                           onChange={handleInputChange}
-                          className="w-full px-3 py-2 border border-gray-300 rounded focus:border-black focus:outline-none"
+                          className="w-full px-3 py-2 border-b-2 border-gray-300 focus:border-black focus:outline-none bg-transparent"
                         >
                           <option value="">Select shipping method</option>
                           <option value="Sea">Sea</option>
@@ -503,7 +444,7 @@ const SpiceImportForm = () => {
                 <button
                   type="submit"
                   className="w-full text-white py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all duration-300"
-                  style={{ backgroundColor: '#2e3e27' }}
+                  style={{ backgroundColor: '#2e3e27', fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.035em' }}
                 >
                   Submit Requirement
                 </button>
@@ -511,12 +452,11 @@ const SpiceImportForm = () => {
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Footer */}
-      <Footer />
-    </div>
-  );
-};
+        {/* Footer */}
+        <Footer />
+      </div>
+    );
+  };
 
 export default SpiceImportForm;

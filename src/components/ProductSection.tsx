@@ -85,7 +85,7 @@ const ProductSection = () => {
                 {/* Product Info Below - Outside the fixed card */}
                 <div className="flex flex-col items-center gap-2 sm:gap-3 mt-3 sm:mt-4 w-full">
                   {/* Product Name */}
-                  <h3 className="text-base sm:text-lg font-medium font-sans text-black text-center leading-tight px-2">
+                  <h3 className="text-base sm:text-lg font-medium text-black text-center leading-tight px-2" style={{ fontFamily: 'Coolvetica, sans-serif' }}>
                     {product.name}
                   </h3>
 

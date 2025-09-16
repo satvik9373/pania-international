@@ -39,7 +39,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
                 key={item.name}
                 href={item.href}
                 className={`${linkClass} text-sm lg:text-base`}
-                style={{ fontFamily: 'InterTight-Medium, sans-serif' }}
+                style={{ fontFamily: 'Coolvetica, sans-serif' }}
               >
                 {item.name}
               </a>
@@ -74,7 +74,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
                   key={item.name}
                   href={item.href}
                   className="block px-3 py-2 text-sm text-white hover:text-gray-200 hover:bg-white/10 transition-colors rounded-md font-medium"
-                  style={{ fontFamily: 'InterTight-Medium, sans-serif' }}
+                  style={{ fontFamily: 'Coolvetica, sans-serif' }}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}

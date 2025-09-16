@@ -129,7 +129,7 @@ const ProductDetail = () => {
               Products
             </button>
             <span>›</span>
-            <span className="text-gray-900">{product.name}</span>
+            <span className="text-gray-900" style={{ fontFamily: 'Coolvetica, sans-serif' }}>{product.name}</span>
           </div>
         </div>
       </div>
@@ -172,7 +172,7 @@ const ProductDetail = () => {
           {/* Right Side - Product Info */}
           <div className="space-y-6">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-3">{product.name}</h1>
+              <h1 className="text-3xl font-bold text-gray-900 mb-3" style={{ fontFamily: 'Coolvetica, sans-serif' }}>{product.name}</h1>
               
               {/* Rating */}
               <div className="flex items-center gap-2 mb-4">
@@ -230,12 +230,12 @@ const ProductDetail = () => {
                 </div>
               </div>
 
-              {/* Add to Cart Button */}
+              {/* Order Now Button */}
               <button
                 onClick={handleAddToCart}
                 className="w-full bg-green-700 hover:bg-green-800 text-white py-4 px-8 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center gap-2"
               >
-                ADD TO CART
+                ORDER NOW
               </button>
 
               {/* HSN Code */}

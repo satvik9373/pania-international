@@ -131,19 +131,19 @@ const ProductDetail = () => {
               />
             </div>
             
-            {/* Add to Cart Button - Below Image */}
+            {/* Order Now Button - Below Image */}
             <button
               onClick={handleAddToCart}
               className="w-full mt-4 bg-pink-500 hover:bg-pink-600 text-white py-4 rounded-lg text-lg font-semibold transition-colors"
             >
-              Add To Cart
+              Order Now
             </button>
           </div>
 
           {/* Right Side - Product Details */}
           <div className="lg:col-span-1 space-y-6">
             <div>
-              <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 mt-8" style={{ fontFamily: 'Soria, serif' }}>
+              <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 mt-8" style={{ fontFamily: 'Coolvetica, sans-serif' }}>
                 {product.name}
               </h1>
 
@@ -245,8 +245,8 @@ const ProductDetail = () => {
 
         {/* Suggested Products Section */}  
         {relatedProducts.length > 0 && (
-          <div className="bg-white rounded-lg shadow-sm p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center" style={{ fontFamily: 'InterTight-Medium, sans-serif' }}>Related Products</h2>
+          <div className="p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center" style={{ fontFamily: 'Coolvetica, sans-serif' }}>Related Products</h2>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {relatedProducts.map((suggestedProduct, index) => (
@@ -274,21 +274,21 @@ const ProductDetail = () => {
                     {/* Product Info Below - Flex grow to fill remaining space */}
                     <div className="flex flex-col justify-between flex-grow items-center gap-2 mt-4 w-full">
                       {/* Product Name - Fixed height area */}
-                      <h3 className="text-base font-medium text-black text-center leading-tight px-2 min-h-[3rem] flex items-center" style={{ fontFamily: 'Soria, serif' }}>
+                      <h3 className="text-base font-medium text-black text-center leading-tight px-2 min-h-[3rem] flex items-center" style={{ fontFamily: 'Coolvetica, sans-serif' }}>
                         {suggestedProduct.name}
                       </h3>
 
                       {/* Grid layout: HSN Code on left, Order now Button on right */}
                       <div className="grid grid-cols-2 gap-2 w-full items-center mt-auto">
                         {/* HSN Code - Left side */}
-                        <p className="text-xs text-black text-left font-medium" style={{ fontFamily: 'InterTight-Medium, sans-serif' }}>
+                        <p className="text-xs text-black text-left font-medium" style={{ fontFamily: 'Coolvetica, sans-serif' }}>
                           {suggestedProduct.hsnCode}
                         </p>
 
                         {/* Order now Button - Right side (smaller) */}
                         <button 
                           className="text-white py-1 px-2 rounded-full font-medium hover:bg-opacity-90 transition-all duration-300 hover:shadow-md text-xs"
-                          style={{ backgroundColor: '#2e3e27', fontFamily: 'InterTight-Medium, sans-serif' }}
+                          style={{ backgroundColor: '#2e3e27', fontFamily: 'Coolvetica, sans-serif' }}
                           onClick={(e) => {
                             e.stopPropagation();
                             handleSuggestedProductClick(suggestedProduct.id);

@@ -106,12 +106,9 @@ const ServicesSection = () => {
                   <h4 className="text-xl font-bold text-rich-brown mb-4" style={{ fontFamily: 'Soria, serif' }}>
                     {service.title}
                   </h4>
-                  <p className="text-rich-brown/70 leading-relaxed mb-6 flex-1">
+                  <p className="text-rich-brown/70 leading-relaxed flex-1">
                     {service.description}
                   </p>
-                  <button className="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors">
-                    Learn More
-                  </button>
                 </div>
               </motion.div>
             ))}

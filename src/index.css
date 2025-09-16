@@ -5,7 +5,7 @@
 
 /* Global letter-spacing for all text elements */
 h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, label, li {
-  letter-spacing: -0.025em;
+  letter-spacing: 0.01em;
 }
 
 /* Hide scrollbars for webkit browsers */
@@ -30,9 +30,9 @@ All colors MUST be HSL.
 }
 
 @font-face {
-  font-family: 'InterTight';
-  src: url('/fonts/InterTight-Medium.ttf') format('truetype');
-  font-weight: 500;
+  font-family: 'Coolvetica';
+  src: url('/fonts/coolvetica.ttf') format('truetype');
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
@@ -132,7 +132,8 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'InterTight', sans-serif;
+    font-family: 'Coolvetica', sans-serif;
+    letter-spacing: 0.015em;
   }
 
   h1, h2, h3, h4, h5, h6, .heading, .hero-title, .category-title, .product-title, .section-header {
@@ -140,7 +141,8 @@ All colors MUST be HSL.
   }
 
   p, span, li, div {
-    font-family: 'InterTight', sans-serif;
+    font-family: 'Coolvetica', sans-serif;
+    letter-spacing: 0.015em;
   }
 
   .font-serif {
@@ -148,7 +150,8 @@ All colors MUST be HSL.
   }
 
   .font-sans {
-    font-family: 'InterTight', sans-serif;
+    font-family: 'Coolvetica', sans-serif;
+    letter-spacing: 0.015em;
   }
 
   /* Global product/button brand color - used across CTAs */

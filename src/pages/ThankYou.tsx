@@ -1,4 +1,4 @@
-import { ArrowLeft, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Check } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import AnnouncementBar from '@/components/AnnouncementBar';
@@ -12,72 +12,102 @@ const ThankYou = () => {
   };
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#e8e9e0' }}>
+    <div className="min-h-screen relative overflow-hidden" style={{ backgroundColor: '#e8e9e0', fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.025em' }}>
       {/* Announcement */}
       <AnnouncementBar />
 
       {/* Navbar */}
       <Navbar />
 
-      {/* Thank You Content */}
+      {/* Thank You Content - Full Page */}
       <div className="flex items-center justify-center min-h-screen py-16">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-3xl p-12 shadow-lg text-center">
-            {/* Success Icon */}
-            <div className="flex justify-center mb-8">
-              <div className="bg-green-100 rounded-full p-6">
-                <CheckCircle className="h-16 w-16 text-green-600" />
-              </div>
-            </div>
-
-            {/* Thank You Message */}
-            <div className="mb-8">
-              <h1 className="text-3xl md:text-4xl font-bold text-black mb-4">
-                Thank You!
-              </h1>
-              <h2 className="text-xl md:text-2xl font-semibold text-gray-700 mb-6">
-                Your message has been sent successfully
-              </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                We have received your inquiry and our team will get back to you within 24 hours. 
-                We appreciate your interest in Pania International and look forward to working with you.
-              </p>
-            </div>
-
-            {/* Contact Information */}
-            <div className="bg-gray-50 rounded-2xl p-6 mb-8">
-              <h3 className="text-lg font-semibold text-black mb-4">
-                Need immediate assistance?
-              </h3>
-              <div className="space-y-2 text-gray-600">
-                <p>📧 sales@paniainternational.com</p>
-                <p>📞 +91 98765 43210</p>
-                <p>💬 WhatsApp: +91 87654 32109</p>
-              </div>
-            </div>
-
-            {/* Back to Home Button */}
-            <button
-              onClick={handleBackToHome}
-              className="inline-flex items-center gap-3 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all duration-300"
-              style={{ backgroundColor: '#2e3e27' }}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          
+          {/* Floating Tick Icon Above Thank You */}
+          <div className="flex justify-center mb-8">
+            <div 
+              className="bg-green-500 rounded-full p-4 animate-bounce shadow-lg"
+              style={{
+                animation: 'float 3s ease-in-out infinite, fadeIn 0.8s ease-out'
+              }}
             >
-              <ArrowLeft className="h-5 w-5" />
-              Back to Home
-            </button>
-
-            {/* Additional Message */}
-            <div className="mt-8 pt-6 border-t border-gray-200">
-              <p className="text-sm text-gray-500">
-                Reference ID: #{Date.now().toString().slice(-8)}
-              </p>
+              <Check className="h-12 w-12 text-white stroke-[3]" />
             </div>
           </div>
+
+          {/* Big Thank You Text */}
+          <h1 
+            className="text-6xl md:text-8xl font-bold text-black mb-12" 
+            style={{ 
+              fontFamily: 'Coolvetica, sans-serif', 
+              letterSpacing: '0.03em',
+              animation: 'slideUp 1s ease-out 0.3s both'
+            }}
+          >
+            THANK YOU
+          </h1>
+
+          {/* Success Message */}
+          <h2 
+            className="text-2xl md:text-3xl font-semibold text-black mb-6" 
+            style={{ 
+              fontFamily: 'Coolvetica, sans-serif', 
+              letterSpacing: '0.025em',
+              animation: 'slideUp 1s ease-out 0.6s both'
+            }}
+          >
+            Your message has been sent successfully
+          </h2>
+          
+          {/* Description */}
+          <p 
+            className="text-lg md:text-xl text-gray-700 leading-relaxed mb-16 max-w-3xl mx-auto" 
+            style={{ 
+              fontFamily: 'Coolvetica, sans-serif', 
+              letterSpacing: '0.02em',
+              animation: 'slideUp 1s ease-out 0.9s both'
+            }}
+          >
+            We have received your inquiry and our team will get back to you within 24 hours. We appreciate your interest in Pania International and look forward to working with you.
+          </p>
+
+          {/* Small Back to Home Button */}
+          <button
+            onClick={handleBackToHome}
+            className="inline-flex items-center gap-2 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-300 hover:scale-105"
+            style={{ 
+              backgroundColor: '#2e3e27', 
+              fontFamily: 'Coolvetica, sans-serif', 
+              letterSpacing: '0.02em',
+              animation: 'slideUp 1s ease-out 1.2s both'
+            }}
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to Home
+          </button>
         </div>
       </div>
 
       {/* Footer */}
       <Footer />
+
+      {/* Custom CSS for animations */}
+      <style>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes fadeIn {
+          0% { opacity: 0; transform: scale(0.3); }
+          100% { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes slideUp {
+          0% { opacity: 0; transform: translateY(30px); }
+          100% { opacity: 1; transform: translateY(0px); }
+        }
+      `}</style>
     </div>
   );
 };

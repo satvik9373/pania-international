@@ -10,9 +10,6 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
-    company: '',
-    product: '',
     message: ''
   });
 
@@ -80,8 +77,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-black mb-1">Phone</h3>
-                  <p className="text-gray-600">+91 98765 43210</p>
-                  <p className="text-gray-600">+91 87654 32109</p>
+                  <p className="text-gray-600">+91 6261149388</p>
                 </div>
               </div>
 
@@ -91,8 +87,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-black mb-1">Email</h3>
-                  <p className="text-gray-600">sales@paniainternational.com</p>
-                  <p className="text-gray-600">info@paniainternational.com</p>
+                  <p className="text-gray-600">sales@paniaexports.com</p>
                 </div>
               </div>
 
@@ -103,9 +98,9 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold text-black mb-1">Address</h3>
                   <p className="text-gray-600">
-                    123 Agriculture Hub,<br />
-                    Natural Products District,<br />
-                    Mumbai, Maharashtra 400001
+                    606, Sai Raj Heights,<br />
+                    Punawale<br />
+                    Pune
                   </p>
                 </div>
               </div>
@@ -127,12 +122,12 @@ const Contact = () => {
           {/* Contact Form */}
           <div>
             <div className="bg-white p-8 rounded-xl shadow-lg">
-              <h3 className="text-2xl font-bold text-black mb-6">Send us a Message</h3>
+              <h3 className="text-2xl font-bold text-black mb-8" style={{ fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.02em' }}>Send us a Message</h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-black mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-black mb-3" style={{ fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.025em', lineHeight: '1.6' }}>
                       Full Name *
                     </label>
                     <input
@@ -143,12 +138,13 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-300"
+                      style={{ fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.02em' }}
                       placeholder="Your full name"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-black mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-black mb-3" style={{ fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.025em', lineHeight: '1.6' }}>
                       Email Address *
                     </label>
                     <input
@@ -159,60 +155,14 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-300"
+                      style={{ fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.02em' }}
                       placeholder="your.email@example.com"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-semibold text-black mb-2">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-300"
-                      placeholder="+91 98765 43210"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-semibold text-black mb-2">
-                      Company Name
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-300"
-                      placeholder="Your company name"
-                    />
-                  </div>
-                </div>
-
                 <div>
-                  <label htmlFor="product" className="block text-sm font-semibold text-black mb-2">
-                    Product Interest
-                  </label>
-                  <input
-                    type="text"
-                    id="product"
-                    name="product"
-                    value={formData.product}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-300"
-                    placeholder="Which product are you interested in?"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-black mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-black mb-3" style={{ fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.025em', lineHeight: '1.6' }}>
                     Message *
                   </label>
                   <textarea
@@ -223,31 +173,49 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-300"
-                    placeholder="Tell us about your requirements, quantity needed, and any specific questions..."
+                    style={{ fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.02em' }}
+                    placeholder="Tell us about your requirements and any specific questions..."
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
                   className="w-full text-white py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all duration-300"
-                  style={{ backgroundColor: '#2e3e27' }}
+                  style={{ backgroundColor: '#2e3e27', fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.02em' }}
                 >
                   Send Message
                 </button>
               </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
-              <div className="mt-6 pt-6 border-t border-gray-200 text-center">
-                <p className="text-sm text-gray-600 mb-4">
-                  Looking to place a bulk order? Fill out our detailed import requirement form
-                </p>
-                <button
-                  onClick={() => navigate('/spice-import-form')}
-                  className="text-white px-6 py-2 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300"
-                  style={{ backgroundColor: '#2e3e27' }}
-                >
-                  Go to Import Form
-                </button>
-              </div>
+      {/* Google Maps Section */}
+      <div className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-black mb-4" style={{ fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.02em' }}>
+              Find Us Here
+            </h3>
+            <p className="text-lg text-gray-700" style={{ fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.02em' }}>
+              Visit our office for direct consultations and product demonstrations
+            </p>
+          </div>
+          
+          <div className="flex justify-center">
+            <div className="w-full max-w-6xl">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.536790929342!2d73.73565877501616!3d18.639892982476926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2ba199021bf43%3A0x85ac6f40a186cc82!2sSai%20Raj%20Heights!5e0!3m2!1sen!2sin!4v1758008672104!5m2!1sen!2sin" 
+                width="100%" 
+                height="400" 
+                style={{ border: 0, borderRadius: '24px' }}
+                allowFullScreen={true}
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Pania International Location"
+                className="shadow-lg"
+              />
             </div>
           </div>
         </div>

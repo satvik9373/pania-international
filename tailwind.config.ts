@@ -20,10 +20,10 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'sans': ['InterTight', 'sans-serif'],
+				'sans': ['Coolvetica', 'sans-serif'],
 				'serif': ['Soria', 'serif'],
 				'heading': ['Soria', 'serif'],
-				'body': ['InterTight', 'sans-serif'],
+				'body': ['Coolvetica', 'sans-serif'],
 			},
 			letterSpacing: {
 				'tighter': '-0.05em',
