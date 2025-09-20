@@ -92,14 +92,18 @@ const CategoryProductList = () => {
       <Navbar />
       
       {/* Category Banner */}
-      <div className="relative w-full h-48 md:h-64 lg:h-80 overflow-hidden mb-8">
-        {/* New Green Banner for All Categories */}
-        <div className="w-full h-full flex items-center justify-center relative">
-          {/* Banner Image */}
+      <div className="relative w-full mb-8">
+        {/* Responsive Banner Container with aspect ratio preservation */}
+        <div className="w-full overflow-hidden shadow-sm">
+          {/* Banner Image with proper aspect ratio */}
           <img
             src={getCategoryBanner(categoryIdNum)}
             alt={getCategoryBannerAlt(categoryIdNum)}
-            className="w-full h-full object-cover object-center"
+            className="w-full h-auto object-contain"
+            style={{
+              maxHeight: '420px', // Maximum height to prevent overly tall banners
+              minHeight: '200px', // Minimum height for consistency
+            }}
           />
         </div>
       </div>

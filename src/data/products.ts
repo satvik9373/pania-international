@@ -284,7 +284,7 @@ export const products: Product[] = [
     hsnCode: '2106.90',
     categoryId: 6,
     description: 'Health supplements and nutraceutical products for wellness and nutrition.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/netracuticals.webp'
   },
   {
     id: 26,
@@ -292,7 +292,7 @@ export const products: Product[] = [
     hsnCode: '3004.90',
     categoryId: 6,
     description: 'Natural herbal products and plant-based health supplements.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/plant-based.webp'
   },
 
   // Essential Oils (Category 7)
@@ -334,7 +334,7 @@ export const products: Product[] = [
     hsnCode: '3301.29',
     categoryId: 7,
     description: 'Exotic jasmine essential oil with floral fragrance and therapeutic benefits.',
-    image: '/product-image/placeholder.svg'
+    image: '/product-image/Jasmin.webp'
   },
   {
     id: 32,
@@ -472,7 +472,7 @@ export const products: Product[] = [
     hsnCode: '1302.19',
     categoryId: 8,
     description: 'Concentrated nutmeg oleoresin for culinary and therapeutic use.',
-    image: '/product-image/Nutmeg Oleoresin.jpg'
+    image: '/product-image/Nutmeg Oleoresin.webp'
   },
   {
     id: 49,

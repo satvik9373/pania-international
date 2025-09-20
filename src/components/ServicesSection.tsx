@@ -63,6 +63,7 @@ const ServicesSection = () => {
   ];
 
   return (
+    <>
     <section className="py-20 bg-rich-brown">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -115,24 +116,34 @@ const ServicesSection = () => {
           </div>
         </motion.div>
 
+      </div>
+    </section>
+
+    {/* Professional Services Section with Different Background */}
+    <section className="py-20 bg-olive-green">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Professional Services Title */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4" style={{ fontFamily: 'Soria, serif' }}>
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4" style={{ fontFamily: 'Soria, serif' }}>
             Our Professional Services
-          </h3>
+          </h2>
+          <div className="w-24 h-1 bg-white mx-auto mb-6 rounded-full"></div>
+          <p className="text-lg text-white/80 max-w-3xl mx-auto">
+            Specialized consulting and professional solutions across multiple industries with expert guidance and personalized service.
+          </p>
         </motion.div>
 
         {/* Professional Services Cards Grid */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
           <div className="grid md:grid-cols-2 gap-6">
@@ -145,7 +156,7 @@ const ServicesSection = () => {
                 viewport={{ once: true }}
               >
                 <div className="bg-white rounded-2xl p-8 text-center shadow-lg h-full flex flex-col">
-                  <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-20 h-20 bg-terracotta rounded-full flex items-center justify-center mx-auto mb-6">
                     <service.icon className="w-10 h-10 text-white" />
                   </div>
                   <h4 className="text-xl font-bold text-rich-brown mb-4" style={{ fontFamily: 'Soria, serif' }}>
@@ -154,7 +165,7 @@ const ServicesSection = () => {
                   <p className="text-rich-brown/70 leading-relaxed mb-6 flex-1">
                     {service.description}
                   </p>
-                  <button className="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors">
+                  <button className="bg-terracotta text-white px-6 py-3 rounded-lg font-semibold hover:bg-terracotta/90 transition-colors">
                     Learn More
                   </button>
                 </div>
@@ -164,6 +175,7 @@ const ServicesSection = () => {
         </motion.div>
       </div>
     </section>
+    </>
   );
 };
 
