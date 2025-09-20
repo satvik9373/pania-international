@@ -14,6 +14,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import NotFound from "./pages/NotFound";
 import StickyIcons from "./components/StickyIcons";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <StickyIcons />
         <Routes>
           <Route path="/" element={<Index />} />
