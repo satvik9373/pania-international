@@ -1,6 +1,7 @@
 export interface Product {
   id: number;
   name: string;
+  slug?: string;
   hsnCode: string;
   categoryId: number;
   description?: string;
@@ -10,6 +11,7 @@ export interface Product {
 export interface Category {
   id: number;
   title: string;
+  slug: string;
   bgColor: string;
   textColor: string;
   icon: string;
@@ -19,6 +21,7 @@ export const categories: Category[] = [
   {
     id: 1,
     title: 'Fresh Fruits & Vegetables',
+    slug: 'fresh-fruits-vegetables',
     bgColor: 'bg-green-500',
     textColor: 'text-white',
     icon: '🥕'
@@ -26,6 +29,7 @@ export const categories: Category[] = [
   {
     id: 2,
     title: 'Oils, Fats, & Ghee',
+    slug: 'oils-fats-ghee',
     bgColor: 'bg-blue-500',
     textColor: 'text-white',
     icon: '🏺'
@@ -33,20 +37,23 @@ export const categories: Category[] = [
   {
     id: 3,
     title: 'Refined Oils',
+    slug: 'refined-oils',
     bgColor: 'bg-red-600',
     textColor: 'text-white',
-    icon: '�'
+    icon: '🛢'
   },
   {
     id: 4,
     title: 'Natural Sweeteners & Sugars',
+    slug: 'natural-sweeteners-sugars',
     bgColor: 'bg-pink-600',
     textColor: 'text-white',
-    icon: '�'
+    icon: '🍯'
   },
   {
     id: 5,
     title: 'Grains & Staples',
+    slug: 'grains-staples',
     bgColor: 'bg-orange-600',
     textColor: 'text-white',
     icon: '🌾'
@@ -54,6 +61,7 @@ export const categories: Category[] = [
   {
     id: 6,
     title: 'Pharmaceuticals & Nutraceuticals',
+    slug: 'pharmaceuticals-nutraceuticals',
     bgColor: 'bg-purple-600',
     textColor: 'text-white',
     icon: '💊'
@@ -61,6 +69,7 @@ export const categories: Category[] = [
   {
     id: 7,
     title: 'Essential Oils',
+    slug: 'essential-oils',
     bgColor: 'bg-emerald-600',
     textColor: 'text-white',
     icon: '🫧'
@@ -68,6 +77,7 @@ export const categories: Category[] = [
   {
     id: 8,
     title: 'Oleoresins',
+    slug: 'oleoresins',
     bgColor: 'bg-amber-600',
     textColor: 'text-white',
     icon: '🌿'
@@ -113,6 +123,7 @@ export const products: Product[] = [
   {
     id: 5,
     name: 'A2 Bilona Ghee',
+    slug: 'a2-bilona-ghee',
     hsnCode: '0405.90',
     categoryId: 2,
     description: 'Pure A2 Bilona Ghee made from indigenous cow milk using traditional churning methods.',
@@ -153,6 +164,7 @@ export const products: Product[] = [
   {
     id: 10,
     name: 'Cold Pressed Almond Oil',
+    slug: 'cold-pressed-almond-oil',
     hsnCode: '1515.90',
     categoryId: 2,
     description: 'Premium cold pressed almond oil for culinary and cosmetic use.',
@@ -197,6 +209,7 @@ export const products: Product[] = [
   {
     id: 15,
     name: 'Natural Honey',
+    slug: 'natural-honey',
     hsnCode: '0409.00',
     categoryId: 4,
     description: 'Pure natural honey harvested from bee farms, rich in antioxidants.',
@@ -207,10 +220,11 @@ export const products: Product[] = [
   {
     id: 16,
     name: 'Whole Wheat Flour (Atta)',
+    slug: 'whole-wheat-flour-atta',
     hsnCode: '1101.00',
     categoryId: 5,
     description: 'Fresh ground whole wheat flour perfect for making rotis and bread.',
-    image: '/product-image/wheat-flour.jpg'
+    image: '/product-image/wheat-flour-2.webp'
   },
   {
     id: 17,
@@ -558,4 +572,30 @@ export const getProductById = (productId: number): Product | undefined => {
 
 export const getCategoryById = (categoryId: number): Category | undefined => {
   return categories.find(category => category.id === categoryId);
+};
+
+// New helper functions for slug-based routing
+export const getCategoryBySlug = (slug: string): Category | undefined => {
+  return categories.find(category => category.slug === slug);
+};
+
+export const getProductBySlug = (slug: string): Product | undefined => {
+  return products.find(product => product.slug === slug);
+};
+
+export const getProductsByCategorySlug = (categorySlug: string): Product[] => {
+  const category = getCategoryBySlug(categorySlug);
+  if (!category) return [];
+  return products.filter(product => product.categoryId === category.id);
+};
+
+// Utility function to generate URL-friendly slugs
+export const generateSlug = (text: string): string => {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .replace(/-+/g, '-') // Replace multiple hyphens with single
+    .trim()
+    .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
 };

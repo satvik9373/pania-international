@@ -1,17 +1,16 @@
 import { motion } from 'framer-motion';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getProductsByCategory, getCategoryById } from '@/data/products';
+import { getCategoryBySlug, getProductsByCategorySlug, generateSlug } from '@/data/products';
 import Navbar from '@/components/Navbar';
 import AnnouncementBar from '@/components/AnnouncementBar';
 import Footer from '@/components/Footer';
 
 const CategoryProductList = () => {
-  const { categoryId } = useParams<{ categoryId: string }>();
+  const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   
-  const categoryIdNum = categoryId ? parseInt(categoryId) : 0;
-  const category = getCategoryById(categoryIdNum);
-  const products = getProductsByCategory(categoryIdNum);
+  const category = getCategoryBySlug(slug || '');
+  const products = getProductsByCategorySlug(slug || '');
 
   if (!category) {
     return (
@@ -34,7 +33,12 @@ const CategoryProductList = () => {
   };
 
   const handleProductClick = (productId: number) => {
-    navigate(`/product/${productId}`);
+    // Find the product and generate its slug for navigation
+    const product = products.find(p => p.id === productId);
+    if (product) {
+      const slug = product.slug || generateSlug(product.name);
+      navigate(`/product/${slug}`);
+    }
   };
 
   const getCategoryBanner = (categoryId: number) => {
@@ -97,8 +101,8 @@ const CategoryProductList = () => {
         <div className="w-full overflow-hidden shadow-sm">
           {/* Banner Image with proper aspect ratio */}
           <img
-            src={getCategoryBanner(categoryIdNum)}
-            alt={getCategoryBannerAlt(categoryIdNum)}
+            src={getCategoryBanner(category.id)}
+            alt={getCategoryBannerAlt(category.id)}
             className="w-full h-auto object-contain"
             style={{
               maxHeight: '420px', // Maximum height to prevent overly tall banners

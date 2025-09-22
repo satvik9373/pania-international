@@ -1,37 +1,17 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { generateSlug, getProductById } from '@/data/products';
 
 const ProductSection = () => {
   const navigate = useNavigate();
-  const products = [
-    {
-      id: 5,
-      name: 'A2 Bilona Ghee',
-      hsn: 'HSN: 04059020',
-      image: '/product-image/A2-Bilona-Ghee.png'
-    },
-    {
-      id: 10,
-      name: 'Cold Press Oil',
-      hsn: 'HSN: 15155000',
-      image: '/product-image/Almond-Oil.webp'
-    },
-    {
-      id: 16,
-      name: 'Wheat Flour',
-      hsn: 'HSN: 11022000',
-      image: '/product-image/wheat-flour-2.webp'
-    },
-    {
-      id: 15,
-      name: 'Honey',
-      hsn: 'HSN: 04090000',
-      image: '/product-image/honey.jpg'
-    }
-  ];
+  
+  // Get the actual products from the data instead of hardcoding
+  const featuredProductIds = [5, 10, 16, 15];
+  const products = featuredProductIds.map(id => getProductById(id)).filter(Boolean);
 
-  const handleProductClick = (productId: number) => {
-    navigate(`/product/${productId}`);
+  const handleProductClick = (product: any) => {
+    const slug = product.slug || generateSlug(product.name);
+    navigate(`/product/${slug}`);
   };
 
   return (
@@ -61,7 +41,7 @@ const ProductSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               className="cursor-pointer flex flex-col items-center w-full max-w-[280px] sm:max-w-[260px]"
-              onClick={() => handleProductClick(product.id)}
+              onClick={() => handleProductClick(product)}
             >
               {/* Fixed size product card */}
               <div className="flex flex-col items-center w-full">
@@ -93,7 +73,7 @@ const ProductSection = () => {
                   <div className="grid grid-cols-2 gap-2 w-full items-center">
                     {/* HSN Code - Left side */}
                     <p className="text-xs sm:text-sm text-black text-left font-medium font-sans">
-                      {product.hsn}
+                      HSN: {product.hsnCode}
                     </p>
 
                     {/* Order now Button - Right side (smaller) */}
@@ -102,7 +82,7 @@ const ProductSection = () => {
                       style={{ backgroundColor: '#2e3e27' }}
                       onClick={(e) => {
                         e.stopPropagation();
-                        handleProductClick(product.id);
+                        handleProductClick(product);
                       }}
                     >
                       Order now

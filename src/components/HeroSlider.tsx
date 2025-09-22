@@ -106,10 +106,10 @@ const HeroSlider = () => {
   ];
 
   return (
-    <section className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] xl:h-screen overflow-hidden">
-      <div ref={sliderRef} className="keen-slider h-full">
+    <section className="relative h-[60vh] sm:h-[65vh] md:h-[70vh] lg:h-[80vh] xl:h-screen overflow-hidden">
+      <div ref={sliderRef} className="keen-slider h-full w-full">
         {slides.map((slide, index) => (
-          <div key={slide.id} className="keen-slider__slide relative h-full">
+          <div key={slide.id} className="keen-slider__slide relative h-full w-full">
             {slide.type === 'video' ? (
               <video
                 ref={(el) => (videoRefs.current[index] = el)}
@@ -127,7 +127,7 @@ const HeroSlider = () => {
               <img
                 src={slide.src}
                 alt={slide.alt}
-                className="absolute inset-0 w-full h-full object-cover object-center"
+                className="absolute inset-0 w-full h-full object-cover object-center sm:object-center"
                 loading={index === 0 ? 'eager' : 'lazy'}
               />
             )}
@@ -138,27 +138,27 @@ const HeroSlider = () => {
       {/* Navigation Arrows - Responsive positioning */}
       <button
         onClick={() => instanceRef.current?.prev()}
-        className="absolute left-1 sm:left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-1.5 sm:p-2 md:p-3 transition-all duration-300 z-10 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white/50"
+        className="absolute left-2 sm:left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 backdrop-blur-sm rounded-full p-2 sm:p-2 md:p-3 transition-all duration-300 z-10 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white/50"
         aria-label="Previous slide"
       >
-        <ChevronLeft className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 text-white" />
+        <ChevronLeft className="w-4 h-4 sm:w-4 sm:h-4 md:w-6 md:h-6 text-white" />
       </button>
 
       <button
         onClick={() => instanceRef.current?.next()}
-        className="absolute right-1 sm:right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-1.5 sm:p-2 md:p-3 transition-all duration-300 z-10 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white/50"
+        className="absolute right-2 sm:right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 backdrop-blur-sm rounded-full p-2 sm:p-2 md:p-3 transition-all duration-300 z-10 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white/50"
         aria-label="Next slide"
       >
-        <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 text-white" />
+        <ChevronRight className="w-4 h-4 sm:w-4 sm:h-4 md:w-6 md:h-6 text-white" />
       </button>
 
       {/* Mobile-friendly touch indicators */}
-      <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-1 sm:space-x-2 z-10">
+      <div className="absolute bottom-3 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 sm:space-x-2 z-10">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => instanceRef.current?.moveToIdx(index)}
-            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50 ${
+            className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50 ${
               index === currentSlide ? 'bg-white scale-110' : 'bg-white/50 hover:bg-white/70'
             }`}
             aria-label={`Go to slide ${index + 1}`}
@@ -166,9 +166,9 @@ const HeroSlider = () => {
         ))}
       </div>
 
-      {/* Swipe hint for mobile */}
-      <div className="absolute top-4 left-1/2 transform -translate-x-1/2 text-white/70 text-xs sm:text-sm font-medium z-10 sm:hidden animate-pulse">
-        Swipe to navigate
+      {/* Swipe hint for mobile - subtle and less intrusive */}
+      <div className="absolute top-3 left-1/2 transform -translate-x-1/2 text-white/60 text-xs font-medium z-10 sm:hidden animate-pulse">
+        Swipe
       </div>
     </section>
   );

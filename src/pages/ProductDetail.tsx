@@ -1,20 +1,25 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Star, Plus, Minus } from 'lucide-react';
-import { getProductById, getCategoryById, getProductsByCategory } from '@/data/products';
+import { getProductBySlug, getCategoryById, getProductsByCategory, generateSlug, products } from '@/data/products';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import StickyIcons from '@/components/StickyIcons';
 import { motion } from 'framer-motion';
 
 const ProductDetail = () => {
-  const { productId } = useParams<{ productId: string }>();
+  const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('description');
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
 
-  const product = getProductById(Number(productId));
+  // Try to find product by slug, fallback to finding by generated slug from name
+  let product = getProductBySlug(slug || '');
+  if (!product && slug) {
+    // Fallback: try to find by name-generated slug
+    product = products.find(p => generateSlug(p.name) === slug);
+  }
   
   if (!product) {
     return (

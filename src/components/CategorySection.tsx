@@ -5,8 +5,8 @@ import { categories } from '@/data/products';
 const CategorySection = () => {
   const navigate = useNavigate();
 
-  const handleCategoryClick = (categoryId: number) => {
-    navigate(`/category/${categoryId}`);
+  const handleCategoryClick = (categorySlug: string) => {
+    navigate(`/category/${categorySlug}`);
   };
 
   return (
@@ -30,8 +30,8 @@ const CategorySection = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              onClick={() => handleCategoryClick(category.id)}
-              className={`relative rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-300 min-h-[120px] sm:min-h-[150px] lg:min-h-[180px] shadow-lg hover:shadow-xl`}
+              onClick={() => handleCategoryClick(category.slug)}
+              className={`relative rounded-2xl overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-300 min-h-[200px] shadow-lg hover:shadow-xl`}
             >
               {/* Background Images for categories based on sequence */}
               {category.id === 1 && (
@@ -107,7 +107,7 @@ const CategorySection = () => {
                 </div>
               )}
 
-              <div className="relative z-10 flex h-full p-3 sm:p-4 lg:p-6">
+              <div className="relative z-10 flex h-full p-6">
                 {/* No text content - just background images */}
               </div>
             </motion.div>
