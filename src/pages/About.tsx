@@ -50,23 +50,26 @@ const About = () => {
               Our portfolio covers a diverse range of offerings, including fresh fruits and vegetables, cold-pressed and refined oils, dairy-based ghee, natural sweeteners and sugars, grains and staples, essential oils, and nutraceuticals. Each product is handpicked from trusted farms and suppliers across India, ensuring that what reaches our partners is not just food, but a story of purity, care, and sustainability.
             </p>
             
-            <div className="p-6 my-8 bg-green-50 rounded-lg">
-              <h3 className="text-2xl font-serif text-rich-brown mb-4">Farm-to-Market Approach</h3>
-              <p className="text-lg leading-relaxed text-justify">
-                What sets us apart is our farm-to-market approach. We work closely with local farmers, empowering them with fair trade practices, sustainable methods, and modern technology while preserving traditional values. This not only guarantees quality but also helps create a positive impact on rural communities and the environment.
-              </p>
+            {/* Aligned Feature Sections */}
+            <div className="grid md:grid-cols-2 gap-8 my-12">
+              <div className="p-6 bg-warm-beige rounded-lg border-l-4 border-olive-green">
+                <h3 className="text-2xl font-serif text-rich-brown mb-4">Farm-to-Market Approach</h3>
+                <p className="text-lg leading-relaxed text-justify">
+                  What sets us apart is our farm-to-market approach. We work closely with local farmers, empowering them with fair trade practices, sustainable methods, and modern technology while preserving traditional values. This not only guarantees quality but also helps create a positive impact on rural communities and the environment.
+                </p>
+              </div>
+              
+              <div className="p-6 bg-warm-beige rounded-lg border-l-4 border-terracotta">
+                <h3 className="text-2xl font-serif text-rich-brown mb-4">Quality Foundation</h3>
+                <p className="text-lg leading-relaxed text-justify">
+                  At Pania International, quality is more than a promise — it's our foundation. Every product undergoes rigorous checks to ensure it meets the highest benchmarks of purity, freshness, and safety. Our logistics expertise ensures temperature-sensitive goods and bulk shipments are delivered efficiently, with reliability at every step.
+                </p>
+              </div>
             </div>
             
             <p className="text-lg leading-relaxed">
               With a strong global presence, we proudly export to Europe, the Gulf, and the Americas, serving a wide range of B2B clients — from distributors and retailers to private labels and hospitality groups. Our services go beyond products: we offer custom bulk fulfillment, private label & OEM solutions, and organic product sourcing, backed by strict compliance with international standards.
             </p>
-            
-            <div className="p-6 my-8 bg-orange-50 rounded-lg">
-              <h3 className="text-2xl font-serif text-rich-brown mb-4">Quality Foundation</h3>
-              <p className="text-lg leading-relaxed text-justify">
-                At Pania International, quality is more than a promise — it's our foundation. Every product undergoes rigorous checks to ensure it meets the highest benchmarks of purity, freshness, and safety. Our logistics expertise ensures temperature-sensitive goods and bulk shipments are delivered efficiently, with reliability at every step.
-              </p>
-            </div>
             
             <p className="text-lg leading-relaxed">
               We believe that food is more than sustenance — it is culture, tradition, and connection. That's why our motto is simple: <strong className="text-olive-green">Natural. Premium. Authentic.</strong> With every shipment, we aim to deliver not just goods, but trust, care, and a piece of India's agricultural soul to the world.

@@ -91,40 +91,56 @@ const ProductDetail = () => {
         return (
           <div className="prose max-w-none">
             <p className="text-gray-700 leading-relaxed text-base">
-              Wild Flower Honey is a multi-floral honey, responsibly collected from bees feeding on wild forest flowers nectar from the forest of the Himalayas. The honey is rich in bio-diverse vitamins, minerals, and amino acids boosting good health. 100% Natural | Ayurvedic | No added sugar
+              {product.detailedDescription || product.description || 'Product description not available.'}
             </p>
           </div>
         );
       case 'benefits':
         return (
           <div className="space-y-3">
-            <div className="flex items-start gap-3">
-              <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
-              <span className="text-gray-700">Premium quality sourced from trusted Indian farms</span>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
-              <span className="text-gray-700">Processed using traditional methods to retain natural properties</span>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
-              <span className="text-gray-700">Meets international food safety and quality standards</span>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
-              <span className="text-gray-700">Rich in natural flavors and nutritional benefits</span>
-            </div>
+            {product.keyBenefits && product.keyBenefits.length > 0 ? (
+              product.keyBenefits.map((benefit, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
+                  <span className="text-gray-700">{benefit}</span>
+                </div>
+              ))
+            ) : (
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
+                  <span className="text-gray-700">Premium quality sourced from trusted suppliers</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
+                  <span className="text-gray-700">Processed using traditional methods</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
+                  <span className="text-gray-700">Rich in essential nutrients</span>
+                </div>
+              </div>
+            )}
           </div>
         );
       case 'ingredients':
         return (
-          <div className="space-y-3">
-            <p className="text-gray-700 leading-relaxed">
-              100% Pure {product.name} - No artificial additives, preservatives, or chemicals added.
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              Our products are naturally processed and contain only authentic ingredients sourced from certified organic farms.
-            </p>
+          <div className="space-y-2">
+            <p className="text-gray-700 font-medium">Ingredients & Composition:</p>
+            {product.ingredients && product.ingredients.length > 0 ? (
+              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
+                {product.ingredients.map((ingredient, index) => (
+                  <li key={index}>{ingredient}</li>
+                ))}
+              </ul>
+            ) : (
+              <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
+                <li>100% Natural {product.name}</li>
+                <li>No artificial preservatives or additives</li>
+                <li>Quality assured ingredients</li>
+                <li>Traditionally processed</li>
+              </ul>
+            )}
           </div>
         );
       default:
@@ -187,7 +203,7 @@ const ProductDetail = () => {
                 <div className="px-3 pb-3 border-t border-green-200">
                   <div className="pt-3">
                     <p className="text-gray-700 leading-relaxed text-base">
-                      Wild Flower Honey is a multi-floral honey, responsibly collected from bees feeding on wild forest flowers nectar from the forest of the Himalayas. The honey is rich in bio-diverse vitamins, minerals, and amino acids boosting good health. 100% Natural | Ayurvedic | No added sugar
+                      {product.detailedDescription || product.description || 'Product description not available.'}
                     </p>
                   </div>
                 </div>
@@ -209,22 +225,29 @@ const ProductDetail = () => {
                 {activeTab === 'benefits' && (
                   <div className="px-3 pb-3 border-t border-green-200">
                     <div className="pt-3 space-y-3">
-                      <div className="flex items-start gap-3">
-                        <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
-                        <span className="text-gray-700">Premium quality sourced from trusted Indian farms</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
-                        <span className="text-gray-700">Processed using traditional methods to retain natural properties</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
-                        <span className="text-gray-700">Meets international food safety and quality standards</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
-                        <span className="text-gray-700">Rich in natural flavors and nutritional benefits</span>
-                      </div>
+                      {product.keyBenefits && product.keyBenefits.length > 0 ? (
+                        product.keyBenefits.map((benefit, index) => (
+                          <div key={index} className="flex items-start gap-3">
+                            <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
+                            <span className="text-gray-700">{benefit}</span>
+                          </div>
+                        ))
+                      ) : (
+                        <>
+                          <div className="flex items-start gap-3">
+                            <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
+                            <span className="text-gray-700">Premium quality sourced from trusted suppliers</span>
+                          </div>
+                          <div className="flex items-start gap-3">
+                            <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
+                            <span className="text-gray-700">Processed using traditional methods</span>
+                          </div>
+                          <div className="flex items-start gap-3">
+                            <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
+                            <span className="text-gray-700">Rich in essential nutrients</span>
+                          </div>
+                        </>
+                      )}
                     </div>
                   </div>
                 )}
@@ -245,13 +268,22 @@ const ProductDetail = () => {
                 </div>
                 {activeTab === 'ingredients' && (
                   <div className="px-3 pb-3 border-t border-green-200">
-                    <div className="pt-3 space-y-3">
-                      <p className="text-gray-700 leading-relaxed">
-                        100% Pure {product.name} - No artificial additives, preservatives, or chemicals added.
-                      </p>
-                      <p className="text-gray-700 leading-relaxed">
-                        Our products are naturally processed and contain only authentic ingredients sourced from certified organic farms.
-                      </p>
+                    <div className="pt-3 space-y-2">
+                      <p className="text-gray-700 font-medium">Ingredients & Composition:</p>
+                      {product.ingredients && product.ingredients.length > 0 ? (
+                        <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
+                          {product.ingredients.map((ingredient, index) => (
+                            <li key={index}>{ingredient}</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
+                          <li>100% Natural {product.name}</li>
+                          <li>No artificial preservatives or additives</li>
+                          <li>Quality assured ingredients</li>
+                          <li>Traditionally processed</li>
+                        </ul>
+                      )}
                     </div>
                   </div>
                 )}

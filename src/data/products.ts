@@ -6,6 +6,9 @@ export interface Product {
   categoryId: number;
   description?: string;
   image?: string;
+  detailedDescription?: string;
+  keyBenefits?: string[];
+  ingredients?: string[];
 }
 
 export interface Category {
@@ -89,18 +92,50 @@ export const products: Product[] = [
   {
     id: 1,
     name: 'Fresh Mangoes',
+    slug: 'fresh-mangoes',
     hsnCode: '0804.50',
     categoryId: 1,
     description: 'Premium quality fresh mangoes sourced directly from Indian orchards. Sweet, juicy and rich in vitamins.',
-    image: '/product-image/mango.jpg'
+    image: '/product-image/mango.jpg',
+    detailedDescription: 'Our premium fresh mangoes are hand-picked from the finest orchards across India, known for their exceptional sweetness and rich flavor. These mangoes are carefully selected at optimal ripeness to ensure maximum taste and nutritional value. Grown using sustainable farming practices, our mangoes represent the authentic taste of Indian tropical fruits.',
+    keyBenefits: [
+      'Rich in Vitamin C and antioxidants for immune system support',
+      'High fiber content aids in digestion and gut health',
+      'Natural source of beta-carotene for healthy skin and vision',
+      'Contains essential minerals like potassium and magnesium',
+      'Low in calories, making it a healthy snack option',
+      'Natural sugars provide quick energy boost'
+    ],
+    ingredients: [
+      'Fresh mangoes (100% natural)',
+      'No artificial preservatives',
+      'No added sugars or chemicals',
+      'Naturally ripened on the tree'
+    ]
   },
   {
     id: 2,
     name: 'Fresh Onions',
+    slug: 'fresh-onions',
     hsnCode: '0703.10',
     categoryId: 1,
     description: 'Farm-fresh onions with excellent storage life. Essential ingredient for Indian cuisine.',
-    image: '/product-image/onion.jpg'
+    image: '/product-image/onion.jpg',
+    detailedDescription: 'Our farm-fresh onions are sourced from trusted agricultural regions known for producing high-quality bulbs with excellent storage life. These onions are carefully harvested, cleaned, and sorted to ensure consistent size and quality. Perfect for cooking, they add the essential flavor base to countless dishes.',
+    keyBenefits: [
+      'Rich in antioxidants, particularly quercetin for heart health',
+      'Contains anti-inflammatory compounds and natural sulfur',
+      'Good source of vitamin C and dietary fiber',
+      'Long storage life when properly stored',
+      'Essential flavor base for cuisines worldwide',
+      'Natural antibacterial and antimicrobial properties'
+    ],
+    ingredients: [
+      'Fresh yellow/red onions (100% natural)',
+      'No chemical treatments or preservatives',
+      'Field-dried and naturally cured',
+      'Hand-sorted for consistent quality'
+    ]
   },
   {
     id: 3,
@@ -127,7 +162,22 @@ export const products: Product[] = [
     hsnCode: '0405.90',
     categoryId: 2,
     description: 'Pure A2 Bilona Ghee made from indigenous cow milk using traditional churning methods.',
-    image: '/product-image/A2-Bilona-Ghee.png'
+    image: '/product-image/A2-Bilona-Ghee.png',
+    detailedDescription: 'Our A2 Bilona Ghee is crafted using the ancient Vedic method from the milk of indigenous Gir cows. The traditional bilona process involves slow churning of cultured butter to extract pure ghee, preserving all the natural nutrients and authentic taste. This golden elixir is free from chemicals and additives.',
+    keyBenefits: [
+      'Contains A2 beta-casein protein, easier to digest than regular dairy',
+      'Rich in fat-soluble vitamins A, D, E, and K',
+      'High smoke point makes it ideal for cooking at high temperatures',
+      'Contains beneficial fatty acids like CLA and omega-3',
+      'Supports brain health and cognitive function',
+      'Aids in nutrient absorption and digestive health'
+    ],
+    ingredients: [
+      'Pure A2 cow milk from indigenous Gir cows',
+      'Traditional bilona churning process',
+      'No preservatives or artificial additives',
+      'Cultured butter base for authentic flavor'
+    ]
   },
   {
     id: 6,
@@ -140,18 +190,50 @@ export const products: Product[] = [
   {
     id: 7,
     name: 'Cold Pressed Mustard Oil',
+    slug: 'cold-pressed-mustard-oil',
     hsnCode: '1514.19',
     categoryId: 2,
     description: 'Traditional cold pressed mustard oil known for its pungent flavor and health benefits.',
-    image: '/product-image/Mustard-Oil.webp'
+    image: '/product-image/Mustard-Oil.webp',
+    detailedDescription: 'Our traditional cold pressed mustard oil is extracted from premium mustard seeds using the ancient wooden pressing method. This preserves the oil\'s natural pungency, nutritional value, and distinctive flavor that has been cherished in Indian kitchens for generations. The oil has a golden yellow color and strong aroma.',
+    keyBenefits: [
+      'Rich in omega-3 and omega-6 fatty acids for heart health',
+      'Natural antibacterial and antifungal properties',
+      'High smoking point suitable for deep frying and cooking',
+      'Contains glucosinolates with natural preservation qualities',
+      'Traditional remedy for joint pain and muscle stiffness',
+      'Excellent source of vitamin E and antioxidants'
+    ],
+    ingredients: [
+      'Premium mustard seeds (100% pure)',
+      'Cold pressed using traditional wooden mills',
+      'No chemical extraction or refining',
+      'Naturally filtered and unbleached'
+    ]
   },
   {
     id: 8,
     name: 'Cold Pressed Coconut Oil',
+    slug: 'cold-pressed-coconut-oil',
     hsnCode: '1513.11',
     categoryId: 2,
     description: 'Virgin cold pressed coconut oil with natural aroma and health benefits.',
-    image: '/product-image/Coconut oil.webp'
+    image: '/product-image/Coconut oil.webp',
+    detailedDescription: 'Our virgin cold pressed coconut oil is extracted from fresh coconut meat using mechanical pressing without heat or chemicals. This preserves the natural nutrients, aroma, and taste of fresh coconuts. The oil solidifies at room temperature and has a pleasant coconut fragrance.',
+    keyBenefits: [
+      'Rich in medium-chain triglycerides (MCTs) for quick energy',
+      'Contains lauric acid with natural antimicrobial properties',
+      'Supports heart health and healthy cholesterol levels',
+      'Excellent for cooking, baking, and skincare',
+      'High smoke point suitable for various cooking methods',
+      'Natural moisturizer for skin and hair care'
+    ],
+    ingredients: [
+      'Fresh coconut meat (100% pure)',
+      'Cold pressed extraction method',
+      'No chemical solvents or additives',
+      'Virgin grade quality'
+    ]
   },
   {
     id: 9,
@@ -168,7 +250,22 @@ export const products: Product[] = [
     hsnCode: '1515.90',
     categoryId: 2,
     description: 'Premium cold pressed almond oil for culinary and cosmetic use.',
-    image: '/product-image/Almond-Oil.webp'
+    image: '/product-image/Almond-Oil.webp',
+    detailedDescription: 'Our premium cold pressed almond oil is extracted from high-quality sweet almonds using mechanical pressing without heat treatment. This gentle process preserves the natural nutrients, vitamin E, and delicate flavor. Perfect for both culinary applications and natural skincare routines.',
+    keyBenefits: [
+      'Rich in vitamin E and antioxidants for skin nourishment',
+      'Contains healthy monounsaturated fats for heart health',
+      'Natural moisturizer for dry skin and hair care',
+      'Light texture absorbs easily without greasy residue',
+      'Suitable for cooking, baking, and salad dressings',
+      'Helps maintain healthy cholesterol levels'
+    ],
+    ingredients: [
+      'Sweet almonds (100% pure)',
+      'Cold pressed extraction method',
+      'No chemical processing or solvents',
+      'Natural and unrefined'
+    ]
   },
 
   // Refined Oils (Category 3)
@@ -213,7 +310,22 @@ export const products: Product[] = [
     hsnCode: '0409.00',
     categoryId: 4,
     description: 'Pure natural honey harvested from bee farms, rich in antioxidants.',
-    image: '/product-image/honey.jpg'
+    image: '/product-image/honey.jpg',
+    detailedDescription: 'Our natural honey is carefully harvested from pristine bee farms where bees collect nectar from diverse wildflowers. This raw, unprocessed honey retains all its natural enzymes, antioxidants, and beneficial compounds. Each jar represents the pure essence of nature\'s sweetness.',
+    keyBenefits: [
+      'Rich in natural antioxidants and enzymes for immune support',
+      'Contains antibacterial and antimicrobial properties',
+      'Natural energy source with easily digestible sugars',
+      'Soothes throat irritation and supports respiratory health',
+      'Promotes wound healing and skin health when applied topically',
+      'May help with seasonal allergies when sourced locally'
+    ],
+    ingredients: [
+      'Pure wildflower honey (100% natural)',
+      'No artificial flavors or additives',
+      'Raw and unfiltered',
+      'Naturally harvested from bee farms'
+    ]
   },
 
   // Grains & Staples (Category 5)
@@ -224,7 +336,22 @@ export const products: Product[] = [
     hsnCode: '1101.00',
     categoryId: 5,
     description: 'Fresh ground whole wheat flour perfect for making rotis and bread.',
-    image: '/product-image/wheat-flour-2.webp'
+    image: '/product-image/wheat-flour-2.webp',
+    detailedDescription: 'Our premium whole wheat flour is stone-ground from carefully selected wheat grains to preserve maximum nutrition and authentic taste. This fine-textured atta is perfect for making soft rotis, chapatis, and traditional Indian breads. Ground fresh to maintain the natural wheat germ and bran.',
+    keyBenefits: [
+      'High in dietary fiber for improved digestive health',
+      'Rich in B vitamins, iron, and essential minerals',
+      'Contains wheat germ for added nutritional value',
+      'Stone-ground process preserves natural nutrients',
+      'Ideal protein content for soft, pliable rotis',
+      'No artificial bleaching or chemical processing'
+    ],
+    ingredients: [
+      'Whole wheat grains (100% natural)',
+      'Stone-ground to fine consistency',
+      'Unbleached and chemical-free',
+      'Contains natural wheat germ and bran'
+    ]
   },
   {
     id: 17,
@@ -237,10 +364,26 @@ export const products: Product[] = [
   {
     id: 18,
     name: 'Basmati Rice',
+    slug: 'basmati-rice',
     hsnCode: '1006.30',
     categoryId: 5,
     description: 'Premium long grain basmati rice with distinctive aroma and flavor.',
-    image: '/product-image/basmati rice.jpg'
+    image: '/product-image/basmati rice.jpg',
+    detailedDescription: 'Our premium basmati rice is sourced from the fertile plains of northern India, where the unique climate and soil conditions produce rice with exceptional aroma, long grains, and delicate flavor. Each grain is aged for optimal texture and taste, making it perfect for biryanis, pilafs, and special occasions.',
+    keyBenefits: [
+      'Extra-long grains that don\'t break during cooking',
+      'Distinctive natural aroma and nutty flavor',
+      'Low glycemic index compared to regular rice',
+      'Rich in essential amino acids and carbohydrates',
+      'Aged rice for better texture and cooking properties',
+      'Perfect for festive dishes and gourmet cooking'
+    ],
+    ingredients: [
+      'Premium basmati rice grains (100% pure)',
+      'Aged for 1+ years for optimal quality',
+      'No artificial additives or preservatives',
+      'Naturally aromatic and long-grain variety'
+    ]
   },
   {
     id: 19,
@@ -253,26 +396,74 @@ export const products: Product[] = [
   {
     id: 20,
     name: 'Chana',
+    slug: 'chana-chickpeas',
     hsnCode: '0713.20',
     categoryId: 5,
     description: 'Premium quality chickpeas rich in protein and fiber.',
-    image: '/product-image/chana.jpg'
+    image: '/product-image/chana.jpg',
+    detailedDescription: 'Our premium chana (chickpeas) are carefully selected from the best farming regions known for producing large, uniform, and nutrient-rich legumes. These versatile pulses are perfect for making dal, curries, snacks, and can also be ground into flour for various culinary applications.',
+    keyBenefits: [
+      'High in plant-based protein for muscle health',
+      'Rich in dietary fiber for digestive wellness',
+      'Good source of folate and iron for blood health',
+      'Contains complex carbohydrates for sustained energy',
+      'Low glycemic index helps control blood sugar',
+      'Versatile ingredient for multiple cuisines'
+    ],
+    ingredients: [
+      'Premium chickpeas (100% natural)',
+      'Cleaned and sorted for quality',
+      'No preservatives or artificial additives',
+      'Sun-dried for optimal storage life'
+    ]
   },
   {
     id: 21,
     name: 'Moong',
+    slug: 'moong-green-gram',
     hsnCode: '0713.31',
     categoryId: 5,
     description: 'Green gram beans perfect for dal and sprouting.',
-    image: '/product-image/moong.webp'
+    image: '/product-image/moong.webp',
+    detailedDescription: 'Our high-quality moong (green gram) is sourced from premium farms and known for its exceptional nutritional profile and cooking versatility. These small, green legumes are easy to digest and cook quickly, making them perfect for dal, sprouts, desserts, and healthy snacks.',
+    keyBenefits: [
+      'Excellent source of plant protein and amino acids',
+      'Easy to digest and light on the stomach',
+      'Rich in folate, magnesium, and potassium',
+      'High fiber content supports digestive health',
+      'Low in fat and calories for weight management',
+      'Perfect for sprouting with enhanced nutrition'
+    ],
+    ingredients: [
+      'Premium green gram (moong)',
+      'Machine cleaned and hand-sorted',
+      'Natural sun-drying process',
+      'No chemicals or preservatives'
+    ]
   },
   {
     id: 22,
     name: 'Urad',
+    slug: 'urad-black-gram',
     hsnCode: '0713.32',
     categoryId: 5,
     description: 'Black gram lentils essential for South Indian cuisine.',
-    image: '/product-image/urad.webp'
+    image: '/product-image/urad.webp',
+    detailedDescription: 'Our premium urad dal (black gram) is carefully sourced and processed to maintain its rich nutritional value and authentic taste. This versatile pulse is essential for South Indian cuisine and is perfect for making idli, dosa, vada, papad, and various dal preparations.',
+    keyBenefits: [
+      'High protein content for muscle development',
+      'Rich in iron and calcium for bone health',
+      'Good source of dietary fiber for digestion',
+      'Contains folate essential for cell division',
+      'Provides magnesium for heart health',
+      'Natural source of potassium for blood pressure'
+    ],
+    ingredients: [
+      'Premium black gram (urad dal)',
+      'Cleaned and polished to perfection',
+      'Traditional processing methods',
+      'No artificial colors or preservatives'
+    ]
   },
   {
     id: 23,
@@ -313,10 +504,26 @@ export const products: Product[] = [
   {
     id: 27,
     name: 'Lavender Essential Oil',
+    slug: 'lavender-essential-oil',
     hsnCode: '3301.29',
     categoryId: 7,
     description: 'Pure lavender essential oil for aromatherapy and relaxation.',
-    image: '/product-image/Lavender,-Tea-Tree,-Peppermint,-etc..webp'
+    image: '/product-image/Lavender,-Tea-Tree,-Peppermint,-etc..webp',
+    detailedDescription: 'Our premium lavender essential oil is steam-distilled from the finest lavender flowers, capturing the pure essence of this beloved aromatic herb. Known for its calming and therapeutic properties, this versatile oil is perfect for aromatherapy, skincare, and promoting peaceful sleep.',
+    keyBenefits: [
+      'Promotes relaxation and reduces stress and anxiety',
+      'Natural sleep aid when used in aromatherapy',
+      'Soothes minor skin irritations and burns',
+      'Antimicrobial properties help with wound healing',
+      'Reduces headaches and tension when inhaled',
+      'Safe for topical use when properly diluted'
+    ],
+    ingredients: [
+      'Pure lavender (Lavandula angustifolia) flowers',
+      'Steam distilled extraction method',
+      'No synthetic fragrances or additives',
+      'Therapeutic grade quality'
+    ]
   },
   {
     id: 28,
