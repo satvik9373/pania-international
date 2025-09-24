@@ -47,7 +47,11 @@ const ProductDetail = () => {
   };
 
   const handleSuggestedProductClick = (suggestedProductId: number) => {
-    navigate(`/product/${suggestedProductId}`);
+    const suggestedProduct = products.find(p => p.id === suggestedProductId);
+    if (suggestedProduct) {
+      const productSlug = suggestedProduct.slug || generateSlug(suggestedProduct.name);
+      navigate(`/product/${productSlug}`);
+    }
   };
 
   // Create multiple product images (using same image for demo)

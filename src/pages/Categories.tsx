@@ -13,9 +13,9 @@ const Categories = () => {
     ...categories // All 8 categories with images
   ];
 
-  const handleCategoryClick = (categoryId: number) => {
-    // Navigate for all categories (1-8)
-    navigate(`/category/${categoryId}`);
+  const handleCategoryClick = (categorySlug: string) => {
+    // Navigate using category slug
+    navigate(`/category/${categorySlug}`);
   };
 
   return (
@@ -42,7 +42,7 @@ const Categories = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
-                onClick={() => handleCategoryClick(category.id)}
+                onClick={() => handleCategoryClick(category.slug)}
                 className={`relative rounded-2xl overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-300 min-h-[200px] shadow-lg hover:shadow-xl`}
               >
                 {/* Background Images for categories 1-8 */}
