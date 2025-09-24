@@ -6,11 +6,11 @@ import AnnouncementBar from '@/components/AnnouncementBar';
 import Footer from '@/components/Footer';
 
 const CategoryProductList = () => {
-  const { slug } = useParams<{ slug: string }>();
+  const { categorySlug } = useParams<{ categorySlug: string }>();
   const navigate = useNavigate();
   
-  const category = getCategoryBySlug(slug || '');
-  const products = getProductsByCategorySlug(slug || '');
+  const category = getCategoryBySlug(categorySlug || '');
+  const products = getProductsByCategorySlug(categorySlug || '');
 
   if (!category) {
     return (
@@ -35,9 +35,9 @@ const CategoryProductList = () => {
   const handleProductClick = (productId: number) => {
     // Find the product and generate its slug for navigation
     const product = products.find(p => p.id === productId);
-    if (product) {
-      const slug = product.slug || generateSlug(product.name);
-      navigate(`/product/${slug}`);
+    if (product && categorySlug) {
+      const productSlug = product.slug || generateSlug(product.name);
+      navigate(`/categories/${categorySlug}/${productSlug}`);
     }
   };
 

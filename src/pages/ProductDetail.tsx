@@ -8,17 +8,17 @@ import StickyIcons from '@/components/StickyIcons';
 import { motion } from 'framer-motion';
 
 const ProductDetail = () => {
-  const { slug } = useParams<{ slug: string }>();
+  const { categorySlug, productSlug } = useParams<{ categorySlug: string; productSlug: string }>();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('description');
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
 
   // Try to find product by slug, fallback to finding by generated slug from name
-  let product = getProductBySlug(slug || '');
-  if (!product && slug) {
+  let product = getProductBySlug(productSlug || '');
+  if (!product && productSlug) {
     // Fallback: try to find by name-generated slug
-    product = products.find(p => generateSlug(p.name) === slug);
+    product = products.find(p => generateSlug(p.name) === productSlug);
   }
   
   if (!product) {
@@ -43,14 +43,18 @@ const ProductDetail = () => {
     .slice(0, 4);
 
   const handleOrderNow = () => {
-    navigate('/spice-import-form');
+    if (categorySlug && productSlug) {
+      navigate(`/categories/${categorySlug}/${productSlug}/spiceimportform`);
+    } else {
+      navigate('/spice-import-form'); // fallback
+    }
   };
 
   const handleSuggestedProductClick = (suggestedProductId: number) => {
     const suggestedProduct = products.find(p => p.id === suggestedProductId);
-    if (suggestedProduct) {
-      const productSlug = suggestedProduct.slug || generateSlug(suggestedProduct.name);
-      navigate(`/product/${productSlug}`);
+    if (suggestedProduct && categorySlug) {
+      const suggestedProductSlug = suggestedProduct.slug || generateSlug(suggestedProduct.name);
+      navigate(`/categories/${categorySlug}/${suggestedProductSlug}`);
     }
   };
 
@@ -64,7 +68,11 @@ const ProductDetail = () => {
   ];
 
   const handleAddToCart = () => {
-    navigate('/spice-import-form');
+    if (categorySlug && productSlug) {
+      navigate(`/categories/${categorySlug}/${productSlug}/spiceimportform`);
+    } else {
+      navigate('/spice-import-form'); // fallback
+    }
   };
 
   const handleQuantityChange = (change: number) => {

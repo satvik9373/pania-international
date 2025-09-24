@@ -29,8 +29,9 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/categories" element={<Categories />} />
-          <Route path="/category/:slug" element={<CategoryProductList />} />
-          <Route path="/product/:slug" element={<ProductDetail />} />
+          <Route path="/categories/:categorySlug" element={<CategoryProductList />} />
+          <Route path="/categories/:categorySlug/:productSlug" element={<ProductDetail />} />
+          <Route path="/categories/:categorySlug/:productSlug/spiceimportform" element={<SpiceImportForm />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/spice-import-form" element={<SpiceImportForm />} />
           <Route path="/thank-you" element={<ThankYou />} />

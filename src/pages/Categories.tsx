@@ -14,8 +14,8 @@ const Categories = () => {
   ];
 
   const handleCategoryClick = (categorySlug: string) => {
-    // Navigate using category slug
-    navigate(`/category/${categorySlug}`);
+    // Navigate using hierarchical category slug
+    navigate(`/categories/${categorySlug}`);
   };
 
   return (

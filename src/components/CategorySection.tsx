@@ -6,7 +6,7 @@ const CategorySection = () => {
   const navigate = useNavigate();
 
   const handleCategoryClick = (categorySlug: string) => {
-    navigate(`/category/${categorySlug}`);
+    navigate(`/categories/${categorySlug}`);
   };
 
   return (

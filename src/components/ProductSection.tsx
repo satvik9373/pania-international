@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { generateSlug, getProductById } from '@/data/products';
+import { generateSlug, getProductById, getCategoryById } from '@/data/products';
 
 const ProductSection = () => {
   const navigate = useNavigate();
@@ -10,8 +10,11 @@ const ProductSection = () => {
   const products = featuredProductIds.map(id => getProductById(id)).filter(Boolean);
 
   const handleProductClick = (product: any) => {
-    const slug = product.slug || generateSlug(product.name);
-    navigate(`/product/${slug}`);
+    const productSlug = product.slug || generateSlug(product.name);
+    const category = getCategoryById(product.categoryId);
+    if (category) {
+      navigate(`/categories/${category.slug}/${productSlug}`);
+    }
   };
 
   return (
