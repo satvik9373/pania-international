@@ -158,6 +158,13 @@ const CategoryProductList = () => {
                       {product.name}
                     </h3>
 
+                    {/* Product Description */}
+                    {product.description && (
+                      <p className="text-sm text-gray-600 text-center leading-relaxed px-2 line-clamp-3">
+                        {product.description}
+                      </p>
+                    )}
+
                     {/* HSN Code - Middle of pyramid */}
                     <p className="text-sm text-black text-center font-medium font-sans">
                       HSN: {product.hsnCode}
