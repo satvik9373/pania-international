@@ -1,62 +1,65 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { X } from 'lucide-react'
 
 type Blog = {
 	id: number
 	title: string
 	description: string
 	image: string
-	category: 'Ghee' | 'Honey' | 'Oils' | 'Spices' | 'Farming' | 'Staples'
+	category: string
+	content: string
 }
 
-// Natural, earthy, agri-focused posts
+// Updated blogs with your new content
 const blogs: Blog[] = [
 	{
 		id: 1,
-		title: 'How A2 Ghee Is Made: From Grass-Fed Cows to Your Table',
+		title: 'Rediscovering Khapli Wheat Flour: Ancient Grain, Modern Nourishment',
 		description:
-			'A simple walkthrough of the traditional bilona method and why A2 ghee tastes richer and feels lighter.',
-		image: '/product-image/ghee.png',
-		category: 'Ghee',
+			'In an era where ultra-processed foods dominate, ancient grains are making a powerful comeback. Among these, Khapli wheat (also known as Emmer wheat) stands apart with its compelling blend of nutrients, digestibility, and flavor.',
+		image: '/Blog Images/A2 BILONA GHEE - BLOG.png',
+		category: 'Grains & Nutrition',
 	},
 	{
 		id: 2,
-		title: 'Cold-Pressed Oils: Benefits and Best Uses in Daily Cooking',
+		title: 'The Sacred Essence of Sambrani Dhup Cups: Purity, Calmness, and Spiritual Energy',
 		description:
-			'Why cold-pressed oils retain more nutrients and how to use them for sautéing, dressings, and more.',
-		image: '/product-image/Mustard-Oil.webp',
-		category: 'Oils',
+			'Lighting a Sambrani Dhup Cup has been a timeless tradition in Indian homes, temples, and meditation spaces. Known for its purifying aroma and calming properties, sambrani creates an atmosphere of peace.',
+		image: '/Blog Images/A2 BILONA GHEE - BLOG.png',
+		category: 'Spiritual & Wellness',
 	},
 	{
 		id: 3,
-		title: 'Raw Honey vs. Processed Honey: What You Should Know',
+		title: 'Virgin & Extra Virgin Olive Oil — Pure Goodness, Naturally',
 		description:
-			'Natural enzymes, pollen, and flavor notes that make raw honey a better daily pick.',
-		image: '/product-image/honey.jpg',
-		category: 'Honey',
+			'When it comes to wellness and taste, extra virgin olive oil (EVOO) stands apart as a natural elixir. We bring you virgin and extra virgin olive oil sourced from trusted producers, carefully packaged to preserve freshness.',
+		image: '/Blog Images/A2 BILONA GHEE - BLOG.png',
+		category: 'Oils & Health',
 	},
 	{
 		id: 4,
-		title: 'Spices from Farm to Kitchen: How We Keep Them Fresh',
+		title: 'Pomace Olive Oil — The Unsung Hero of High-Heat Cooking',
 		description:
-			'Sourcing, sun-drying, and small-batch grinding to preserve essential oils and aroma in your masalas.',
-		image: '/product-image/black-saltkala-namak-powder-100-g-quick-pantry.jpg',
-		category: 'Spices',
+			'Pomace olive oil is a versatile, refined oil widely valued for its high smoke point, neutral flavor, and affordability. Perfect for homes, restaurants, and food industries worldwide.',
+		image: '/Blog Images/A2 BILONA GHEE - BLOG.png',
+		category: 'Oils & Cooking',
 	},
 	{
 		id: 5,
-		title: 'Sustainable Farming Practices Behind Our Staples',
+		title: 'Refined Sunflower Oil: The Neutral, High-Heat Cooking Choice',
 		description:
-			'Soil health, water conservation, and biodiversity: how responsible farming improves everyday staples.',
-		image: '/product-image/basmati rice.jpg',
-		category: 'Farming',
+			'Sunflower oil is one of the most widely used vegetable oils worldwide, known for its light flavor, versatility, and favorable fat profile that meets strict quality standards for global markets.',
+		image: '/Blog Images/A2 BILONA GHEE - BLOG.png',
+		category: 'Oils & Cooking',
 	},
 	{
 		id: 6,
-		title: 'Smart Storage for Grains & Pulses at Home',
+		title: 'Essential Oils from India – Pure, Natural & Trusted by the World',
 		description:
-			'Practical tips to keep staples fresh longer—right containers, humidity control, and pantry hygiene.',
-		image: '/product-image/wheat-flour.jpg',
-		category: 'Staples',
+			'Essential oils are nature\'s most powerful extracts – concentrated drops that capture the true essence, fragrance, and healing properties of plants. We bring you the finest pure essential oils from India.',
+		image: '/Blog Images/Essential-oil.webp',
+		category: 'Essential Oils & Wellness',
 	},
 ]
 
