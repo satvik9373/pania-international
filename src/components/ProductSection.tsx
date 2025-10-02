@@ -72,13 +72,6 @@ const ProductSection = () => {
                     {product.name}
                   </h3>
 
-                  {/* Product Description */}
-                  {product.description && (
-                    <p className="text-xs sm:text-sm text-gray-600 text-center leading-relaxed px-2 max-w-[240px] line-clamp-3">
-                      {product.description}
-                    </p>
-                  )}
-
                   {/* Grid layout: HSN Code on left, Order now Button on right */}
                   <div className="grid grid-cols-2 gap-2 w-full items-center">
                     {/* HSN Code - Left side */}

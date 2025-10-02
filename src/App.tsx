@@ -12,6 +12,7 @@ import SpiceImportForm from "./pages/SpiceImportForm";
 import ThankYou from "./pages/ThankYou";
 import About from "./pages/About";
 import Services from "./pages/Services";
+import BlogDetail from "./pages/BlogDetail";
 import NotFound from "./pages/NotFound";
 import StickyIcons from "./components/StickyIcons";
 import ScrollToTop from "./components/ScrollToTop";
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/blog/:id" element={<BlogDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
