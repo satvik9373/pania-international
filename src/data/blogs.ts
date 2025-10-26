@@ -46,7 +46,7 @@ While modern wheat offers high yield and ease, it often comes at the expense of 
 		title: 'The Sacred Essence of Sambrani Dhup Cups: Purity, Calmness, and Spiritual Energy',
 		description:
 			'Lighting a Sambrani Dhup Cup has been a timeless tradition in Indian homes, temples, and meditation spaces. Known for its purifying aroma and calming properties, sambrani creates an atmosphere of peace.',
-		image: '/Blog Images/A2 BILONA GHEE - BLOG.png',
+		image: '/Blog Images/dhup-cups.jpg',
 		category: 'Spiritual & Wellness',
 		content: `Lighting a Sambrani Dhup Cup has been a timeless tradition in Indian homes, temples, and meditation spaces. Known for its purifying aroma and calming properties, sambrani has long been considered a natural way to cleanse the aura, uplift the mind, and create an atmosphere of peace.
 
@@ -84,7 +84,7 @@ A Sambrani Dhup Cup is more than just incense — it's a spiritual experience th
 		title: 'Virgin Olive Oil: Nature\'s Liquid Gold for Health and Flavor',
 		description:
 			'Virgin olive oil is the purest form of olive oil, extracted through mechanical means without chemicals or heat. It retains the natural flavors, aromas, and health benefits of fresh olives.',
-		image: '/Blog Images/Olive-Oil.webp',
+		image: '/Blog Images/virgin.jpg',
 		category: 'Oils & Health',
 		content: `Virgin olive oil is the purest form of olive oil, extracted through mechanical means without chemicals or heat. It retains the natural flavors, aromas, and health benefits of fresh olives. At Pania International, we source premium virgin olive oil that meets the highest standards of quality and purity.
 
@@ -308,7 +308,7 @@ Essential oils are not just fragrances—they are natural solutions for health, 
 		title: 'Millets: The Ancient Grains Powering a Modern Healthy Lifestyle',
 		description:
 			'In today\'s fast-paced world, where lifestyle diseases like diabetes, obesity, and digestive issues are on the rise, people are seeking healthier alternatives to regular grains. Discover how millets are making their way back into modern diets.',
-		image: '/Blog Images/Wheat-Flour.webp',
+		image: '/Blog Images/milet.jpg',
 		category: 'Grains & Nutrition',
 		content: `In today\'s fast-paced world, where lifestyle diseases like diabetes, obesity, and digestive issues are on the rise, people are seeking healthier alternatives to regular grains such as rice and wheat. This is where millets step in — ancient super grains that are not only nutrient-dense but also sustainable for the planet.
 

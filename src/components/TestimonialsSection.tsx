@@ -13,25 +13,25 @@ const slides: Slide[] = [
   {
     id: 't1',
     title: 'AMAZING QUALITY FOR MY FAMILY!',
-    body: 'I have been purchasing from Pania International for over a year now, and I must say the quality is exceptional! The A2 Bilona Ghee is so pure and aromatic - you can truly taste the difference in every dish. My kids absolutely love the natural sweeteners, and I feel great knowing I\'m giving them wholesome treats without any artificial sugar. The packaging is always excellent, and delivery is prompt. Highly recommend Pania for anyone looking for authentic, premium quality products!',
+    body: 'I have been purchasing from Pania International for over a year now, and the quality is exceptional! The A2 Bilona Ghee is so pure and aromatic. My kids love the natural sweeteners, and I feel great knowing I\'m giving them wholesome treats without any artificial sugar.',
     author: 'AMITA SHARMA',
   },
   {
     id: 't2',
     title: 'BEST GHEE IN THE MARKET - HANDS DOWN!',
-    body: 'After trying multiple brands over the years, I finally found the perfect ghee! Pania\'s A2 Bilona Ghee is absolutely divine. The traditional method of preparation really shows in the taste and texture. It\'s rich, pure, and has that authentic aroma that reminds me of my grandmother\'s kitchen. I use it daily for cooking and even in my morning coffee. The best part is the consistency - every jar maintains the same premium quality. I\'ve been a loyal customer for a year now and have no plans to switch. Worth every penny!',
+    body: 'After trying multiple brands, I finally found the perfect ghee! Pania\'s A2 Bilona Ghee is absolutely divine. The traditional method of preparation really shows in the taste and texture. It\'s rich, pure, and has that authentic aroma that reminds me of my grandmother\'s kitchen.',
     author: 'MANSI VERMA',
   },
   {
     id: 't3',
     title: 'FRESHNESS AND PURITY YOU CAN TRUST',
-    body: 'What impressed me most about Pania International is their commitment to quality and authenticity. Every product I\'ve ordered - from olive oil to wheat flour - arrives fresh and well-packaged. You can genuinely feel the difference in everyday cooking. The flavors are more vibrant, the aromas are stronger, and everything tastes so much better. My family has noticed the positive change in our meals. The customer service is also excellent - they respond quickly and handle orders professionally. I\'m so glad I discovered Pania!',
+    body: 'What impressed me most about Pania International is their commitment to quality and authenticity. Every product arrives fresh and well-packaged. The flavors are more vibrant, the aromas are stronger, and everything tastes so much better. My family has noticed the positive change in our meals.',
     author: 'RAHUL KAPOOR',
   },
   {
     id: 't4',
     title: 'EXCEPTIONAL VALUE AND PREMIUM QUALITY',
-    body: 'As someone who is very particular about what goes into my family\'s food, finding Pania International has been a blessing. Their products are not just premium in quality but also reasonably priced. The delivery is always on time, packaging is secure, and the product range is diverse. I especially love their essential oils - they\'re pure and therapeutic grade. Every time I cook with their ingredients, I can taste the authenticity and care that goes into sourcing and processing. This is more than just a supplier - it\'s a brand I trust completely!',
+    body: 'As someone who is particular about what goes into my family\'s food, finding Pania International has been a blessing. Their products are premium in quality and reasonably priced. I especially love their essential oils - they\'re pure and therapeutic grade.',
     author: 'NEHA PATEL',
   },
 ]
