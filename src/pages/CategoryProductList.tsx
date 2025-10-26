@@ -169,7 +169,7 @@ const CategoryProductList = () => {
                       style={{ backgroundColor: '#2e3e27' }}
                       onClick={(e) => {
                         e.stopPropagation();
-                        handleContactUs();
+                        handleProductClick(product.id);
                       }}
                     >
                       Order now

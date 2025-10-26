@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 
 const About = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Announcement */}
       <AnnouncementBar />
 
@@ -77,6 +77,9 @@ const About = () => {
           </div>
         </section>
       </main>
+
+      {/* Spacer before footer */}
+      <div className="py-12"></div>
 
       {/* Footer */}
       <Footer />

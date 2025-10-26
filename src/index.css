@@ -3,6 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Prevent white flash on initial load */
+html {
+  background-color: #2E3E27;
+}
+
+body {
+  background-color: white;
+  overflow-x: hidden;
+}
+
 /* Global letter-spacing for all text elements */
 h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, label, li {
   letter-spacing: 0.01em;

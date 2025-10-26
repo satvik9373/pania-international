@@ -3,10 +3,10 @@ import { ArrowLeft } from 'lucide-react'
 import { blogs } from '../data/blogs'
 
 const BlogDetail = () => {
-	const { id } = useParams<{ id: string }>()
+	const { slug } = useParams<{ slug: string }>()
 	const navigate = useNavigate()
 
-	const blog = blogs.find(b => b.id === parseInt(id || '0'))
+	const blog = blogs.find(b => b.slug === slug)
 
 	if (!blog) {
 		return (
@@ -45,6 +45,8 @@ const BlogDetail = () => {
 						src={blog.image}
 						alt={blog.title}
 						className="w-full h-full object-cover"
+						loading="eager"
+						fetchPriority="high"
 					/>
 					<div className="absolute inset-0 bg-black bg-opacity-40"></div>
 

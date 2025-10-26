@@ -192,21 +192,25 @@ const ProductDetail = () => {
               <div className="bg-green-50 rounded-lg mb-4 overflow-hidden">
                 <div 
                   className="flex items-center justify-between p-3 cursor-pointer hover:bg-green-100 transition-colors"
-                  onClick={() => setActiveTab(activeTab === 'description' ? 'description' : 'description')}
+                  onClick={() => setActiveTab(activeTab === 'description' ? '' : 'description')}
                 >
                   <div>
                     <span className="text-green-600 font-medium">Product Description</span>
                     <div className="text-sm text-gray-600">View detailed information</div>
                   </div>
-                  <div className={`text-orange-500 cursor-pointer transform transition-transform rotate-90`}>{'>'}</div>
+                  <div className={`text-orange-500 cursor-pointer transform transition-transform ${
+                    activeTab === 'description' ? 'rotate-90' : ''
+                  }`}>{'>'}</div>
                 </div>
-                <div className="px-3 pb-3 border-t border-green-200">
-                  <div className="pt-3">
-                    <p className="text-gray-700 leading-relaxed text-base">
-                      {product.detailedDescription || product.description || 'Product description not available.'}
-                    </p>
+                {activeTab === 'description' && (
+                  <div className="px-3 pb-3 border-t border-green-200">
+                    <div className="pt-3">
+                      <p className="text-gray-700 leading-relaxed text-base">
+                        {product.detailedDescription || product.description || 'Product description not available.'}
+                      </p>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
 
               <div className="bg-green-50 rounded-lg mb-4 overflow-hidden">

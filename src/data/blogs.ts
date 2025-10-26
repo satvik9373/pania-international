@@ -1,5 +1,6 @@
 export type Blog = {
 	id: number
+	slug: string
 	title: string
 	description: string
 	image: string
@@ -11,6 +12,7 @@ export type Blog = {
 export const blogs: Blog[] = [
 	{
 		id: 1,
+		slug: 'khapli-wheat-flour-ancient-grain-modern-nourishment',
 		title: 'Rediscovering Khapli Wheat Flour: Ancient Grain, Modern Nourishment',
 		description:
 			'In an era where ultra-processed foods dominate, ancient grains are making a powerful comeback. Among these, Khapli wheat (also known as Emmer wheat) stands apart with its compelling blend of nutrients, digestibility, and flavor.',
@@ -40,6 +42,7 @@ While modern wheat offers high yield and ease, it often comes at the expense of 
 	},
 	{
 		id: 2,
+		slug: 'sambrani-dhup-cups-purity-calmness-spiritual-energy',
 		title: 'The Sacred Essence of Sambrani Dhup Cups: Purity, Calmness, and Spiritual Energy',
 		description:
 			'Lighting a Sambrani Dhup Cup has been a timeless tradition in Indian homes, temples, and meditation spaces. Known for its purifying aroma and calming properties, sambrani creates an atmosphere of peace.',
@@ -77,6 +80,7 @@ A Sambrani Dhup Cup is more than just incense — it's a spiritual experience th
 	},
 	{
 		id: 3,
+		slug: 'virgin-olive-oil-natures-liquid-gold',
 		title: 'Virgin Olive Oil: Nature\'s Liquid Gold for Health and Flavor',
 		description:
 			'Virgin olive oil is the purest form of olive oil, extracted through mechanical means without chemicals or heat. It retains the natural flavors, aromas, and health benefits of fresh olives.',
@@ -115,6 +119,7 @@ Experience the authentic taste and health benefits of premium virgin olive oil f
 	},
 	{
 		id: 4,
+		slug: 'pomace-olive-oil-versatile-heat-stable-choice',
 		title: 'Pomace Olive Oil: The Versatile, Heat-Stable Choice',
 		description:
 			'Pomace olive oil is extracted from the remaining olive pulp after the first pressing, offering a cost-effective alternative with excellent heat stability and neutral flavor.',
@@ -159,6 +164,7 @@ At Pania International, we supply high-quality pomace olive oil that combines pe
 	},
 	{
 		id: 5,
+		slug: 'complete-guide-to-olive-oil-from-tree-to-table',
 		title: 'The Complete Guide to Olive Oil: From Tree to Table',
 		description:
 			'Olive oil has been a cornerstone of Mediterranean cuisine for millennia. This comprehensive guide explores the different types, production methods, and health benefits of olive oil.',
@@ -213,6 +219,7 @@ At Pania International, we provide a complete range of olive oils to meet divers
 	},
 	{
 		id: 6,
+		slug: 'refined-sunflower-oil-neutral-high-heat-cooking',
 		title: 'Refined Sunflower Oil: The Neutral, High-Heat Cooking Choice',
 		description:
 			'Sunflower oil is one of the most widely used vegetable oils worldwide, known for its light flavor, versatility, and favorable fat profile that meets strict quality standards for global markets.',
@@ -251,6 +258,7 @@ Refined sunflower oil remains a kitchen essential thanks to its neutral taste, h
 	},
 	{
 		id: 7,
+		slug: 'essential-oils-from-india-pure-natural-trusted',
 		title: 'Essential Oils from India – Pure, Natural & Trusted by the World',
 		description:
 			'Essential oils are nature\'s most powerful extracts – concentrated drops that capture the true essence, fragrance, and healing properties of plants. We bring you the finest pure essential oils from India.',
@@ -293,5 +301,87 @@ Essential oils are concentrated plant extracts obtained using advanced extractio
 5. **Global Reach** – Trusted supplier for international buyers seeking authentic Indian oils
 
 Essential oils are not just fragrances—they are natural solutions for health, beauty, and well-being. Partner with us today and experience why the world trusts Indian essential oils for purity, potency, and unmatched benefits.`
+	},
+	{
+		id: 8,
+		slug: 'millets-ancient-grains-modern-healthy-lifestyle',
+		title: 'Millets: The Ancient Grains Powering a Modern Healthy Lifestyle',
+		description:
+			'In today\'s fast-paced world, where lifestyle diseases like diabetes, obesity, and digestive issues are on the rise, people are seeking healthier alternatives to regular grains. Discover how millets are making their way back into modern diets.',
+		image: '/Blog Images/Wheat-Flour.webp',
+		category: 'Grains & Nutrition',
+		content: `In today\'s fast-paced world, where lifestyle diseases like diabetes, obesity, and digestive issues are on the rise, people are seeking healthier alternatives to regular grains such as rice and wheat. This is where millets step in — ancient super grains that are not only nutrient-dense but also sustainable for the planet.
+
+At Pania International, we bring you a wide range of premium-quality millets including Finger (Ragi) Millet, Jowar (Sorghum) Millet, Bajra (Pearl Millet), Foxtail Millet, Little Millet, Kodo Millet, Barnyard Millet, Browntop Millet, and Proso Millet. These time-tested grains are making their way back into modern diets, and for good reason.
+
+Why Millets Are Better Than Regular Grains
+
+Low Glycemic Index: Millets release energy slowly, preventing sudden spikes in blood sugar. This makes them an excellent choice for diabetics and those focused on weight management.
+
+Gluten-Free Goodness: Unlike wheat, millets are naturally gluten-free, making them easier to digest and suitable for people with gluten sensitivities.
+
+Rich in Nutrients: Packed with protein, fiber, calcium, iron, magnesium, phosphorus, and antioxidants, millets provide holistic nourishment.
+
+Supports Heart Health: Regular consumption helps reduce cholesterol and maintain healthy blood pressure levels.
+
+Better Digestion: Their high fiber content promotes gut health, prevents constipation, and keeps you fuller for longer.
+
+Eco-Friendly Crop: Millets require less water, grow well in dry regions, and are highly resilient — making them a sustainable alternative to rice and wheat.
+
+Different Types of Millets and Their Unique Qualities
+
+Finger Millet (Ragi): A calcium powerhouse that strengthens bones, improves hemoglobin levels, and is ideal for children and elderly.
+
+Jowar (Sorghum) Millet: Rich in protein and iron, perfect for rotis, porridges, and dosas.
+
+Bajra (Pearl Millet): Known for its warming properties, boosts energy, strengthens the immune system, and keeps the body warm in winters.
+
+Foxtail Millet: A light grain, excellent for weight management, helps regulate blood sugar, and is great for salads, khichdi, or porridge.
+
+Little Millet: A versatile grain rich in iron and antioxidants, suitable for pulao, idlis, or dosas.
+
+Kodo Millet: Packed with fiber and polyphenols, it aids weight management and is great for people with lifestyle diseases.
+
+Barnyard Millet: Quick-cooking, highly digestible, and commonly used as a rice substitute during fasting.
+
+Browntop Millet: High in dietary fiber and micronutrients, helps in detoxifying the body.
+
+Proso Millet: A great source of protein and antioxidants, widely used in cereals, snacks, and baked products.
+
+Easy Ways to Include Millets in Your Daily Diet
+
+One of the biggest advantages of millets is how versatile they are in cooking. They can seamlessly replace rice or wheat in most recipes. Some simple ways to enjoy them include:
+
+Rotis and Flatbreads: Millet flours make soft, wholesome chapatis and parathas.
+
+Baked Delights: Use millet flour in cookies, cakes, and bread for a nutty flavor and nutrition boost.
+
+Noodles and Pasta: Millet-based noodles and pasta are healthy, tasty alternatives to refined flour versions.
+
+Breakfast Bowls: Cook millets like porridge with milk, nuts, and fruits for a nutritious start to the day.
+
+Snacks and Savories: Millets can be used in khichdi, upma, energy bars, or traditional Indian snacks.
+
+The Global Rise of Millets
+
+The world is recognizing the value of millets as superfoods. From health-conscious families to international food brands, millets are being used in everything from gluten-free baking mixes to ready-to-eat snacks. With the United Nations declaring 2023 as the International Year of Millets, demand has surged globally, and this is just the beginning.
+
+Why Choose Pania International for Millets
+
+Trusted Sourcing: We partner directly with farmers to ensure authenticity and purity.
+
+Nutrient Retention: Our traditional stone-grinding and modern hygienic processing methods preserve maximum nutrition.
+
+Variety and Customization: Whether you need millet grains, flour, or processed forms like noodles and mixes, we deliver.
+
+Global Standards: Our products are tested, certified, and packed to meet international quality requirements.
+
+Commitment to Health and Sustainability: For us, it is not just about supplying grains but about promoting healthier lifestyles and eco-friendly food systems.
+
+Final Word
+
+Millets are not just a trend — they are the future of healthy and sustainable food. From their incredible nutrition profile to their versatile culinary uses, these ancient grains offer a complete package of taste, health, and environmental responsibility.
+
+At Pania International, we are proud to bring you the very best of millets, bridging tradition with modern lifestyles. If you are an international buyer, wholesaler, or health-conscious brand, we are here to fulfill your millet requirements with unmatched quality and reliability.`
 	},
 ]

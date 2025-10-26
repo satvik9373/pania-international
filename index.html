@@ -6,6 +6,31 @@
     <link rel="icon" type="" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PaniaInternational</title>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/Pania-logo.png" as="image" />
+    <link rel="preload" href="/Banner Image/1.webp" as="image" />
+    <link rel="preload" href="/fonts/coolvetica.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/soria-font.ttf" as="font" type="font/ttf" crossorigin />
+    
+    <style>
+      /* Prevent white flash on load */
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #2E3E27;
+        overflow-x: hidden;
+      }
+      #root {
+        min-height: 100vh;
+        background-color: #2E3E27;
+      }
+      /* Smooth transition when content loads */
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>

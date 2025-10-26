@@ -13,7 +13,7 @@ function themeFor(blogId: number) {
 const BlogCard = ({ item }: { item: Blog }) => {
 	const colors = themeFor(item.id)
 	return (
-		<Link to={`/blog/${item.id}`} className="h-full">
+		<Link to={`/blog/${item.slug}`} className="h-full">
 			<article className="h-full rounded-2xl shadow-sm ring-1 ring-black/5 overflow-hidden transition group hover:shadow-md hover:-translate-y-0.5 hover:scale-[1.02] duration-200 ease-out flex flex-col cursor-pointer" style={{ backgroundColor: colors.card }}>
 				{/* Image area with rounded top corners */}
 				<div className="w-full h-48 md:h-56 overflow-hidden rounded-t-2xl">

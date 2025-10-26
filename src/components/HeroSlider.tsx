@@ -129,6 +129,8 @@ const HeroSlider = () => {
                 alt={slide.alt}
                 className="absolute inset-0 w-full h-full object-cover object-center sm:object-center"
                 loading={index === 0 ? 'eager' : 'lazy'}
+                fetchPriority={index === 0 ? 'high' : 'low'}
+                decoding={index === 0 ? 'sync' : 'async'}
               />
             )}
           </div>

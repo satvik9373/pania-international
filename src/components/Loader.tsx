@@ -10,11 +10,12 @@ const Loader = ({ onComplete }: LoaderProps) => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Auto-complete loader after 1 second maximum
+    // Reduced loader time to 500ms for faster loading
     const loaderTimeout = setTimeout(() => {
       setIsVisible(false);
-      setTimeout(onComplete, 300);
-    }, 1000);
+      // Call onComplete immediately after fade completes
+      setTimeout(onComplete, 150);
+    }, 500);
 
     return () => {
       clearTimeout(loaderTimeout);
@@ -27,7 +28,7 @@ const Loader = ({ onComplete }: LoaderProps) => {
     <motion.div
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.15, ease: 'easeInOut' }}
       className="fixed inset-0 z-50 flex items-center justify-center"
       style={{ backgroundColor: '#2E3E27' }}
     >
@@ -38,6 +39,8 @@ const Loader = ({ onComplete }: LoaderProps) => {
             src="/Pania-logo.png"
             alt="Pania International"
             className="w-full h-full object-contain"
+            loading="eager"
+            fetchPriority="high"
           />
         </div>
       </div>
