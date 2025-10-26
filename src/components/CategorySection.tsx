@@ -38,7 +38,7 @@ const CategorySection = () => {
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('/category-image/Fresh Fruits & Vegetables.png')`
+                    backgroundImage: `url('/category-image/Fresh Fruits & Vegetables.webp')`
                   }}
                 >
                 </div>
@@ -47,7 +47,7 @@ const CategorySection = () => {
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('/category-image/oil-fats&ghee.png')`
+                    backgroundImage: `url('/category-image/oil-fats&ghee.webp')`
                   }}
                 >
                 </div>
@@ -56,7 +56,7 @@ const CategorySection = () => {
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('/category-image/Refined Oils.png')`
+                    backgroundImage: `url('/category-image/Refined Oils.webp')`
                   }}
                 >
                 </div>
@@ -65,7 +65,7 @@ const CategorySection = () => {
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('/category-image/natural-sweetners.jpg')`
+                    backgroundImage: `url('/category-image/natural-sweetners.webp')`
                   }}
                 >
                 </div>
@@ -74,7 +74,7 @@ const CategorySection = () => {
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage: `url('/category-image/Grains and staples.png')`
+                    backgroundImage: `url('/category-image/Grains and staples.webp')`
                   }}
                 >
                 </div>

@@ -51,7 +51,7 @@ const Index = () => {
                   Why Choose Pania?
                 </h2>
                 
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
+                <div className="grid grid-cols-2 lg:grid-cols-4 -gap-x-4 gap-y-4 sm:gap-x-6 sm:gap-y-5 lg:gap-x-8 lg:gap-y-6">
                   <div className="text-center">
                     <div className="w-16 h-16 sm:w-20 sm:h-20 border-2 border-white rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
                       <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

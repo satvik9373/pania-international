@@ -508,7 +508,7 @@ export const products: Product[] = [
     hsnCode: '3301.29',
     categoryId: 7,
     description: 'Pure lavender essential oil for aromatherapy and relaxation.',
-    image: '/product-image/Lavender,-Tea-Tree,-Peppermint,-etc..webp',
+    image: '/product-image/lavender.webp',
     detailedDescription: 'Our premium lavender essential oil is steam-distilled from the finest lavender flowers, capturing the pure essence of this beloved aromatic herb. Known for its calming and therapeutic properties, this versatile oil is perfect for aromatherapy, skincare, and promoting peaceful sleep.',
     keyBenefits: [
       'Promotes relaxation and reduces stress and anxiety',
@@ -531,7 +531,7 @@ export const products: Product[] = [
     hsnCode: '3301.29',
     categoryId: 7,
     description: 'Antiseptic tea tree essential oil for skincare and wellness. This powerful essential oil is steam-distilled from Australian tea tree leaves, known for their potent antimicrobial and anti-inflammatory properties. Perfect for treating acne, fungal infections, and minor skin irritations, it serves as a natural alternative to chemical-based skincare solutions while promoting healthy, clear skin.',
-    image: '/product-image/Lavender,-Tea-Tree,-Peppermint,-etc..webp'
+    image: '/product-image/tea-tree.webp'
   },
   {
     id: 29,
@@ -539,7 +539,7 @@ export const products: Product[] = [
     hsnCode: '3301.29',
     categoryId: 7,
     description: 'Refreshing peppermint essential oil for aromatherapy and cooling effects. This invigorating oil is extracted from pure peppermint leaves, delivering a crisp, mentholated aroma that stimulates the senses and promotes mental clarity. Excellent for relieving headaches, improving focus, and providing natural cooling relief for tired muscles and respiratory congestion.',
-    image: '/product-image/Lavender,-Tea-Tree,-Peppermint,-etc..webp'
+    image: '/product-image/Peppermint.webp'
   },
   {
     id: 30,

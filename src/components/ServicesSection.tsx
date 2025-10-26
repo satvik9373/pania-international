@@ -53,12 +53,6 @@ const ServicesSection = () => {
       title: "Specialized Logistics",
       description: "Temperature-sensitive logistics and supply chain management.",
       color: "from-teal-500 to-teal-600"
-    },
-    {
-      icon: MapPin,
-      title: "Pan-India Network",
-      description: "Comprehensive procurement and shipment services across India.",
-      color: "from-cyan-500 to-cyan-600"
     }
   ];
 
@@ -165,9 +159,12 @@ const ServicesSection = () => {
                   <p className="text-rich-brown/70 leading-relaxed mb-6 flex-1">
                     {service.description}
                   </p>
-                  <button className="bg-terracotta text-white px-6 py-3 rounded-lg font-semibold hover:bg-terracotta/90 transition-colors">
+                  <a 
+                    href="/services"
+                    className="bg-rich-brown text-white px-6 py-3 rounded-lg font-semibold hover:bg-rich-brown/90 transition-colors inline-block"
+                  >
                     Learn More
-                  </button>
+                  </a>
                 </div>
               </motion.div>
             ))}

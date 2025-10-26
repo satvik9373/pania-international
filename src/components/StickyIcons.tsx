@@ -2,7 +2,7 @@ import React from 'react';
 
 const StickyIcons = () => {
   return (
-    <div className="fixed right-4 bottom-4 z-50 flex flex-col space-y-4">
+    <div className="fixed right-4 bottom-24 z-50 flex flex-col space-y-6">
       {/* WhatsApp Icon */}
       <a
         href="https://wa.me/1234567890" // Replace with actual WhatsApp number
@@ -33,3 +33,4 @@ const StickyIcons = () => {
 };
 
 export default StickyIcons;
+

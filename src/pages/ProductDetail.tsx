@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Star, Plus, Minus } from 'lucide-react';
 import { getProductBySlug, getCategoryById, getProductsByCategory, generateSlug, products } from '@/data/products';
@@ -13,6 +13,7 @@ const ProductDetail = () => {
   const [activeTab, setActiveTab] = useState('description');
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
+  const [showStickyButton, setShowStickyButton] = useState(false);
 
   // Try to find product by slug, fallback to finding by generated slug from name
   let product = getProductBySlug(productSlug || '');
@@ -78,6 +79,21 @@ const ProductDetail = () => {
   const handleQuantityChange = (change: number) => {
     setQuantity(prev => Math.max(1, prev + change));
   };
+
+  // Scroll detection for sticky button
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show sticky button when scrolled more than 300px
+      if (window.scrollY > 300) {
+        setShowStickyButton(true);
+      } else {
+        setShowStickyButton(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const tabs = [
     { id: 'description', label: 'Product Description' },
@@ -359,6 +375,26 @@ const ProductDetail = () => {
         )}
       </div>
 
+      {/* Sticky Order Now Button - Mobile Only */}
+      {showStickyButton && (
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 100, opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white border-t border-gray-200 shadow-lg"
+        >
+          <div className="max-w-7xl mx-auto px-4 py-3">
+            <button
+              onClick={handleAddToCart}
+              className="w-full bg-pink-500 hover:bg-pink-600 text-white py-3 rounded-lg text-base font-semibold transition-colors"
+            >
+              Order Now
+            </button>
+          </div>
+        </motion.div>
+      )}
+
       <StickyIcons />
       <Footer />
     </div>
@@ -366,3 +402,4 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
+
