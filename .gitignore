@@ -12,6 +12,15 @@ dist
 dist-ssr
 *.local
 
+# Service Account Key (SENSITIVE - DO NOT COMMIT!)
+service-account-key.json
+
+# Environment variables (SENSITIVE - DO NOT COMMIT!)
+.env
+.env.local
+.env.production
+.env.*.local
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

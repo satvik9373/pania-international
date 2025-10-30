@@ -4,8 +4,50 @@ import Footer from '@/components/Footer';
 import FAQSection from '@/components/FAQSection';
 import { motion } from 'framer-motion';
 import { CheckCircle, Shield, Clock, Award } from 'lucide-react';
+import { useState } from 'react';
 
 const Services = () => {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    service: 'architectural',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/submit-service-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ fullName: '', email: '', phone: '', service: 'architectural', message: '' });
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
   const services = [
     {
       title: 'Architectural Services',
@@ -357,7 +399,7 @@ const Services = () => {
 
               {/* Right Side - Contact Form */}
               <div className="bg-white p-8 lg:p-12">
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Full Name */}
                   <div>
                     <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-2">
@@ -367,6 +409,9 @@ const Services = () => {
                       type="text"
                       id="fullName"
                       name="fullName"
+                      value={formData.fullName}
+                      onChange={handleChange}
+                      required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rich-brown focus:border-transparent outline-none transition-all"
                       placeholder=""
                     />
@@ -382,6 +427,9 @@ const Services = () => {
                         type="email"
                         id="email"
                         name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rich-brown focus:border-transparent outline-none transition-all"
                         placeholder=""
                       />
@@ -394,6 +442,9 @@ const Services = () => {
                         type="tel"
                         id="phone"
                         name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rich-brown focus:border-transparent outline-none transition-all"
                         placeholder=""
                       />
@@ -408,6 +459,9 @@ const Services = () => {
                     <select
                       id="service"
                       name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                      required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rich-brown focus:border-transparent outline-none transition-all bg-white"
                     >
                       <option value="architectural">Architectural Services</option>
@@ -425,18 +479,33 @@ const Services = () => {
                     <textarea
                       id="message"
                       name="message"
+                      value={formData.message}
+                      onChange={handleChange}
                       rows={4}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rich-brown focus:border-transparent outline-none transition-all resize-none"
                       placeholder="Tell us about your project or goal..."
                     />
                   </div>
 
+                  {/* Submit Status Messages */}
+                  {submitStatus === 'success' && (
+                    <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
+                      ✓ Thank you! We'll get back to you within one business day.
+                    </div>
+                  )}
+                  {submitStatus === 'error' && (
+                    <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
+                      ✗ Something went wrong. Please try again or call us directly.
+                    </div>
+                  )}
+
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full bg-gray-900 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+                    disabled={isSubmitting}
+                    className="w-full bg-gray-900 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-800 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
                   >
-                    Send Request
+                    {isSubmitting ? 'Sending...' : 'Send Request'}
                   </button>
 
                   {/* Privacy Notice */}
