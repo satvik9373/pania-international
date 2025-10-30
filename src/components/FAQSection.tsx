@@ -9,16 +9,16 @@ type FAQ = {
 
 const faqs: FAQ[] = [
   {
-    q: "What makes Pania products different?",
-    a: "We source directly from trusted farms and artisan producers, focusing on traditional methods, clean ingredients, and small-batch quality for freshness and authenticity.",
+    q: "What does your architectural process look like?",
+    a: "We begin with a consultation to understand your goals, then develop concepts and detailed designs. We oversee construction and provide post-completion support.",
   },
   {
-    q: "Do you ship worldwide?",
-    a: "Yes. We ship worldwide with trusted international courier partners. Delivery timelines typically range from 7–21 business days, depending on your country and location.",
+    q: "Do I need a doctor's referral for physiotherapy?",
+    a: "No—patients can book sessions directly with our physiotherapists for online or in-person treatment.",
   },
   {
-    q: "How should I store ghee, oils, and spices?",
-    a: "Store in a cool, dry place away from direct sunlight. Use clean, dry spoons and keep containers tightly sealed to preserve freshness and aroma.",
+    q: "How are fitness consultations conducted?",
+    a: "All sessions are done via video call. A certified coach assesses your fitness level and designs a personalised plan.",
   },
 ];
 
@@ -42,7 +42,7 @@ export default function FAQSection() {
           </h2>
           <div className="w-20 h-1 bg-terracotta mx-auto mb-6 rounded-full"></div>
           <p className="text-lg text-rich-brown/70 max-w-2xl mx-auto leading-relaxed">
-            Answers to common questions about our products, shipping, and care.
+            Answers to common questions about our services and processes.
           </p>
         </motion.div>
 
