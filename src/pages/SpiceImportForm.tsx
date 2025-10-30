@@ -85,10 +85,52 @@ const SpiceImportForm = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    navigate('/thank-you');
+    setIsSubmitting(true);
+
+    try {
+      // Flatten the form data for Google Sheets
+      const flattenedData = {
+        companyName: formData.companyName,
+        contactPerson: formData.contactPerson,
+        designation: formData.designation,
+        email: formData.email,
+        phone: formData.phone,
+        countryOfImport: formData.countryOfImport,
+        website: formData.website,
+        products: JSON.stringify(formData.products),
+        certifications: Object.entries(formData.certifications)
+          .filter(([key, value]) => value === true)
+          .map(([key]) => key === 'other' ? formData.certifications.otherText : key)
+          .join(', '),
+        portOfDelivery: formData.portOfDelivery,
+        deliveryTerms: formData.deliveryTerms,
+        shippingMethod: formData.shippingMethod,
+        deliveryTimeline: formData.deliveryTimeline
+      };
+
+      const response = await fetch('/api/submit-product-lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(flattenedData),
+      });
+
+      if (response.ok) {
+        navigate('/thank-you');
+      } else {
+        alert('Failed to submit form. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('An error occurred. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -443,10 +485,11 @@ const SpiceImportForm = () => {
 
                 <button
                   type="submit"
-                  className="w-full text-white py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all duration-300"
+                  disabled={isSubmitting}
+                  className="w-full text-white py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all duration-300 disabled:opacity-50"
                   style={{ backgroundColor: '#2e3e27', fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.035em' }}
                 >
-                  Submit Requirement
+                  {isSubmitting ? 'Submitting...' : 'Submit Requirement'}
                 </button>
               </form>
             </div>

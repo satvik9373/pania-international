@@ -11,10 +11,24 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    const { name, email, phone, company, country, productInterest, quantity, message } = req.body;
+    const { 
+      companyName, 
+      contactPerson, 
+      designation, 
+      email, 
+      phone, 
+      countryOfImport, 
+      website,
+      products,
+      certifications,
+      portOfDelivery,
+      deliveryTerms,
+      shippingMethod,
+      deliveryTimeline
+    } = req.body;
 
     // Validate required fields
-    if (!name || !email || !productInterest) {
+    if (!companyName || !contactPerson || !email) {
       return res.status(400).json({ error: 'Missing required fields' });
     }
 
@@ -40,20 +54,25 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const values = [[
       date,
       time,
-      name,
+      companyName,
+      contactPerson,
+      designation || '',
       email,
       phone || '',
-      company || '',
-      country || '',
-      productInterest,
-      quantity || '',
-      message || ''
+      countryOfImport || '',
+      website || '',
+      products || '',
+      certifications || '',
+      portOfDelivery || '',
+      deliveryTerms || '',
+      shippingMethod || '',
+      deliveryTimeline || ''
     ]];
 
     // Append to sheet
     await sheets.spreadsheets.values.append({
       spreadsheetId: SPREADSHEET_ID,
-      range: `${SHEET_NAME}!A:J`,
+      range: `${SHEET_NAME}!A:O`,
       valueInputOption: 'USER_ENTERED',
       requestBody: { values },
     });
