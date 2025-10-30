@@ -92,13 +92,6 @@ const SpiceImportForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Format products in a readable way
-      const productsText = formData.products
-        .map((p, i) => 
-          `Product ${i + 1}: ${p.spiceName || 'N/A'} | Grade: ${p.gradeType || 'N/A'} | Type: ${p.organicConventional || 'N/A'} | Qty: ${p.quantity || 'N/A'} MT | Packing: ${p.packing || 'N/A'} | Remarks: ${p.remarks || 'N/A'}`
-        )
-        .join(' || ');
-
       // Flatten the form data for Google Sheets
       const flattenedData = {
         companyName: formData.companyName,
@@ -108,7 +101,13 @@ const SpiceImportForm = () => {
         phone: formData.phone,
         countryOfImport: formData.countryOfImport,
         website: formData.website,
-        products: productsText,
+        // Separate product fields
+        spiceName: formData.products.map(p => p.spiceName).filter(Boolean).join(', ') || '',
+        gradeType: formData.products.map(p => p.gradeType).filter(Boolean).join(', ') || '',
+        organicConventional: formData.products.map(p => p.organicConventional).filter(Boolean).join(', ') || '',
+        quantity: formData.products.map(p => p.quantity).filter(Boolean).join(', ') || '',
+        packing: formData.products.map(p => p.packing).filter(Boolean).join(', ') || '',
+        remarks: formData.products.map(p => p.remarks).filter(Boolean).join(', ') || '',
         certifications: Object.entries(formData.certifications)
           .filter(([key, value]) => value === true)
           .map(([key]) => key === 'other' ? formData.certifications.otherText : key)
