@@ -359,7 +359,7 @@ export const products: Product[] = [
     hsnCode: '1006.30',
     categoryId: 5,
     description: 'Authentic GI tagged Kala Namak rice with unique aroma and taste.',
-    image: '/product-image/black-saltkala-namak-powder-100-g-quick-pantry.jpg'
+    image: '/product-image/Kala Namak Rice.jpg'
   },
   {
     id: 18,
