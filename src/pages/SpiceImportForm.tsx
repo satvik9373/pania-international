@@ -153,14 +153,14 @@ const SpiceImportForm = () => {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif tracking-wide mb-4">SPICE IMPORT FORM</h1>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif tracking-wide mb-4">IMPORTER REQUIREMENT FORM</h1>
             <p className="text-lg text-white/90 max-w-2xl mx-auto">
               Complete our detailed import requirement form for bulk orders and customized pricing.
             </p>
             <div className="mt-6">
               <a href="/" className="text-sm text-white underline mr-2">Home</a>
               <span className="text-sm text-white">›</span>
-              <span className="text-sm text-white ml-2">Spice Import Form</span>
+              <span className="text-sm text-white ml-2">Importer Requirement Form</span>
             </div>
           </div>
         </div>
@@ -172,7 +172,7 @@ const SpiceImportForm = () => {
           <div className="bg-white p-8 rounded-lg shadow-sm">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-black mb-2">PANIA INTERNATIONAL PRIVATE LIMITED</h3>
-                <h4 className="text-xl font-semibold text-gray-700">Spice Import Requirement Form</h4>
+                <h4 className="text-xl font-semibold text-gray-700">Importer Requirement Form</h4>
               </div>
               
               <form onSubmit={handleSubmit} className="space-y-8" style={{ fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.035em' }}>
@@ -466,7 +466,6 @@ const SpiceImportForm = () => {
                           <option value="">Select shipping method</option>
                           <option value="Sea">Sea</option>
                           <option value="Air">Air</option>
-                          <option value="Both">Both</option>
                         </select>
                       </div>
                       <div>

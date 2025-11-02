@@ -4,8 +4,10 @@ import FAQSection from '@/components/FAQSection';
 import { motion } from 'framer-motion';
 import { CheckCircle, Shield, Clock, Award } from 'lucide-react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Services = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -29,15 +31,15 @@ const Services = () => {
       });
 
       if (response.ok) {
-        setSubmitStatus('success');
-        setFormData({ fullName: '', email: '', phone: '', service: 'architectural', message: '' });
-        setTimeout(() => setSubmitStatus('idle'), 5000);
+        navigate('/thank-you');
       } else {
         setSubmitStatus('error');
+        alert('Failed to submit form. Please try again or contact us directly at sales@paniaexports.com');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
       setSubmitStatus('error');
+      alert('Unable to submit form at this time. Please contact us directly at:\n\nEmail: sales@paniaexports.com\nPhone: +91 6261149388');
     } finally {
       setIsSubmitting(false);
     }
