@@ -147,7 +147,7 @@ const Services = () => {
                 <span></span>
               </a>
               <a 
-                href="/contact"
+                href="tel:+916261149388"
                 className="bg-white border-2 border-gray-300 text-gray-900 px-8 py-3 rounded-lg font-semibold hover:border-gray-400 transition-colors inline-flex items-center gap-2"
               >
                 <span></span>
