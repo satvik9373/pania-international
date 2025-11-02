@@ -208,12 +208,11 @@ const Contact = () => {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-semibold text-black mb-2">
-                    Message *
+                    Message
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    required
                     rows={4}
                     value={formData.message}
                     onChange={handleInputChange}

@@ -215,12 +215,11 @@ const Contact = () => {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-black mb-3" style={{ fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.025em', lineHeight: '1.6' }}>
-                    Message *
+                    Message
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    required
                     rows={4}
                     value={formData.message}
                     onChange={handleInputChange}
