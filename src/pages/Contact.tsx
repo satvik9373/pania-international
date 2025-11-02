@@ -99,7 +99,7 @@ const Contact = () => {
                   <Phone className="h-6 w-6 text-black" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-black mb-1">Phone</h3>
+                  <h3 className="font-semibold text-black mb-1">Phone / WhatsApp</h3>
                   <p className="text-gray-600">+91 6261149388</p>
                 </div>
               </div>
@@ -133,9 +133,8 @@ const Contact = () => {
                   <Clock className="h-6 w-6 text-black" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-black mb-1">Business Hours</h3>
-                  <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                  <p className="text-gray-600">Saturday: 9:00 AM - 2:00 PM</p>
+                  <h3 className="font-semibold text-black mb-1">Office Hours</h3>
+                  <p className="text-gray-600">Monday - Saturday: 9:00 AM - 7:00 PM</p>
                   <p className="text-gray-600">Sunday: Closed</p>
                 </div>
               </div>
