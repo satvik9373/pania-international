@@ -66,11 +66,11 @@ export default function FAQSection() {
                 <AccordionItem
                   value={`item-${idx}`}
                   className="border border-gray-200 rounded-xl shadow-sm overflow-hidden"
-                  style={{ backgroundColor: '#8B4513' }}
+                  style={{ backgroundColor: '#5B4539' }}
                 >
                   <AccordionTrigger 
                     className="px-6 py-4 text-left hover:no-underline transition-colors rounded-t-xl"
-                    style={{ backgroundColor: '#8B4513' }}
+                    style={{ backgroundColor: '#5B4539' }}
                   >
                     <span className="text-base md:text-lg font-medium text-white leading-tight" style={{ fontFamily: 'Soria, serif' }}>
                       {item.q}
