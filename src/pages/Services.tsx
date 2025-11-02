@@ -273,35 +273,35 @@ const Services = () => {
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Us</h2>
               <p className="text-gray-600 mb-8">
-                Tailored solutions, rigorous quality, and a transparent process—built around your goals and timelines.
+                Tailored solutions, rigorous quality, and a transparent processï¿½built around your goals and timelines.
               </p>
 
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-olive-green flex-shrink-0 mt-1" />
                   <div>
-                    <p className="text-gray-800 font-medium">Multi-disciplinary expertise – architects, physiotherapists, fitness coaches and logistics professionals</p>
+                    <p className="text-gray-800 font-medium">Multi-disciplinary expertise ï¿½ architects, physiotherapists, fitness coaches and logistics professionals</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-olive-green flex-shrink-0 mt-1" />
                   <div>
-                    <p className="text-gray-800 font-medium">Client-centric approach – personalised plans and clear communication</p>
+                    <p className="text-gray-800 font-medium">Client-centric approach ï¿½ personalised plans and clear communication</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-olive-green flex-shrink-0 mt-1" />
                   <div>
-                    <p className="text-gray-800 font-medium">Transparent pricing & SLAs – no hidden costs, clear milestones and regular updates</p>
+                    <p className="text-gray-800 font-medium">Transparent pricing & SLAs ï¿½ no hidden costs, clear milestones and regular updates</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-olive-green flex-shrink-0 mt-1" />
                   <div>
-                    <p className="text-gray-800 font-medium">Global reach, local knowledge – pan-India sourcing and worldwide virtual services</p>
+                    <p className="text-gray-800 font-medium">Global reach, local knowledge ï¿½ pan-India sourcing and worldwide virtual services</p>
                   </div>
                 </div>
               </div>
@@ -333,19 +333,19 @@ const Services = () => {
               <div className="space-y-4 pt-6 border-t border-gray-300">
                 <div className="flex items-start gap-3">
                   <span className="text-olive-green">??</span>
-                  <p className="text-sm text-gray-700">Discovery & Consultation – understand your goals and priorities</p>
+                  <p className="text-sm text-gray-700">Discovery & Consultation ï¿½ understand your goals and priorities</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-olive-green">??</span>
-                  <p className="text-sm text-gray-700">Proposal & Planning – develop a tailored solution and timeline</p>
+                  <p className="text-sm text-gray-700">Proposal & Planning ï¿½ develop a tailored solution and timeline</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-olive-green">??</span>
-                  <p className="text-sm text-gray-700">Delivery & Execution – implement with regular updates</p>
+                  <p className="text-sm text-gray-700">Delivery & Execution ï¿½ implement with regular updates</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-olive-green">??</span>
-                  <p className="text-sm text-gray-700">Support & Follow-Up – ongoing assistance and care</p>
+                  <p className="text-sm text-gray-700">Support & Follow-Up ï¿½ ongoing assistance and care</p>
                 </div>
               </div>
             </motion.div>
@@ -372,7 +372,7 @@ const Services = () => {
                   Let's Build Something Extraordinary
                 </h2>
                 <p className="text-gray-600 mb-8">
-                  Tell us a little about your needs—whether it's a design project, rehabilitation plan, fitness programme or sourcing requirement. We'll reply within one business day with next steps.
+                  Tell us a little about your needsï¿½whether it's a design project, rehabilitation plan, fitness programme or sourcing requirement. We'll reply within one business day with next steps.
                 </p>
                 
                 <div className="space-y-4">
@@ -398,7 +398,7 @@ const Services = () => {
                   {/* Full Name */}
                   <div>
                     <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-2">
-                      Full Name
+                      Full Name *
                     </label>
                     <input
                       type="text"
@@ -416,7 +416,7 @@ const Services = () => {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                        Email
+                        Email *
                       </label>
                       <input
                         type="email"
@@ -431,7 +431,7 @@ const Services = () => {
                     </div>
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                        Phone
+                        Phone *
                       </label>
                       <input
                         type="tel"

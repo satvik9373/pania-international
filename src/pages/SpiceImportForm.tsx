@@ -195,7 +195,7 @@ const SpiceImportForm = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-black mb-2">Contact Person</label>
+                        <label className="block text-sm font-medium text-black mb-2">Contact Person *</label>
                         <input
                           type="text"
                           name="contactPerson"
@@ -207,7 +207,7 @@ const SpiceImportForm = () => {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-black mb-2">Designation</label>
+                        <label className="block text-sm font-medium text-black mb-2">Designation *</label>
                         <input
                           type="text"
                           name="designation"
@@ -222,7 +222,7 @@ const SpiceImportForm = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-black mb-2">Email Address</label>
+                        <label className="block text-sm font-medium text-black mb-2">Email Address *</label>
                         <input
                           type="email"
                           name="email"
@@ -234,7 +234,7 @@ const SpiceImportForm = () => {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-black mb-2">Phone/WhatsApp</label>
+                        <label className="block text-sm font-medium text-black mb-2">Phone/WhatsApp *</label>
                         <input
                           type="tel"
                           name="phone"

@@ -39,11 +39,13 @@ const Contact = () => {
       if (response.ok) {
         navigate('/thank-you');
       } else {
-        alert('Failed to submit form. Please try again.');
+        const errorData = await response.json().catch(() => ({}));
+        console.error('Form submission failed:', errorData);
+        alert(`Failed to submit form: ${errorData.error || 'Please try again or contact us directly at sales@paniaexports.com'}`);
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('An error occurred. Please try again.');
+      alert('Unable to submit form at this time. Please contact us directly at:\n\nEmail: sales@paniaexports.com\nPhone: +91 6261149388');
     } finally {
       setIsSubmitting(false);
     }
@@ -182,12 +184,13 @@ const Contact = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-black mb-3" style={{ fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.025em', lineHeight: '1.6' }}>
-                      Phone Number
+                      Phone Number *
                     </label>
                     <input
                       type="tel"
                       id="phone"
                       name="phone"
+                      required
                       value={formData.phone}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-300"
