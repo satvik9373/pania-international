@@ -374,7 +374,7 @@ const Services = () => {
                   Let's Build Something Extraordinary
                 </h2>
                 <p className="text-gray-600 mb-8">
-                  Tell us a little about your needs�whether it's a design project, rehabilitation plan, fitness programme or sourcing requirement. We'll reply within one business day with next steps.
+                  Tell us a little about your needs - whether it's a design project, rehabilitation plan, fitness programme or sourcing requirement. We'll reply within one business day with next steps.
                 </p>
                 
                 <div className="space-y-4">
