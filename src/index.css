@@ -302,3 +302,153 @@ All colors MUST be HSL.
 .border-3 {
   border-width: 3px;
 }
+
+/* Google Translate Styling */
+.google-translate-wrapper {
+  display: inline-block;
+  min-width: 150px;
+}
+
+/* Hide Google Translate banner */
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+#google_translate_element {
+  display: inline-block !important;
+  background: transparent !important;
+}
+
+/* Style the Google Translate gadget container */
+.goog-te-gadget {
+  font-family: 'Coolvetica', sans-serif !important;
+  color: white !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  background: transparent !important;
+}
+
+/* Remove all backgrounds from gadget */
+.goog-te-gadget-simple {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* Style the dropdown */
+.goog-te-gadget .goog-te-combo {
+  background-color: #f8f9fa !important;
+  border: 1px solid #dadce0 !important;
+  color: #3c4043 !important;
+  padding: 8px 12px !important;
+  border-radius: 4px !important;
+  font-size: 14px !important;
+  font-family: 'Coolvetica', sans-serif !important;
+  cursor: pointer !important;
+  outline: none !important;
+  min-width: 150px !important;
+  appearance: menulist !important;
+  -webkit-appearance: menulist !important;
+  -moz-appearance: menulist !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+}
+
+.goog-te-gadget .goog-te-combo:hover {
+  border-color: #b0b3b8 !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15) !important;
+}
+
+.goog-te-gadget .goog-te-combo:focus {
+  border-color: #1a73e8 !important;
+  box-shadow: 0 0 0 2px rgba(26,115,232,0.2) !important;
+}
+
+/* Style dropdown options */
+.goog-te-gadget .goog-te-combo option {
+  background-color: white !important;
+  color: #3c4043 !important;
+  padding: 8px !important;
+  font-family: 'Coolvetica', sans-serif !important;
+}
+
+/* Menu value styling */
+.goog-te-gadget .goog-te-menu-value {
+  color: #3c4043 !important;
+  background: transparent !important;
+}
+
+.goog-te-gadget .goog-te-menu-value span {
+  color: #3c4043 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+/* Google branding styling */
+.goog-te-gadget span {
+  color: #5f6368 !important;
+  font-size: 11px !important;
+  vertical-align: middle !important;
+  background: transparent !important;
+}
+
+.goog-te-gadget > div {
+  display: inline-block !important;
+  background: transparent !important;
+}
+
+/* Google logo link - no background */
+.goog-logo-link {
+  display: inline-block !important;
+  padding-top: 2px !important;
+  background: transparent !important;
+  text-decoration: none !important;
+}
+
+/* Google logo image - no background */
+.goog-te-gadget img {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  height: 14px !important;
+  width: auto !important;
+  background: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Remove any wrapper backgrounds */
+.goog-te-gadget-simple a {
+  background: transparent !important;
+}
+
+/* Ensure "Powered by" text looks good */
+.goog-te-gadget .goog-te-gadget-simple span {
+  background: transparent !important;
+  color: #5f6368 !important;
+}
+
+/* Remove the globe emoji */
+#google_translate_element::before,
+#google_translate_element_mobile::before {
+  content: "" !important;
+  display: none !important;
+}
+
+/* Mobile translate widget */
+@media (max-width: 768px) {
+  .google-translate-wrapper {
+    margin-top: 8px;
+    display: block;
+    width: 100%;
+    background: transparent !important;
+  }
+  
+  .goog-te-gadget .goog-te-combo {
+    width: 100% !important;
+    background-color: #f8f9fa !important;
+  }
+}

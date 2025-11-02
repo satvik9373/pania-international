@@ -1,11 +1,12 @@
 
 import { useState, useRef, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Languages } from 'lucide-react';
 
 const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isContactDropdownOpen, setIsContactDropdownOpen] = useState(false);
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const googleTranslateRef = useRef<HTMLDivElement>(null);
 
   const navItems = [
     { name: 'Home', href: '/' },
@@ -32,12 +33,68 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
   };
 
   useEffect(() => {
+    // Add Google Translate script
+    const addGoogleTranslateScript = () => {
+      if (!document.getElementById('google-translate-script')) {
+        const script = document.createElement('script');
+        script.id = 'google-translate-script';
+        script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        script.async = true;
+        document.body.appendChild(script);
+      }
+    };
+
+    // Initialize Google Translate
+    (window as any).googleTranslateElementInit = () => {
+      if (!(window as any).google?.translate?.TranslateElement) {
+        return;
+      }
+      
+      // Desktop translate element
+      const desktopElement = document.getElementById('google_translate_element');
+      if (desktopElement && !desktopElement.hasChildNodes()) {
+        new (window as any).google.translate.TranslateElement(
+          {
+            pageLanguage: 'en',
+            includedLanguages: 'en,es,fr,de,it,pt,ru,zh-CN,zh-TW,ja,ko,ar,hi,bn,ur,tr,vi,th,id,ms,tl,nl,pl,sv,no,da,fi,cs,el,he,fa,uk,ro,hu,sr,bg,hr,sk,sl,lt,lv,et',
+            layout: (window as any).google?.translate?.TranslateElement?.InlineLayout?.SIMPLE,
+            autoDisplay: false,
+          },
+          'google_translate_element'
+        );
+      }
+
+      // Mobile translate element
+      const mobileElement = document.getElementById('google_translate_element_mobile');
+      if (mobileElement && !mobileElement.hasChildNodes()) {
+        new (window as any).google.translate.TranslateElement(
+          {
+            pageLanguage: 'en',
+            includedLanguages: 'en,es,fr,de,it,pt,ru,zh-CN,zh-TW,ja,ko,ar,hi,bn,ur,tr,vi,th,id,ms,tl,nl,pl,sv,no,da,fi,cs,el,he,fa,uk,ro,hu,sr,bg,hr,sk,sl,lt,lv,et',
+            layout: (window as any).google?.translate?.TranslateElement?.InlineLayout?.SIMPLE,
+            autoDisplay: false,
+          },
+          'google_translate_element_mobile'
+        );
+      }
+    };
+
+    addGoogleTranslateScript();
+    
+    // Re-initialize when menu opens
+    const timer = setTimeout(() => {
+      if ((window as any).googleTranslateElementInit) {
+        (window as any).googleTranslateElementInit();
+      }
+    }, 100);
+
     return () => {
+      clearTimeout(timer);
       if (dropdownTimeoutRef.current) {
         clearTimeout(dropdownTimeoutRef.current);
       }
     };
-  }, []);
+  }, [isMenuOpen]);
 
   return (
     <nav className={`${navClass} relative z-50`}>
@@ -99,6 +156,11 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
                   </a>
                 </div>
               )}
+            </div>
+
+            {/* Google Translate */}
+            <div className="google-translate-wrapper flex items-center">
+              <div id="google_translate_element" ref={googleTranslateRef}></div>
             </div>
           </div>
 
@@ -167,6 +229,14 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
                     </a>
                   </div>
                 )}
+              </div>
+
+              {/* Google Translate for Mobile */}
+              <div className="px-3 py-2">
+                <div className="text-xs text-white/70 mb-2" style={{ fontFamily: 'Coolvetica, sans-serif' }}>
+                  Language
+                </div>
+                <div id="google_translate_element_mobile" className="google-translate-wrapper"></div>
               </div>
             </div>
           </div>
