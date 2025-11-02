@@ -1,10 +1,11 @@
 
-import { useState } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isContactDropdownOpen, setIsContactDropdownOpen] = useState(false);
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const navItems = [
     { name: 'Home', href: '/' },
@@ -16,6 +17,27 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
   const navClass = 'bg-[#2e3e27] border-none';
   const linkClass = 'text-white hover:text-gray-200 transition-colors duration-200 leading-tightish font-medium';
   const logoClass = 'text-white tracking-tight uppercase';
+
+  const handleMouseEnter = () => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+    }
+    setIsContactDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setIsContactDropdownOpen(false);
+    }, 300); // 300ms delay before closing
+  };
+
+  useEffect(() => {
+    return () => {
+      if (dropdownTimeoutRef.current) {
+        clearTimeout(dropdownTimeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <nav className={`${navClass} relative z-50`}>
@@ -48,15 +70,14 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
             {/* Contact Us Dropdown */}
             <div 
               className="relative"
-              onMouseEnter={() => setIsContactDropdownOpen(true)}
-              onMouseLeave={() => setIsContactDropdownOpen(false)}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               <button
-                className={`${linkClass} text-sm lg:text-base flex items-center gap-1`}
+                className={`${linkClass} text-sm lg:text-base`}
                 style={{ fontFamily: 'Coolvetica, sans-serif' }}
               >
                 Contact Us
-                <ChevronDown size={16} className={`transition-transform duration-200 ${isContactDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
               
               {/* Dropdown Menu */}
@@ -120,11 +141,10 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
               <div>
                 <button
                   onClick={() => setIsContactDropdownOpen(!isContactDropdownOpen)}
-                  className="w-full flex items-center justify-between px-3 py-2 text-sm text-white hover:text-gray-200 hover:bg-white/10 transition-colors rounded-md font-medium"
+                  className="w-full text-left px-3 py-2 text-sm text-white hover:text-gray-200 hover:bg-white/10 transition-colors rounded-md font-medium"
                   style={{ fontFamily: 'Coolvetica, sans-serif' }}
                 >
                   Contact Us
-                  <ChevronDown size={16} className={`transition-transform duration-200 ${isContactDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
                 
                 {isContactDropdownOpen && (
