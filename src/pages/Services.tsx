@@ -226,7 +226,7 @@ const Services = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow"
+                className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow flex flex-col h-full"
               >
                 {/* Service Title with Icon */}
                 <div className="flex items-center gap-3 mb-4">
@@ -239,8 +239,8 @@ const Services = () => {
                 {/* Service Description */}
                 <p className="text-gray-600 text-sm mb-6">{service.description}</p>
 
-                {/* Features List */}
-                <ul className="space-y-3 mb-6">
+                {/* Features List - flex-grow to push button to bottom */}
+                <ul className="space-y-3 mb-6 flex-grow">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
                       <CheckCircle className="w-4 h-4 text-olive-green mt-0.5 flex-shrink-0" />
@@ -249,10 +249,10 @@ const Services = () => {
                   ))}
                 </ul>
 
-                {/* CTA Button */}
+                {/* CTA Button - stays at bottom */}
                 <a
                   href="#contact-form"
-                  className="block w-full text-center bg-olive-green hover:bg-olive-green/90 text-white py-2.5 px-4 rounded-lg font-medium transition-colors text-sm"
+                  className="block w-full text-center bg-olive-green hover:bg-olive-green/90 text-white py-2.5 px-4 rounded-lg font-medium transition-colors text-sm mt-auto"
                 >
                   {service.buttonText}
                 </a>

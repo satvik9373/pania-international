@@ -160,7 +160,9 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
 
             {/* Google Translate */}
             <div className="google-translate-wrapper flex items-center">
-              <div id="google_translate_element" ref={googleTranslateRef}></div>
+              <div className="language-selector-button">
+                <div id="google_translate_element" ref={googleTranslateRef}></div>
+              </div>
             </div>
           </div>
 
@@ -236,7 +238,9 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
                 <div className="text-xs text-white/70 mb-2" style={{ fontFamily: 'Coolvetica, sans-serif' }}>
                   Language
                 </div>
-                <div id="google_translate_element_mobile" className="google-translate-wrapper"></div>
+                <div className="language-selector-button mobile">
+                  <div id="google_translate_element_mobile" className="google-translate-wrapper"></div>
+                </div>
               </div>
             </div>
           </div>
