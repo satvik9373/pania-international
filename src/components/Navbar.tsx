@@ -82,17 +82,17 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
               
               {/* Dropdown Menu */}
               {isContactDropdownOpen && (
-                <div className="absolute top-full right-0 mt-2 w-56 bg-white rounded-md shadow-lg py-2 z-50">
+                <div className="absolute top-full right-0 mt-1 w-48 bg-white rounded shadow-md py-1 z-50">
                   <a
                     href="/contact"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    className="block px-3 py-1.5 text-xs text-gray-700 hover:bg-gray-100 transition-colors"
                     style={{ fontFamily: 'Coolvetica, sans-serif' }}
                   >
                     Contact Us
                   </a>
                   <a
                     href="/spice-import-form"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    className="block px-3 py-1.5 text-xs text-gray-700 hover:bg-gray-100 transition-colors"
                     style={{ fontFamily: 'Coolvetica, sans-serif' }}
                   >
                     Importer Requirement Form

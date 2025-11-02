@@ -144,13 +144,13 @@ const Services = () => {
                 className="bg-rich-brown text-white px-8 py-3 rounded-lg font-semibold hover:bg-rich-brown/90 transition-colors inline-flex items-center gap-2"
               >
                 Explore Services
-                <span>?</span>
+                <span></span>
               </a>
               <a 
                 href="/contact"
                 className="bg-white border-2 border-gray-300 text-gray-900 px-8 py-3 rounded-lg font-semibold hover:border-gray-400 transition-colors inline-flex items-center gap-2"
               >
-                <span>??</span>
+                <span></span>
                 Call Us
               </a>
             </motion.div>
