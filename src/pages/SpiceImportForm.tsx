@@ -181,7 +181,7 @@ const SpiceImportForm = () => {
                   <h5 className="text-lg font-bold text-black mb-4 bg-gray-100 p-3 rounded" style={{ fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.035em' }}>1. Company Information</h5>
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-sm font-medium text-black mb-2">Company Name</label>
+                      <label className="block text-sm font-medium text-black mb-2">Company Name *</label>
                       <input
                         type="text"
                         name="companyName"
@@ -249,7 +249,7 @@ const SpiceImportForm = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-black mb-2">Country of Import</label>
+                        <label className="block text-sm font-medium text-black mb-2">Country of Import *</label>
                         <input
                           type="text"
                           name="countryOfImport"
@@ -261,7 +261,7 @@ const SpiceImportForm = () => {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-black mb-2">Website/Social Handles</label>
+                        <label className="block text-sm font-medium text-black mb-2">Website/Social Handles *</label>
                         <input
                           type="url"
                           name="website"
