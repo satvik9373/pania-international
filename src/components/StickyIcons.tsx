@@ -5,7 +5,7 @@ const StickyIcons = () => {
     <div className="fixed right-4 bottom-24 z-50 flex flex-col space-y-6">
       {/* WhatsApp Icon */}
       <a
-        href="https://wa.me/1234567890" // Replace with actual WhatsApp number
+        href="https://wa.me/916261149388"
         target="_blank"
         rel="noopener noreferrer"
         className="bg-green-500 hover:bg-green-600 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
