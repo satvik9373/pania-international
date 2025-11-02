@@ -1,7 +1,6 @@
 import { ArrowLeft, Check } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
-import AnnouncementBar from '@/components/AnnouncementBar';
 import Footer from '@/components/Footer';
 
 const ThankYou = () => {
@@ -12,11 +11,7 @@ const ThankYou = () => {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden" style={{ backgroundColor: '#e8e9e0', fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.025em' }}>
-      {/* Announcement */}
-      <AnnouncementBar />
-
-      {/* Navbar */}
+    <div className="min-h-screen relative overflow-hidden" style={{ backgroundColor: '#e8e9e0', fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.025em' }}>      {/* Navbar */}
       <Navbar />
 
       {/* Thank You Content - Full Page */}

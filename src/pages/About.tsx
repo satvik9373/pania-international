@@ -1,14 +1,9 @@
 import Navbar from '@/components/Navbar';
-import AnnouncementBar from '@/components/AnnouncementBar';
 import Footer from '@/components/Footer';
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Announcement */}
-      <AnnouncementBar />
-
-  {/* Navbar */}
+    <div className="min-h-screen bg-white">  {/* Navbar */}
   <Navbar />
 
       {/* Hero */}

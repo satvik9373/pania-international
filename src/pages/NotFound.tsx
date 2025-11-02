@@ -1,7 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from '@/components/Navbar';
-import AnnouncementBar from '@/components/AnnouncementBar';
 import Footer from '@/components/Footer';
 
 const NotFound = () => {
@@ -15,11 +14,7 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      {/* Announcement */}
-      <AnnouncementBar />
-
-      {/* Navbar */}
+    <div className="min-h-screen bg-gray-100">      {/* Navbar */}
       <Navbar transparent />
 
       <div className="flex items-center justify-center min-h-[60vh]">

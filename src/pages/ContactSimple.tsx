@@ -2,7 +2,6 @@ import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
-import AnnouncementBar from '@/components/AnnouncementBar';
 import Footer from '@/components/Footer';
 
 const Contact = () => {
@@ -31,11 +30,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#e8e9e0' }}>
-      {/* Announcement */}
-      <AnnouncementBar />
-
-      {/* Navbar */}
+    <div className="min-h-screen" style={{ backgroundColor: '#e8e9e0' }}>      {/* Navbar */}
       <Navbar />
 
       {/* Header */}

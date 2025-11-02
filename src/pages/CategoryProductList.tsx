@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getCategoryBySlug, getProductsByCategorySlug, generateSlug } from '@/data/products';
 import Navbar from '@/components/Navbar';
-import AnnouncementBar from '@/components/AnnouncementBar';
 import Footer from '@/components/Footer';
 
 const CategoryProductList = () => {
@@ -89,9 +88,7 @@ const CategoryProductList = () => {
 
   return (
     <div className="min-h-screen bg-warm-beige font-sans">
-      {/* Standard Announcement Bar */}
-      <AnnouncementBar />
-      
+      {/* Standard Announcement Bar */}      
       {/* Navbar */}
       <Navbar />
       

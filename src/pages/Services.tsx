@@ -1,5 +1,4 @@
-﻿import Navbar from '@/components/Navbar';
-import AnnouncementBar from '@/components/AnnouncementBar';
+import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FAQSection from '@/components/FAQSection';
 import { motion } from 'framer-motion';
@@ -107,11 +106,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Announcement */}
-      <AnnouncementBar />
-
-      {/* Navbar */}
+    <div className="min-h-screen bg-gray-50">      {/* Navbar */}
       <Navbar />
 
       {/* Hero Section */}
@@ -147,13 +142,13 @@ const Services = () => {
                 className="bg-rich-brown text-white px-8 py-3 rounded-lg font-semibold hover:bg-rich-brown/90 transition-colors inline-flex items-center gap-2"
               >
                 Explore Services
-                <span>→</span>
+                <span>?</span>
               </a>
               <a 
                 href="/contact"
                 className="bg-white border-2 border-gray-300 text-gray-900 px-8 py-3 rounded-lg font-semibold hover:border-gray-400 transition-colors inline-flex items-center gap-2"
               >
-                <span>📞</span>
+                <span>??</span>
                 Call Us
               </a>
             </motion.div>
@@ -278,35 +273,35 @@ const Services = () => {
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Us</h2>
               <p className="text-gray-600 mb-8">
-                Tailored solutions, rigorous quality, and a transparent process—built around your goals and timelines.
+                Tailored solutions, rigorous quality, and a transparent process�built around your goals and timelines.
               </p>
 
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-olive-green flex-shrink-0 mt-1" />
                   <div>
-                    <p className="text-gray-800 font-medium">Multi‑disciplinary expertise – architects, physiotherapists, fitness coaches and logistics professionals</p>
+                    <p className="text-gray-800 font-medium">Multi-disciplinary expertise � architects, physiotherapists, fitness coaches and logistics professionals</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-olive-green flex-shrink-0 mt-1" />
                   <div>
-                    <p className="text-gray-800 font-medium">Client‑centric approach – personalised plans and clear communication</p>
+                    <p className="text-gray-800 font-medium">Client-centric approach � personalised plans and clear communication</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-olive-green flex-shrink-0 mt-1" />
                   <div>
-                    <p className="text-gray-800 font-medium">Transparent pricing & SLAs – no hidden costs, clear milestones and regular updates</p>
+                    <p className="text-gray-800 font-medium">Transparent pricing & SLAs � no hidden costs, clear milestones and regular updates</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-6 h-6 text-olive-green flex-shrink-0 mt-1" />
                   <div>
-                    <p className="text-gray-800 font-medium">Global reach, local knowledge – pan-India sourcing and worldwide virtual services</p>
+                    <p className="text-gray-800 font-medium">Global reach, local knowledge � pan-India sourcing and worldwide virtual services</p>
                   </div>
                 </div>
               </div>
@@ -337,20 +332,20 @@ const Services = () => {
 
               <div className="space-y-4 pt-6 border-t border-gray-300">
                 <div className="flex items-start gap-3">
-                  <span className="text-olive-green">🚀</span>
-                  <p className="text-sm text-gray-700">Discovery & Consultation – understand your goals and priorities</p>
+                  <span className="text-olive-green">??</span>
+                  <p className="text-sm text-gray-700">Discovery & Consultation � understand your goals and priorities</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-olive-green">🚀</span>
-                  <p className="text-sm text-gray-700">Proposal & Planning – develop a tailored solution and timeline</p>
+                  <span className="text-olive-green">??</span>
+                  <p className="text-sm text-gray-700">Proposal & Planning � develop a tailored solution and timeline</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-olive-green">🚀</span>
-                  <p className="text-sm text-gray-700">Delivery & Execution – implement with regular updates</p>
+                  <span className="text-olive-green">??</span>
+                  <p className="text-sm text-gray-700">Delivery & Execution � implement with regular updates</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-olive-green">🚀</span>
-                  <p className="text-sm text-gray-700">Support & Follow-Up – ongoing assistance and care</p>
+                  <span className="text-olive-green">??</span>
+                  <p className="text-sm text-gray-700">Support & Follow-Up � ongoing assistance and care</p>
                 </div>
               </div>
             </motion.div>
@@ -377,7 +372,7 @@ const Services = () => {
                   Let's Build Something Extraordinary
                 </h2>
                 <p className="text-gray-600 mb-8">
-                  Tell us a little about your needs—whether it's a design project, rehabilitation plan, fitness programme or sourcing requirement. We'll reply within one business day with next steps.
+                  Tell us a little about your needs�whether it's a design project, rehabilitation plan, fitness programme or sourcing requirement. We'll reply within one business day with next steps.
                 </p>
                 
                 <div className="space-y-4">
@@ -490,12 +485,12 @@ const Services = () => {
                   {/* Submit Status Messages */}
                   {submitStatus === 'success' && (
                     <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
-                      ✓ Thank you! We'll get back to you within one business day.
+                      ? Thank you! We'll get back to you within one business day.
                     </div>
                   )}
                   {submitStatus === 'error' && (
                     <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
-                      ✗ Something went wrong. Please try again or call us directly.
+                      ? Something went wrong. Please try again or call us directly.
                     </div>
                   )}
 

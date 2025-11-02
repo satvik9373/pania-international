@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { categories } from '@/data/products';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import AnnouncementBar from '@/components/AnnouncementBar';
 
 const Categories = () => {
   const navigate = useNavigate();
@@ -19,9 +18,7 @@ const Categories = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <AnnouncementBar />
-      <Navbar />
+    <div className="min-h-screen bg-white">      <Navbar />
       
       <section className="py-16 bg-warm-beige">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Loader from '../components/Loader';
-import AnnouncementBar from '../components/AnnouncementBar';
 import Navbar from '../components/Navbar';
 import HeroSlider from '../components/HeroSlider';
 import CategorySection from '../components/CategorySection';
@@ -27,9 +26,7 @@ const Index = () => {
       </AnimatePresence>
       
       {!isLoading && (
-        <div style={{ backgroundColor: 'white' }}>
-          <AnnouncementBar />
-          <Navbar />
+        <div style={{ backgroundColor: 'white' }}>          <Navbar />
           <HeroSlider />
           <CategorySection />
           <ProductSection />
