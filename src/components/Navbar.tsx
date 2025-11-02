@@ -1,16 +1,16 @@
 
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isContactDropdownOpen, setIsContactDropdownOpen] = useState(false);
 
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'Products', href: '/categories' },
     { name: 'About us', href: '/about' },
     { name: 'Services', href: '/services' },
-    { name: 'Contact Us', href: '/contact' },
   ];
 
   const navClass = 'bg-[#2e3e27] border-none';
@@ -44,6 +44,41 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
                 {item.name}
               </a>
             ))}
+            
+            {/* Contact Us Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsContactDropdownOpen(true)}
+              onMouseLeave={() => setIsContactDropdownOpen(false)}
+            >
+              <button
+                className={`${linkClass} text-sm lg:text-base flex items-center gap-1`}
+                style={{ fontFamily: 'Coolvetica, sans-serif' }}
+              >
+                Contact Us
+                <ChevronDown size={16} className={`transition-transform duration-200 ${isContactDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {/* Dropdown Menu */}
+              {isContactDropdownOpen && (
+                <div className="absolute top-full right-0 mt-2 w-56 bg-white rounded-md shadow-lg py-2 z-50">
+                  <a
+                    href="/contact"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    style={{ fontFamily: 'Coolvetica, sans-serif' }}
+                  >
+                    Contact Us
+                  </a>
+                  <a
+                    href="/spice-import-form"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                    style={{ fontFamily: 'Coolvetica, sans-serif' }}
+                  >
+                    Importer Requirement Form
+                  </a>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -80,6 +115,39 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
                   {item.name}
                 </a>
               ))}
+              
+              {/* Contact Us Dropdown for Mobile */}
+              <div>
+                <button
+                  onClick={() => setIsContactDropdownOpen(!isContactDropdownOpen)}
+                  className="w-full flex items-center justify-between px-3 py-2 text-sm text-white hover:text-gray-200 hover:bg-white/10 transition-colors rounded-md font-medium"
+                  style={{ fontFamily: 'Coolvetica, sans-serif' }}
+                >
+                  Contact Us
+                  <ChevronDown size={16} className={`transition-transform duration-200 ${isContactDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {isContactDropdownOpen && (
+                  <div className="pl-4 space-y-1 mt-1">
+                    <a
+                      href="/contact"
+                      className="block px-3 py-2 text-sm text-white/90 hover:text-white hover:bg-white/10 transition-colors rounded-md"
+                      style={{ fontFamily: 'Coolvetica, sans-serif' }}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Contact Us
+                    </a>
+                    <a
+                      href="/spice-import-form"
+                      className="block px-3 py-2 text-sm text-white/90 hover:text-white hover:bg-white/10 transition-colors rounded-md"
+                      style={{ fontFamily: 'Coolvetica, sans-serif' }}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Importer Requirement Form
+                    </a>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </>
