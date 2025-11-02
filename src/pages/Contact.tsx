@@ -119,9 +119,10 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold text-black mb-1">Address</h3>
                   <p className="text-gray-600">
-                    606, Sai Raj Heights,<br />
+                    606, Sai Raj Heights<br />
                     Punawale<br />
-                    Pune
+                    Pune - 411033<br />
+                    Maharashtra, India
                   </p>
                 </div>
               </div>
