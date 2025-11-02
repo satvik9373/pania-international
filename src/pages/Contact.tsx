@@ -198,7 +198,7 @@ const Contact = () => {
                   
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-black mb-3" style={{ fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.025em', lineHeight: '1.6' }}>
-                      Subject
+                      Requirement
                     </label>
                     <input
                       type="text"
@@ -208,7 +208,7 @@ const Contact = () => {
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-300"
                       style={{ fontFamily: 'Coolvetica, sans-serif', letterSpacing: '0.02em' }}
-                      placeholder="What's this about?"
+                      placeholder="What's your requirement?"
                     />
                   </div>
                 </div>
