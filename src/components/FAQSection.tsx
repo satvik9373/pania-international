@@ -65,14 +65,18 @@ export default function FAQSection() {
               >
                 <AccordionItem
                   value={`item-${idx}`}
-                  className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden"
+                  className="border border-gray-200 rounded-xl shadow-sm overflow-hidden"
+                  style={{ backgroundColor: '#8B4513' }}
                 >
-                  <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <AccordionTrigger 
+                    className="px-6 py-4 text-left hover:no-underline transition-colors rounded-t-xl"
+                    style={{ backgroundColor: '#8B4513' }}
+                  >
                     <span className="text-base md:text-lg font-medium text-white leading-tight" style={{ fontFamily: 'Soria, serif' }}>
                       {item.q}
                     </span>
                   </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4">
+                  <AccordionContent className="px-6 pb-4" style={{ backgroundColor: 'white' }}>
                     <div className="pt-2 border-t border-gray-100">
                       <p className="text-rich-brown/80 leading-relaxed text-sm md:text-base" style={{ fontFamily: 'Soria, serif' }}>
                         {item.a}

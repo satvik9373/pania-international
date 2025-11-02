@@ -33,9 +33,8 @@ const Index = () => {
           <ServicesSection />
           <TestimonialsSection />
           <BlogSection />
-          <FAQSection />
           
-          {/* Additional content sections */}
+          {/* Why Choose Pania Section */}
           <section className="py-12 bg-olive-green">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <motion.div
@@ -88,7 +87,9 @@ const Index = () => {
               </motion.div>
             </div>
           </section>
-
+          
+          <FAQSection />
+          
           {/* Footer */}
           <Footer />
         </div>
