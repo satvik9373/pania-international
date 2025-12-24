@@ -19,7 +19,9 @@ export async function submitContactLead(req, res) {
     const { date, time } = getISTDateTime();
     const values = [date, time, name, email, phone || '', subject || '', message || ''];
 
+    console.log('[Contact] Submitting lead:', { name, email, phone, subject });
     await appendToSheet(SHEET_NAME, values, 'A:G');
+    console.log('[Contact] Lead submitted successfully');
 
     return res.status(200).json({ success: true, message: 'Contact form submitted successfully' });
   } catch (error) {

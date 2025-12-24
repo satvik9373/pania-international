@@ -47,14 +47,28 @@ export async function appendToSheet(sheetName, values, range = 'A:Z') {
   }
 
   const sheets = await getGoogleSheetsClient();
+  const fullRange = `'${sheetName}'!${range}`;
+
+  console.log('[GoogleSheets] Appending to sheet:', {
+    spreadsheetId,
+    range: fullRange,
+    rowData: values,
+  });
 
   const response = await sheets.spreadsheets.values.append({
     spreadsheetId,
-    range: `${sheetName}!${range}`,
+    range: fullRange,
     valueInputOption: 'USER_ENTERED',
+    insertDataOption: 'INSERT_ROWS',
     requestBody: {
       values: [values],
     },
+  });
+
+  console.log('[GoogleSheets] Append response:', {
+    updatedRange: response.data.updates?.updatedRange,
+    updatedRows: response.data.updates?.updatedRows,
+    updatedCells: response.data.updates?.updatedCells,
   });
 
   return response.data;

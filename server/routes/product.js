@@ -61,7 +61,9 @@ export async function submitProductLead(req, res) {
       deliveryTimeline || '',
     ];
 
+    console.log('[Product] Submitting lead:', { companyName, contactPerson, email });
     await appendToSheet(SHEET_NAME, values, 'A:T');
+    console.log('[Product] Lead submitted successfully');
 
     return res.status(200).json({ success: true, message: 'Product lead submitted successfully' });
   } catch (error) {

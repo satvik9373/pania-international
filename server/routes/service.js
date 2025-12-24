@@ -21,7 +21,9 @@ export async function submitServiceLead(req, res) {
     const { date, time } = getISTDateTime();
     const values = [date, time, fullName, email, phone, service, message || ''];
 
+    console.log('[Service] Submitting lead:', { fullName, email, phone, service });
     await appendToSheet(SHEET_NAME, values, 'A:G');
+    console.log('[Service] Lead submitted successfully');
 
     return res.status(200).json({ success: true, message: 'Service lead submitted successfully' });
   } catch (error) {
