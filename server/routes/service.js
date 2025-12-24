@@ -1,6 +1,4 @@
-import { appendToSheet, getISTDateTime } from '../lib/googleSheets.js';
-
-const SHEET_NAME = 'Service page data';
+import { getGoogleSheetsClient } from '../lib/googleSheets.js';
 
 /**
  * Handle service form submission
@@ -18,11 +16,28 @@ export async function submitServiceLead(req, res) {
       });
     }
 
-    const { date, time } = getISTDateTime();
-    const values = [date, time, fullName, email, phone, service, message || ''];
+    console.log('[Service] Appending row:', { fullName, email, phone, service, message });
 
-    console.log('[Service] Submitting lead:', { fullName, email, phone, service });
-    await appendToSheet(SHEET_NAME, values, 'A:G');
+    const sheets = await getGoogleSheetsClient();
+
+    await sheets.spreadsheets.values.append({
+      spreadsheetId: process.env.GOOGLE_SHEET_ID,
+      range: 'Service page data!A:G',
+      valueInputOption: 'USER_ENTERED',
+      insertDataOption: 'INSERT_ROWS',
+      requestBody: {
+        values: [[
+          new Date().toLocaleDateString(),
+          new Date().toLocaleTimeString(),
+          fullName || '',
+          email || '',
+          phone || '',
+          service || '',
+          message || ''
+        ]]
+      }
+    });
+
     console.log('[Service] Lead submitted successfully');
 
     return res.status(200).json({ success: true, message: 'Service lead submitted successfully' });

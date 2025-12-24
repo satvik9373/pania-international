@@ -1,6 +1,4 @@
-import { appendToSheet, getISTDateTime } from '../lib/googleSheets.js';
-
-const SHEET_NAME = 'Contact page data';
+import { getGoogleSheetsClient } from '../lib/googleSheets.js';
 
 /**
  * Handle contact form submission
@@ -16,11 +14,28 @@ export async function submitContactLead(req, res) {
       return res.status(400).json({ error: 'Missing required fields: name and email are required' });
     }
 
-    const { date, time } = getISTDateTime();
-    const values = [date, time, name, email, phone || '', subject || '', message || ''];
+    console.log('[Contact] Appending row:', { name, email, phone, subject, message });
 
-    console.log('[Contact] Submitting lead:', { name, email, phone, subject });
-    await appendToSheet(SHEET_NAME, values, 'A:G');
+    const sheets = await getGoogleSheetsClient();
+
+    await sheets.spreadsheets.values.append({
+      spreadsheetId: process.env.GOOGLE_SHEET_ID,
+      range: 'Contact page data!A:G',
+      valueInputOption: 'USER_ENTERED',
+      insertDataOption: 'INSERT_ROWS',
+      requestBody: {
+        values: [[
+          new Date().toLocaleDateString(),
+          new Date().toLocaleTimeString(),
+          name || '',
+          email || '',
+          phone || '',
+          subject || '',
+          message || ''
+        ]]
+      }
+    });
+
     console.log('[Contact] Lead submitted successfully');
 
     return res.status(200).json({ success: true, message: 'Contact form submitted successfully' });
